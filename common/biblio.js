@@ -112,6 +112,20 @@ var biblio = {
                         "http://www.w3.org/SVG/"
                 ]
         },
+	"GRAPHICS-ARIA-1.0": {
+		"authors":[ "Amelia Bellamy-Royds", "Fred Esch", "Richard Schwerdtfeger", "Léonie Watson"], "href": "https://www.w3.org/TR/graphics-aria-1.0/", "title": "WAI-ARIA Graphics Module", "status": "WD", "publisher": "W3C", "edDraft": "https://w3c.github.io/graphics-aria/", "deliveredBy":[ {
+			"url": "https://www.w3.org/Graphics/SVG/WG/", "shortname": "svg"
+		}, {
+			"url": "https://www.w3.org/WAI/ARIA/", "shortname": "wai_aria"
+		}], "versions":[ "graphics-aria-1.0-20160908", "graphics-aria-1.0-20151203"], "repository": "https://github.com/w3c/aria", "id": "graphics-aria-1.0", "date": "2 February 2018"
+	},
+	"GRAPHICS-AAM-1.0": {
+		"authors":[ "Richard Schwerdtfeger", "Doug Schepers", "Fred Esch", "Amelia Bellamy-Royds"], "href": "https://www.w3.org/TR/graphics-aam-1.0/", "title": "Graphics Accessibility API Mappings", "status": "WD", "publisher": "W3C", "edDraft": "https://w3c.github.io/aria/graphics-aam/graphics-aam.html", "deliveredBy":[ {
+			"url": "https://www.w3.org/Graphics/SVG/WG/", "shortname": "svg"
+		}, {
+			"url": "https://www.w3.org/WAI/ARIA/", "shortname": "wai_aria"
+		}], "versions":[ "graphics-aam-1.0-20160908"], "repository": "https://github.com/w3c/aria", "id": "graphics-aam-1.0", "date": "2 February 2018"
+	},
 
 	"EPUB-SSV": {
 		"href": "http://www.idpf.org/epub/vocab/structure/",
