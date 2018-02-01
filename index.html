@@ -53,28 +53,38 @@
                                 mailto: "amelia.bellamy.royds@gmail.com",
                                 w3cid: 75809
                         },
-
+			{
+				name: "Joanmarie Diggs",
+				url: 'https://www.igalia.com',
+				mailto: "jdiggs@igalia.com",
+				company: "Igalia, S.L.",
+				companyURI: "https://www.igalia.com",
+				w3cid: 68182
+			},
+			{
+				name: "Michael Cooper",
+				url: 'http://www.w3.org',
+				mailto: "cooper@w3.org",
+				company: "W3C",
+				companyURI: "http://www.w3.org",
+				w3cid: 34017
+			},
 			{
 				name: "Fred Esch",
                           mailto: "fesch@us.ibm.com",
 				company: "IBM Corporation",
 				companyURI: "http://www.ibm.com",
-				w3cid: 73593
+				w3cid: 73593,
+				note: "until September 2016"
 			},
 			{
 				name: "Rich Schwerdtfeger",
 				mailto: "richschwer@gmail.com",
 				company: "Knowbility", 
 				companyURI: "https://www.knowbility.org/",
-				w3cid: 2460
-			},
-			{
-				name: "Léonie Watson",
-				mailto: "lwatson@paciellogroup.com ",
-				company: "The Paciello Group",
-				companyURI: 'http://www.paciellogroup.com',
-				w3cid: 44692
-			},
+				w3cid: 2460,
+				note: "until August 2017"
+			}
 		],
 
 		// authors, add as many as you like. 
@@ -107,14 +117,7 @@
 				company: "W3C", 
 				companyURI: "https://www.w3.org/",
 				w3cid: 38635
-			},
-			{
-				name: "Léonie Watson",
-				mailto: "lwatson@paciellogroup.com ",
-				company: "The Paciello Group",
-				companyURI: 'https://www.paciellogroup.com/',
-				w3cid: 44692
-			},
+			}
 		],
 
 		/*
@@ -259,8 +262,10 @@
         <p>The role descriptions suggest which features of an element with that role are considered semantically important and should be conveyed to the reader whenever possible.</p>
 	</section>
 </section>
-<section class="normative" id="conformance">
-	<p>This specification indicates whether a section is <a>normative</a> or <a>informative</a>. Classifying a section as normative or informative applies to the entire section. A statement "This section is normative" or "This section is informative" applies to all sub-sections of that section.</p>
+<section class="normative">
+	<h2>Conformance</h2>
+	<p>This specification indicates whether a section is <a class="termref">normative</a> or non-normative (<a class="termref">informative</a>) and the classification applies to the entire section. A statement "This section is normative" or "This section is non-normative" applies to all sub-sections of that section.</p>
+	<p>Normative sections provide requirements that <a class="termref">user agents</a> must follow for an implementation to conform to this specification. The keywords <strong class="rfc2119">MUST</strong>, <strong class="rfc2119">MUST NOT</strong>, <strong class="rfc2119">REQUIRED</strong>, <strong class="rfc2119">SHALL</strong>, <strong class="rfc2119">SHALL NOT</strong>, <strong class="rfc2119">SHOULD</strong>, <strong class="rfc2119">RECOMMENDED</strong>, <strong class="rfc2119">MAY</strong>, and <strong class="rfc2119">OPTIONAL</strong> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [[!RFC2119]]. RFC-2119 keywords are formatted in uppercase and contained in a <code>strong</code> element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format, they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
 	<p>Normative sections provide requirements that authors, user agents and assistive technologies MUST follow for an implementation to conform to this specification.</p>
 	<p>Informative sections provide information useful to understanding the specification. Such sections may contain examples of recommended practice, but it is not required to follow such recommendations in order to conform to this specification.</p>
 </section>
@@ -1154,15 +1159,6 @@ OK to omit the second example?
 	which could alert the user that a change has occurred.</p>
 
 	</section>
-<section class="appendix informative" id="a_schemata">
-	<h1>Schemata</h1>
-	<p>WAI-ARIA attributes are natively incorporated into HTML since <a href="https://www.w3.org/TR/html5/">HTML 5</a>. Official support for WAI-ARIA in HTML is provided in that and subsequent HTML specifications.
-    WAI-ARIA attributes are natively incorporated into SVG by the <a href="https://www.w3.org/TR/SVG2/">SVG 2</a> specification.
-    </p>
-	<p class="ednote">Validation support for the roles defined in this module will be added once the specification reaches recommendation.</p>
-	<p>For information on incorporating WAI-ARIA into other grammars, refer to <a href="https://www.w3.org/TR/wai-aria-1.1/#a_schemata">Appendix A</a> of the ARIA 1.1 specification [[!WAI-ARIA-1.1]].</p>
-	<p class="ednote">Review whether any additional schemata are necessary for this module.</p>
-</section>
 <section class="appendix" id="changelog">
 	<h2>Change Log</h2>
 <p>The full <a href="https://github.com/w3c/graphics-aria/commits/master/index.html">commit history to WAI-ARIA Graphics Module 1.0</a> is available.</p>
