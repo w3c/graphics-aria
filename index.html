@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#"><head><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta charset="UTF-8"><meta name="generator" content="ReSpec 19.0.2"><meta lang="" property="dc:language" content="en"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 20.0.3"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 div.example-title {
     min-width: 7.5em;
     color: #b9ab2d;
@@ -782,53 +782,35 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "preProcess": [
     null
   ],
-  "publishDate": "2018-02-02",
-  "publishISODate": "2018-02-02T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 02 February 2018"
-}</script></head>
-<body aria-busy="false" class="h-entry toc-inline"><div class="head">
-    <p>
-      <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
-    </p>
-  <p><!--_hyper: 1118210990;--></p>
-  <h1 class="title p-name" id="title" property="dcterms:title"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module</h1>
-  <h2 id="w3c-editor-s-draft-02-february-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2018-02-02">02 February 2018</time><span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 02 February 2018" title="Permalink for W3C Editor's Draft 02 February 2018" property="url"><span property="title" content="W3C Editor's Draft 02 February 2018">§</span></a></span></h2>
+  "publishDate": "2018-03-06",
+  "publishISODate": "2018-03-06T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 06 March 2018"
+}</script><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML5] and SVG [SVG2]."></head>
+<body class="h-entry toc-inline"><div class="head">
+  <a href="https://www.w3.org/" class="logo">
+      <img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C">
+  </a>
+  <h1 class="title p-name" id="title"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module</h1>
+  
+  <h2 id="w3c-editor-s-draft-06-march-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-03-06">06 March 2018</time></h2>
   <dl>
-      <dt>This version:</dt>
-      <dd><a class="u-url" href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd>
-      <dt>Latest published version:</dt>
-      <dd><a href="https://www.w3.org/TR/graphics-aria-1.0/">https://www.w3.org/TR/graphics-aria-1.0/</a></dd>
-      <dt>Latest editor's draft:</dt>
-      <dd><a href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd>
+    <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/graphics-aria-1.0/">https://www.w3.org/TR/graphics-aria-1.0/</a></dd>
+    <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd>
+    
+    
+    
+    
+    
+    
     <dt>Editors:</dt>
-    <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0" data-editor-id="75809"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Amelia Bellamy-Royds</span>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:amelia.bellamy.royds@gmail.com">amelia.bellamy.royds@gmail.com</a></span></span>
-<span property="rdf:rest" resource="_:editor1"></span>
-</dd>
-<dd class="p-author h-card vcard" resource="_:editor1" data-editor-id="68182"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Joanmarie Diggs"><a class="u-url url p-name fn" property="foaf:homepage" href="https://www.igalia.com">Joanmarie Diggs</a>, Igalia, S.L., <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:jdiggs@igalia.com">jdiggs@igalia.com</a></span></span>
-<span property="rdf:rest" resource="_:editor2"></span>
-</dd>
-<dd class="p-author h-card vcard" resource="_:editor2" data-editor-id="34017"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Michael Cooper"><a class="u-url url p-name fn" property="foaf:homepage" href="http://www.w3.org">Michael Cooper</a>, <abbr title="World Wide Web Consortium">W3C</abbr>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:cooper@w3.org">cooper@w3.org</a></span></span>
-<span property="rdf:rest" resource="_:editor3"></span>
-</dd>
-<dd class="p-author h-card vcard" resource="_:editor3" data-editor-id="73593"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Fred Esch</span>, IBM Corporation, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:fesch@us.ibm.com">fesch@us.ibm.com</a></span> (until September 2016)</span>
-<span property="rdf:rest" resource="_:editor4"></span>
-</dd>
-<dd class="p-author h-card vcard" resource="_:editor4" data-editor-id="2460"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Rich Schwerdtfeger</span>, Knowbility, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:richschwer@gmail.com">richschwer@gmail.com</a></span> (until August 2017)</span>
-<span property="rdf:rest" resource="rdf:nil"></span>
-</dd>
-
-      <dt>Authors:</dt>
-      <dd class="p-author h-card vcard" data-editor-id="75809"><span property="dc:contributor" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Amelia Bellamy-Royds</span>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:amelia.bellamy.royds@gmail.com">amelia.bellamy.royds@gmail.com</a></span></span>
-</dd>
-<dd class="p-author h-card vcard" data-editor-id="73593"><span property="dc:contributor" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Fred Esch</span>, IBM Corporation, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:fesch@us.ibm.com">fesch@us.ibm.com</a></span></span>
-</dd>
-<dd class="p-author h-card vcard" data-editor-id="2460"><span property="dc:contributor" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Rich Schwerdtfeger</span>, Knowbility, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:richschwer@gmail.com">richschwer@gmail.com</a></span></span>
-</dd>
-<dd class="p-author h-card vcard" data-editor-id="38635"><span property="dc:contributor" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Doug Schepers</span>, <abbr title="World Wide Web Consortium">W3C</abbr>, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:schepers@w3.org">schepers@w3.org</a></span></span>
-</dd>
-
+    <dd class="p-author h-card vcard" data-editor-id="75809"><span class="p-name fn">Amelia Bellamy-Royds</span>, <a class="ed_mailto u-email email" href="mailto:amelia.bellamy.royds@gmail.com">amelia.bellamy.royds@gmail.com</a></dd><dd class="p-author h-card vcard" data-editor-id="68182"><a class="u-url url p-name fn" href="https://www.igalia.com">Joanmarie Diggs</a>, Igalia, S.L., <a class="ed_mailto u-email email" href="mailto:jdiggs@igalia.com">jdiggs@igalia.com</a></dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="u-url url p-name fn" href="http://www.w3.org">Michael Cooper</a>, <abbr title="World Wide Web Consortium">W3C</abbr>, <a class="ed_mailto u-email email" href="mailto:cooper@w3.org">cooper@w3.org</a></dd><dd class="p-author h-card vcard" data-editor-id="73593"><span class="p-name fn">Fred Esch</span>, IBM Corporation, <a class="ed_mailto u-email email" href="mailto:fesch@us.ibm.com">fesch@us.ibm.com</a> (until September 2016)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><span class="p-name fn">Rich Schwerdtfeger</span>, Knowbility, <a class="ed_mailto u-email email" href="mailto:richschwer@gmail.com">richschwer@gmail.com</a> (until August 2017)</dd>
+    <dt>Authors:</dt><dd class="p-author h-card vcard" data-editor-id="75809"><span class="p-name fn">Amelia Bellamy-Royds</span>, <a class="ed_mailto u-email email" href="mailto:amelia.bellamy.royds@gmail.com">amelia.bellamy.royds@gmail.com</a></dd><dd class="p-author h-card vcard" data-editor-id="73593"><span class="p-name fn">Fred Esch</span>, IBM Corporation, <a class="ed_mailto u-email email" href="mailto:fesch@us.ibm.com">fesch@us.ibm.com</a></dd><dd class="p-author h-card vcard" data-editor-id="2460"><span class="p-name fn">Rich Schwerdtfeger</span>, Knowbility, <a class="ed_mailto u-email email" href="mailto:richschwer@gmail.com">richschwer@gmail.com</a></dd><dd class="p-author h-card vcard" data-editor-id="38635"><span class="p-name fn">Doug Schepers</span>, <abbr title="World Wide Web Consortium">W3C</abbr>, <a class="ed_mailto u-email email" href="mailto:schepers@w3.org">schepers@w3.org</a></dd>
+    
   </dl>
-      <p class="copyright">
+  
+  
+  
+  <p class="copyright">
         <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
         2015-2018
         
@@ -836,49 +818,49 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
         <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
         <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+        
         <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
         <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
-            <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
+        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
         rules apply.
       </p>
   <hr title="Separator for header">
 </div>
-<section id="abstract" class="introductory" property="dc:abstract"><h2 id="abstract-0" resource="#abstract-0"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
+<section id="abstract" class="introductory"><h2 id="abstract-0">Abstract</h2>
 	<p>Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> [<cite><a class="bibref" href="#bib-WAI-ARIA-1.1">WAI-ARIA-1.1</a></cite>] module of core <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a><!-- , <a data-lt="state">states</a> and <a data-lt="property">properties</a> Note, if we do include any states & properties in this module, edit this sentence! --> specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>] and <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>].</p>
 	<p>This document is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="https://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Overview</a>.</p>
 </section>
-<section id="sotd" class="introductory"><h2 id="status-of-this-document" resource="#status-of-this-document"><span property="xhv:role" resource="xhv:heading">Status of This Document</span></h2>
-      <p>
+<section id="sotd" class="introductory"><h2 id="status-of-this-document">Status of This Document</h2><p>
         <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
-      </p>
-        
-	<p>This is an Editor's Draft of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module 1.0 by the <a href="https://www.w3.org/WAI/PF/svg-a11y-tf/"><abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Taskforce</a>, a joint task force of the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> and the <a href="https://www.w3.org/Graphics/SVG/WG/"><abbr title="Scalable Vector Graphics">SVG</abbr> Working Group</a>. </p>
-	<p>Feedback on any aspect of the specification is accepted. For this publication, the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Task Force particularly seeks feedback on the following questions:</p>
-	<ul>
+      </p><p>This is an Editor's Draft of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module 1.0 by the <a href="https://www.w3.org/WAI/PF/svg-a11y-tf/"><abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Taskforce</a>, a joint task force of the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> and the <a href="https://www.w3.org/Graphics/SVG/WG/"><abbr title="Scalable Vector Graphics">SVG</abbr> Working Group</a>. </p><p>Feedback on any aspect of the specification is accepted. For this publication, the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Task Force particularly seeks feedback on the following questions:</p><ul>
 		<li>Are proposed roles clear and appropriate to the needs of interactive graphics?</li>
 		<li>Is the relationship of this specification to <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> clear?</li>
-	</ul>
-	<p>To comment, <a href="https://github.com/w3c/aria/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> ARIA GitHub repository</a>, using the "graphics" label in the issue. If this is not feasible, send email to <a href="mailto:public-svg-a11y@w3.org?subject=Graphics%20ARIA%20public%20comment">public-svg-a11y@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-svg-a11y/">comment archive</a>). Comments are requested by <strong>30 September 2016</strong>. In-progress updates to the document may be viewed in the <a href="https://w3c.github.io/aria/aria/graphics.html">publicly visible editors' draft</a>.</p>
-
-        <p>
+	</ul><p>To comment, <a href="https://github.com/w3c/aria/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> ARIA GitHub repository</a>, using the "graphics" label in the issue. If this is not feasible, send email to <a href="mailto:public-svg-a11y@w3.org?subject=Graphics%20ARIA%20public%20comment">public-svg-a11y@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-svg-a11y/">comment archive</a>). Comments are requested by <strong>30 September 2016</strong>. In-progress updates to the document may be viewed in the <a href="https://w3c.github.io/aria/aria/graphics.html">publicly visible editors' draft</a>.</p><p>
           This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> and the <a href="https://www.w3.org/Graphics/SVG/WG/"><abbr title="Scalable Vector Graphics">SVG</abbr> Working Group</a> as an Editor's Draft.
+          
+          
             Comments regarding this document are welcome. Please send them to
             <a href="mailto:public-svg-a11y@w3.org">public-svg-a11y@w3.org</a>
             (<a href="mailto:public-svg-a11y-request@w3.org?subject=subscribe">subscribe</a>,
             <a href="https://lists.w3.org/Archives/Public/public-svg-a11y/">archives</a>).
-        </p>
-          <p>
+          
+          
+          
+          
+        </p><p>
             Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
             Membership. This is a draft document and may be updated, replaced or obsoleted by other
             documents at any time. It is inappropriate to cite this document as other than work in
             progress.
-          </p>
-        <p>
+          </p><p>
+          
             This document was produced by
             groups
- operating under the
-            <a id="sotd_patent" property="w3p:patentRules" href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="https://www.w3.org/2004/01/pp-impl/83726/status" rel="disclosure">public list of any patent disclosures  (Accessible Rich Internet Applications Working Group)</a> and a <a href="https://www.w3.org/2004/01/pp-impl/19480/status" rel="disclosure">public list of any patent disclosures  (<abbr title="Scalable Vector Graphics">SVG</abbr> Working Group)</a>
+            operating under the
+            <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+          
+          <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="https://www.w3.org/2004/01/pp-impl/83726/status" rel="disclosure">public list of any patent disclosures  (Accessible Rich Internet Applications Working Group)</a> and a <a href="https://www.w3.org/2004/01/pp-impl/19480/status" rel="disclosure">public list of any patent disclosures  (<abbr title="Scalable Vector Graphics">SVG</abbr> Working Group)</a>
             made in connection with the deliverables of
             each group; these pages also include
             instructions for disclosing a patent. An individual who has actual knowledge of a patent
@@ -887,15 +869,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             Claim(s)</a> must disclose the information in accordance with
             <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section
             6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-        </p>
-          <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2017/Process-20170301/">1 March 2017 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-          </p>
-        
-
-</section>
-<nav id="toc"><h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">Table of Contents<span class="permalink" typeof="bookmark"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents" property="url"><span property="title" content="Table of Contents">§</span></a></span></span></h2><ol class="toc"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#target-audience" class="tocxref"><span class="secno">1.1 </span>Target Audience</a></li><li class="tocline"><a href="#ua-support" class="tocxref"><span class="secno">1.2 </span>User Agent Support</a></li><li class="tocline"><a href="#co-evolution" class="tocxref"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages</a></li><li class="tocline"><a href="#authoring_practices" class="tocxref"><span class="secno">1.4 </span>Authoring Practices</a><ol class="toc"><li class="tocline"><a href="#authoring_tools" class="tocxref"><span class="secno">1.4.1 </span>Authoring Tools</a></li><li class="tocline"><a href="#authoring_testing" class="tocxref"><span class="secno">1.4.2 </span>Testing Practices and Tools</a></li></ol></li><li class="tocline"><a href="#at_support" class="tocxref"><span class="secno">1.5 </span>Assistive Technologies</a></li></ol></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a href="#roles" class="tocxref"><span class="secno">4. </span>Graphics Roles</a><ol class="toc"><li class="tocline"><a href="#role_definitions" class="tocxref"><span class="secno">4.1 </span>Definition of Roles</a><ol class="toc"></ol></li><li class="tocline"><a href="#role_other" class="tocxref"><span class="secno">4.2 </span>Other Roles for Graphics</a></li></ol></li><li class="tocline"><a href="#state_prop" class="tocxref"><span class="secno">5. </span>States and Properties</a></li><li class="tocline"><a href="#changelog" class="tocxref"><span class="secno">A. </span>Change Log</a><ol class="toc"><li class="tocline"><a href="#substantive-changes-since-the-last-public-working-draft" class="tocxref"><span class="secno">A.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a href="#other-substantive-changes-since-the-first-public-working-draft" class="tocxref"><span class="secno">A.2 </span>Other substantive changes since the <span class="formerLink">First Public Working Draft</span></a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_svga11y" class="tocxref"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication</a></li><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.2 </span>Participants active in the PFWG at the time of publication</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
-<section class="informative" id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
-	<!--OddPage--><h2 id="x1-introduction" resource="#x1-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction<span class="permalink" typeof="bookmark"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction" property="url"><span property="title" content="1. Introduction">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
+          
+          
+        </p><p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+        </p></section>
+<nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#target-audience" class="tocxref"><span class="secno">1.1 </span>Target Audience</a></li><li class="tocline"><a href="#ua-support" class="tocxref"><span class="secno">1.2 </span>User Agent Support</a></li><li class="tocline"><a href="#co-evolution" class="tocxref"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages</a></li><li class="tocline"><a href="#authoring_practices" class="tocxref"><span class="secno">1.4 </span>Authoring Practices</a><ol class="toc"><li class="tocline"><a href="#authoring_tools" class="tocxref"><span class="secno">1.4.1 </span>Authoring Tools</a></li><li class="tocline"><a href="#authoring_testing" class="tocxref"><span class="secno">1.4.2 </span>Testing Practices and Tools</a></li></ol></li><li class="tocline"><a href="#at_support" class="tocxref"><span class="secno">1.5 </span>Assistive Technologies</a></li></ol></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a href="#roles" class="tocxref"><span class="secno">4. </span>Graphics Roles</a><ol class="toc"><li class="tocline"><a href="#role_definitions" class="tocxref"><span class="secno">4.1 </span>Definition of Roles</a><ol class="toc"></ol></li><li class="tocline"><a href="#role_other" class="tocxref"><span class="secno">4.2 </span>Other Roles for Graphics</a></li></ol></li><li class="tocline"><a href="#state_prop" class="tocxref"><span class="secno">5. </span>States and Properties</a></li><li class="tocline"><a href="#changelog" class="tocxref"><span class="secno">A. </span>Change Log</a><ol class="toc"><li class="tocline"><a href="#substantive-changes-since-the-last-public-working-draft" class="tocxref"><span class="secno">A.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a href="#other-substantive-changes-since-the-first-public-working-draft" class="tocxref"><span class="secno">A.2 </span>Other substantive changes since the <span class="formerLink">First Public Working Draft</span></a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_svga11y" class="tocxref"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication</a></li><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.2 </span>Participants active in the PFWG at the time of publication</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
+<section class="informative" id="introduction">
+	<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<span class="permalink"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
 	<p><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> is a technical specification that provides a framework to improve the accessibility and interoperability of web content and applications. It enables web browsers to map the accessibility semantics in web content to platform-specific accessibility APIs. This enables web content to be interoperable with platform assistive technologies, similar to native platform applications, without requiring authors to include platform dependencies.</p>
 	<p>This specification is a modular extension of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-WAI-ARIA-1.1">WAI-ARIA-1.1</a></cite>] designed to support graphics. The goals of this specification include:</p>
 	<ul>
@@ -910,8 +890,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     Future work will expand on this framework to enable more detailed annotation of data-rich graphics such as charts or maps.</p>
 	<p>For a more detailed explanation of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> please refer to the <a href="https://www.w3.org/WAI/intro/aria"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Introduction</a> and how it applies to Rich Internet Application Accessibility.</p> 
 	
-	<section id="target-audience" typeof="bibo:Chapter" resource="#target-audience" property="bibo:hasPart">
-		<h3 id="x1-1-target-audience" resource="#x1-1-target-audience"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Target Audience<span class="permalink" typeof="bookmark"><a href="#target-audience" aria-label="Permalink for 1.1 Target Audience" title="Permalink for 1.1 Target Audience" property="url"><span property="title" content="1.1 Target Audience">§</span></a></span></span></h3>
+	<section id="target-audience">
+		<h3 id="x1-1-target-audience"><span class="secno">1.1 </span>Target Audience<span class="permalink"><a href="#target-audience" aria-label="Permalink for 1.1 Target Audience" title="Permalink for 1.1 Target Audience"><span>§</span></a></span></h3>
 		<p>This specification defines a module of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> for graphics, consisting of graphics-specific element <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a><!-- , <a data-lt="state">states</a>, <a data-lt="property">properties</a> and values Again, edit as required re states/properties -->. It impacts several audiences:</p>
 		<ul>
 			<li><a data-lt="user agent" href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">User agents</a> that process content containing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and graphics <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> features;</li>
@@ -924,37 +904,37 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		<!--p>Although this specification is applicable to the above audiences, it is not specifically targeted to, nor is it intended to be the sole source of information for, any of these audiences. In the future, additional documents will be created to assist authors in applying these <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics for graphics and to define how the information in this document is mapped to platform accessibility APIs.</p--> 
 	</section>
 	
-	<section id="ua-support" typeof="bibo:Chapter" resource="#ua-support" property="bibo:hasPart">
-		<h3 id="x1-2-user-agent-support" resource="#x1-2-user-agent-support"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>User Agent Support<span class="permalink" typeof="bookmark"><a href="#ua-support" aria-label="Permalink for 1.2 User Agent Support" title="Permalink for 1.2 User Agent Support" property="url"><span property="title" content="1.2 User Agent Support">§</span></a></span></span></h3>
+	<section id="ua-support">
+		<h3 id="x1-2-user-agent-support"><span class="secno">1.2 </span>User Agent Support<span class="permalink"><a href="#ua-support" aria-label="Permalink for 1.2 User Agent Support" title="Permalink for 1.2 User Agent Support"><span>§</span></a></span></h3>
 		<p>This module follows the general <a href="https://www.w3.org/TR/wai-aria-1.1/#ua-support">User Agent support principles</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-WAI-ARIA-1.1">WAI-ARIA-1.1</a></cite>].
         The roles defined here do not require any change in behavior by user agents other than in the information exposed to the <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">API</abbr></a>.
         However, the semantics defined here provide the ability for user agents to enhance the general user interface presented to readers.
         For example, a user agent may provide alternative keyboard navigation suitable to a graphical environment, or may allow users to extract a copy of a graphic from a larger document.</p> 
 	</section>
 	
-	<section id="co-evolution" typeof="bibo:Chapter" resource="#co-evolution" property="bibo:hasPart">
-		<h3 id="x1-3-co-evolution-of-wai-aria-and-host-languages" resource="#x1-3-co-evolution-of-wai-aria-and-host-languages"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages<span class="permalink" typeof="bookmark"><a href="#co-evolution" aria-label="Permalink for 1.3 Co-Evolution of WAI-ARIA and Host Languages" title="Permalink for 1.3 Co-Evolution of WAI-ARIA and Host Languages" property="url"><span property="title" content="1.3 Co-Evolution of WAI-ARIA and Host Languages">§</span></a></span></span></h3>
+	<section id="co-evolution">
+		<h3 id="x1-3-co-evolution-of-wai-aria-and-host-languages"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages<span class="permalink"><a href="#co-evolution" aria-label="Permalink for 1.3 Co-Evolution of WAI-ARIA and Host Languages" title="Permalink for 1.3 Co-Evolution of WAI-ARIA and Host Languages"><span>§</span></a></span></h3>
 		<p>The <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module follows the model for <a href="https://www.w3.org/TR/wai-aria-1.1/#co-evolution">co-evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and host languages</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-WAI-ARIA-1.1">WAI-ARIA-1.1</a></cite>]. It is intended to augment semantics in supporting languages like <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>], <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-SVG2">SVG2</a></cite>] and EPUB, or to be used as an accessibility enhancement technology in other markup-based languages that do not explicitly include support for ARIA. 
         <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> <a href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a> clarify semantics to assistive technologies when authors create new types of objects, via style and script, or use markup languages which describe the visual appearance of a document rather than its meaning.</p>
 		<p>Although markup languages may provide some of these semantics natively, it is expected that there will be a persistent need for the semantics provided by the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module.
 		Some host languages exist to create semantics for features other than the user interface. For example, <abbr title="Scalable Vector Graphics">SVG</abbr> expresses the semantics behind production of graphical objects, not of user interface components that those objects may represent. Host languages such as these might, by design, not provide native semantics that map to all of this specification's features. In these host languages, the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module could be adopted as a long-term approach to add semantic information.</p>
 	</section>
 	
-	<section id="authoring_practices" typeof="bibo:Chapter" resource="#authoring_practices" property="bibo:hasPart">
-		<h3 id="x1-4-authoring-practices" resource="#x1-4-authoring-practices"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4 </span>Authoring Practices<span class="permalink" typeof="bookmark"><a href="#authoring_practices" aria-label="Permalink for 1.4 Authoring Practices" title="Permalink for 1.4 Authoring Practices" property="url"><span property="title" content="1.4 Authoring Practices">§</span></a></span></span></h3>
-		<section id="authoring_tools" typeof="bibo:Chapter" resource="#authoring_tools" property="bibo:hasPart">
-			<h4 id="x1-4-1-authoring-tools" resource="#x1-4-1-authoring-tools"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4.1 </span>Authoring Tools<span class="permalink" typeof="bookmark"><a href="#authoring_tools" aria-label="Permalink for 1.4.1 Authoring Tools" title="Permalink for 1.4.1 Authoring Tools" property="url"><span property="title" content="1.4.1 Authoring Tools">§</span></a></span></span></h4>
+	<section id="authoring_practices">
+		<h3 id="x1-4-authoring-practices"><span class="secno">1.4 </span>Authoring Practices<span class="permalink"><a href="#authoring_practices" aria-label="Permalink for 1.4 Authoring Practices" title="Permalink for 1.4 Authoring Practices"><span>§</span></a></span></h3>
+		<section id="authoring_tools">
+			<h4 id="x1-4-1-authoring-tools"><span class="secno">1.4.1 </span>Authoring Tools<span class="permalink"><a href="#authoring_tools" aria-label="Permalink for 1.4.1 Authoring Tools" title="Permalink for 1.4.1 Authoring Tools"><span>§</span></a></span></h4>
 			<p>Many of the requirements in the definitions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Graphics <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a>, <a data-lt="state" href="#dfn-state" class="internalDFN" data-link-type="dfn">states</a> and <a data-lt="property" href="#dfn-property" class="internalDFN" data-link-type="dfn">properties</a> can be checked automatically during the development process, similar to other quality control processes used for validating code. To assist authors who are creating graphics, these tools can compare the semantic structure of Graphics <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> roles from the <abbr title="Document Object Model">DOM</abbr> to that defined in this specification and notify the author of errors or simply create templates that enforce that structure.</p>
 		</section>
 		
-		<section id="authoring_testing" typeof="bibo:Chapter" resource="#authoring_testing" property="bibo:hasPart">
-			<h4 id="x1-4-2-testing-practices-and-tools" resource="#x1-4-2-testing-practices-and-tools"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.4.2 </span>Testing Practices and Tools<span class="permalink" typeof="bookmark"><a href="#authoring_testing" aria-label="Permalink for 1.4.2 Testing Practices and Tools" title="Permalink for 1.4.2 Testing Practices and Tools" property="url"><span property="title" content="1.4.2 Testing Practices and Tools">§</span></a></span></span></h4> 
+		<section id="authoring_testing">
+			<h4 id="x1-4-2-testing-practices-and-tools"><span class="secno">1.4.2 </span>Testing Practices and Tools<span class="permalink"><a href="#authoring_testing" aria-label="Permalink for 1.4.2 Testing Practices and Tools" title="Permalink for 1.4.2 Testing Practices and Tools"><span>§</span></a></span></h4> 
 			<p>The accessibility of interactive content cannot be confirmed by static checks alone. Developers of interactive content should test for device-independent access to <a data-lt="widget" href="#dfn-widget" class="internalDFN" data-link-type="dfn">widgets</a> and applications, and should verify accessibility <abbr title="application programming interface">API</abbr> access to all content and changes during user interaction.</p>
 		</section>
 	</section>
 	
-	<section id="at_support" typeof="bibo:Chapter" resource="#at_support" property="bibo:hasPart">
-		<h3 id="x1-5-assistive-technologies" resource="#x1-5-assistive-technologies"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.5 </span>Assistive Technologies<span class="permalink" typeof="bookmark"><a href="#at_support" aria-label="Permalink for 1.5 Assistive Technologies" title="Permalink for 1.5 Assistive Technologies" property="url"><span property="title" content="1.5 Assistive Technologies">§</span></a></span></span></h3>
+	<section id="at_support">
+		<h3 id="x1-5-assistive-technologies"><span class="secno">1.5 </span>Assistive Technologies<span class="permalink"><a href="#at_support" aria-label="Permalink for 1.5 Assistive Technologies" title="Permalink for 1.5 Assistive Technologies"><span>§</span></a></span></h3>
 		<p>Programmatic access to accessibility semantics is essential for assistive technologies. For more information, refer to the <a href="https://www.w3.org/TR/wai-aria-1.1/#at_support">Assistive Technologies</a> section in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-WAI-ARIA-1.1">WAI-ARIA-1.1</a></cite>].</p> 
         <p>For the graphics roles in particular, two categories of assistive technology are particularly relevant, but have different needs:</p>
         <ul>
@@ -965,15 +945,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <p>The role descriptions suggest which features of an element with that role are considered semantically important and should be conveyed to the reader whenever possible.</p>
 	</section>
 </section>
-<section class="normative" id="conformance" typeof="bibo:Chapter" resource="#conformance" property="bibo:hasPart">
-	<!--OddPage--><h2 id="x2-conformance" resource="#x2-conformance"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Conformance<span class="permalink" typeof="bookmark"><a href="#conformance" aria-label="Permalink for 2. Conformance" title="Permalink for 2. Conformance" property="url"><span property="title" content="2. Conformance">§</span></a></span></span></h2>
+<section class="normative" id="conformance">
+	<!--OddPage--><h2 id="x2-conformance"><span class="secno">2. </span>Conformance<span class="permalink"><a href="#conformance" aria-label="Permalink for 2. Conformance" title="Permalink for 2. Conformance"><span>§</span></a></span></h2>
 	<p>This specification indicates whether a section is <a class="termref internalDFN" href="#dfn-normative" data-link-type="dfn">normative</a> or non-normative (<a class="termref internalDFN" href="#dfn-informative" data-link-type="dfn">informative</a>) and the classification applies to the entire section. A statement "This section is normative" or "This section is non-normative" applies to all sub-sections of that section.</p>
-	<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <strong class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></strong>, and <strong class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></strong> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" href="#bib-RFC2119">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in a <code>strong</code> element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format, they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
+	<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <em class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></em>, <em class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></em>, <em class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></em>, <em class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></em>, and <em class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></em> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" href="#bib-RFC2119">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in an element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format, they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
 	<p>Normative sections provide requirements that authors, user agents and assistive technologies <em class="rfc2119" title="MUST">MUST</em> follow for an implementation to conform to this specification.</p>
 	<p>Informative sections provide information useful to understanding the specification. Such sections may contain examples of recommended practice, but it is not required to follow such recommendations in order to conform to this specification.</p>
 </section>
-<section class="informative" id="terms" typeof="bibo:Chapter" resource="#terms" property="bibo:hasPart">
-	<!--OddPage--><h2 id="x3-important-terms" resource="#x3-important-terms"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Important Terms<span class="permalink" typeof="bookmark"><a href="#terms" aria-label="Permalink for 3. Important Terms" title="Permalink for 3. Important Terms" property="url"><span property="title" content="3. Important Terms">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
+<section class="informative" id="terms">
+	<!--OddPage--><h2 id="x3-important-terms"><span class="secno">3. </span>Important Terms<span class="permalink"><a href="#terms" aria-label="Permalink for 3. Important Terms" title="Permalink for 3. Important Terms"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
 	<div data-oninclude="restrictReferences"><p>While some terms are defined in place, the following definitions are used throughout this document. </p>
 <dl class="termlist">
     <dt><dfn data-lt="accessibility api|accessibility apis" id="dfn-accessibility-api" data-dfn-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
@@ -1110,8 +1090,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </dl>
 </div>
 </section>
-<section class="normative" id="roles" typeof="bibo:Chapter" resource="#roles" property="bibo:hasPart">
-	<!--OddPage--><h2 id="x4-graphics-roles" resource="#x4-graphics-roles"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Graphics Roles<span class="permalink" typeof="bookmark"><a href="#roles" aria-label="Permalink for 4. Graphics Roles" title="Permalink for 4. Graphics Roles" property="url"><span property="title" content="4. Graphics Roles">§</span></a></span></span></h2>    
+<section class="normative" id="roles">
+	<!--OddPage--><h2 id="x4-graphics-roles"><span class="secno">4. </span>Graphics Roles<span class="permalink"><a href="#roles" aria-label="Permalink for 4. Graphics Roles" title="Permalink for 4. Graphics Roles"><span>§</span></a></span></h2>    
 	<p>
       This section defines additions to the 
       <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 
@@ -1152,8 +1132,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
      and must not be assigned any accessible properties or alternative text. 
      A role of <code>none</code> or <code>presentation</code> will be ignored 
      for interactive elements or those with <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> states and properties.</p>
-	<section id="role_definitions" typeof="bibo:Chapter" resource="#role_definitions" property="bibo:hasPart">
-		<h3 id="x4-1-definition-of-roles" resource="#x4-1-definition-of-roles"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>Definition of Roles<span class="permalink" typeof="bookmark"><a href="#role_definitions" aria-label="Permalink for 4.1 Definition of Roles" title="Permalink for 4.1 Definition of Roles" property="url"><span property="title" content="4.1 Definition of Roles">§</span></a></span></span></h3>
+	<section id="role_definitions">
+		<h3 id="x4-1-definition-of-roles"><span class="secno">4.1 </span>Definition of Roles<span class="permalink"><a href="#role_definitions" aria-label="Permalink for 4.1 Definition of Roles" title="Permalink for 4.1 Definition of Roles"><span>§</span></a></span></h3>
 		<p>
         Below is an alphabetical list of the
         <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 
@@ -1188,8 +1168,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </dl>
 			
 				
-			<section class="role notoc" id="graphics-document" typeof="bibo:Chapter" resource="#graphics-document" property="bibo:hasPart">
-			<h4 class="role-name" title="graphics-document" aria-describedby="desc-graphics-document" id="graphics-document-0" resource="#graphics-document-0"><span property="xhv:role" resource="xhv:heading"><code>graphics-document</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#graphics-document" aria-label="Permalink for graphics-document (role)" title="Permalink for graphics-document (role)" property="url"><span property="title" content="graphics-document (role)">§</span></a></span></span></h4>
+			<section class="role notoc" id="graphics-document">
+			<h4 class="role-name" title="graphics-document" aria-describedby="desc-graphics-document" id="graphics-document-0"><code>graphics-document</code> <span class="type-indicator">(role)</span><span class="permalink"><a href="#graphics-document" aria-label="Permalink for graphics-document (role)" title="Permalink for graphics-document (role)"><span>§</span></a></span></h4>
 			<div class="role-description" id="desc-graphics-document" role="definition">
         <p>
           A type of <a href="https://w3c.github.io/aria/#document" class="role-reference"><code>document</code></a> in which 
@@ -1268,8 +1248,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
              would be subclasses of <code>graphics-document</code>.
            </p>
         </div></div>
-				<div class="example"><div class="example-title marker"><span>Example 1</span></div><pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-comment">&lt;!-- An SVG diagram of an electrical circuit --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"https://www.w3.org/2000/svg"</span> 
+              <aside class="example"><div class="example-title marker"><span>Example 1</span></div>
+                <p>
+                  An <abbr title="Scalable Vector Graphics">SVG</abbr> diagram of an electrical circuit is a simple graphical document:
+                </p>
+<object type="image/svg+xml" data="img/circuit-diagram.svg"></object>
+				<pre class="highlight hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"https://www.w3.org/2000/svg"</span> 
      <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 200 100"</span>
      <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-document document"</span> &gt;</span>
      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>A simple circuit<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -1277,26 +1261,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
      <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span><span class="css">
         <span class="hljs-comment">/* omitted */</span>
      </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
-     <span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"battery-1"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol img"</span> 
-        <span class="hljs-attr">aria-roledescription</span>=<span class="hljs-string">"source"</span> 
-        <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"battery"</span>
-        <span class="hljs-attr">aria-flowto</span>=<span class="hljs-string">"switch-1"</span> 
-        <span class="hljs-attr">transform</span>=<span class="hljs-string">"translate(20,50)"</span> &gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M-15,-5 h30 M-5,5 h10"</span> /&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"battery-1"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol img"</span>
+        <span class="hljs-attr">aria-roledescription</span>=<span class="hljs-string">"source"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"battery"</span>
+        <span class="hljs-attr">transform</span>=<span class="hljs-string">"translate(20,50)"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M-15,-5 h30 M-5,5 h10"</span>/&gt;</span>
      <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
-     <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wire"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M20,45 V20 H90"</span>/&gt;</span>
-     <span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"switch-1"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol img"</span> 
-        <span class="hljs-attr">aria-roledescription</span>=<span class="hljs-string">"switch"</span> 
-        <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"single-pole switch"</span>
-        <span class="hljs-attr">aria-flowto</span>=<span class="hljs-string">"lightbulb-1"</span> &gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M90,20 L105,30"</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"connection"</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"90"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"2"</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"connection"</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"110"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"2"</span> /&gt;</span>
-     <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
-     <span class="hljs-comment">&lt;!-- more wires and a light bulb --&gt;</span> 
+     <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"wire-1"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol img"</span>
+          <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"wire connecting"</span>
+          <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"wire-1 battery-1 switch-1"</span>
+          <span class="hljs-attr">class</span>=<span class="hljs-string">"wire"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M20,45 V20 H90"</span>/&gt;</span>
+     <span class="hljs-comment">&lt;!-- the switch, more wires, and a light bulb --&gt;</span> 
 <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-
-</pre></div>
+</pre>
+              </aside>
 			</div>
 			<table class="role-features">
 				<caption>Characteristics:</caption>
@@ -1376,8 +1353,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 		</section>
 						
 									
-		<section class="role notoc" id="graphics-object" typeof="bibo:Chapter" resource="#graphics-object" property="bibo:hasPart">
-			<h4 class="role-name" title="graphics-object" aria-describedby="desc-graphics-object" id="graphics-object-0" resource="#graphics-object-0"><span property="xhv:role" resource="xhv:heading"><code>graphics-object</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#graphics-object" aria-label="Permalink for graphics-object (role)" title="Permalink for graphics-object (role)" property="url"><span property="title" content="graphics-object (role)">§</span></a></span></span></h4>
+		<section class="role notoc" id="graphics-object">
+			<h4 class="role-name" title="graphics-object" aria-describedby="desc-graphics-object" id="graphics-object-0"><code>graphics-object</code> <span class="type-indicator">(role)</span><span class="permalink"><a href="#graphics-object" aria-label="Permalink for graphics-object (role)" title="Permalink for graphics-object (role)"><span>§</span></a></span></h4>
 			<div class="role-description" id="desc-graphics-object" role="definition">
         <p>
           A section of a <a href="#graphics-document" class="role-reference"><code>graphics-document</code></a>
@@ -1413,7 +1390,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </p></div>
 
         
-<div class="example">
+<aside class="example"><div class="example-title marker"><span>Example 2</span></div>
   <p>
     The code that follows is a portion of the markup for a 
     structured graphic.  It includes <abbr title="Scalable Vector Graphics">SVG</abbr> <code>g</code> grouping
@@ -1441,7 +1418,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     group role is provided as an explicit fallback.
   </p>
     <object type="image/svg+xml" data="img/house-graphicsroles.svg"></object>
-				<pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"https://www.w3.org/2000/svg"</span>
+				<pre class="highlight hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"https://www.w3.org/2000/svg"</span>
      <span class="hljs-attr">width</span>=<span class="hljs-string">"600"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 600 400"</span>
      <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-document document"</span> <span class="hljs-attr">xml:lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -1516,7 +1493,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <span class="hljs-comment">&lt;!-- more markup for the trees --&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
 </pre>    
-</div>
+</aside>
       <!-- 
 FRED: I've added more explanation to the house example,
 which I think covers the factors you were trying to emphasize here.
@@ -1644,8 +1621,8 @@ OK to omit the second example?
 		</section>
 				
 		
-		<section class="role notoc" id="graphics-symbol" typeof="bibo:Chapter" resource="#graphics-symbol" property="bibo:hasPart">
-			<h4 class="role-name" title="graphics-symbol" aria-describedby="desc-graphics-symbol" id="graphics-symbol-0" resource="#graphics-symbol-0"><span property="xhv:role" resource="xhv:heading"><code>graphics-symbol</code> <span class="type-indicator">(role)</span><span class="permalink" typeof="bookmark"><a href="#graphics-symbol" aria-label="Permalink for graphics-symbol (role)" title="Permalink for graphics-symbol (role)" property="url"><span property="title" content="graphics-symbol (role)">§</span></a></span></span></h4>
+		<section class="role notoc" id="graphics-symbol">
+			<h4 class="role-name" title="graphics-symbol" aria-describedby="desc-graphics-symbol" id="graphics-symbol-0"><code>graphics-symbol</code> <span class="type-indicator">(role)</span><span class="permalink"><a href="#graphics-symbol" aria-label="Permalink for graphics-symbol (role)" title="Permalink for graphics-symbol (role)"><span>§</span></a></span></h4>
 			<div class="role-description" id="desc-graphics-symbol" role="definition">
 				<p>
             A graphical object used to convey a simple meaning or category, 
@@ -1672,8 +1649,12 @@ OK to omit the second example?
             in the form <code>role="graphics-symbol img"</code>, 
             if that is not already the default semantic role for the element.
         </p></div>
-				<div class="example"><div class="example-title marker"><span>Example 2</span></div><pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-comment">&lt;!-- Within an HTML document listing a restaurant menu --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Appetizers<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+              <aside class="example"><div class="example-title marker"><span>Example 3</span></div>
+                <p>
+                  Within an <abbr title="Hypertext Markup Language">HTML</abbr> document for a restaurant menu,
+                  an <code>img</code> element can represent a repeated symbol:
+                </p>
+				<pre class="highlight hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Appetizers<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span> Spinach Salad with Strawberry &amp; Almonds
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Vegetarian"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../assets/leaf.svg"</span> /&gt;</span>
@@ -1683,39 +1664,78 @@ OK to omit the second example?
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Contains Nuts"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../assets/peanut.svg"</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- … --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></pre></div>
-				<div class="example"><div class="example-title marker"><span>Example 3</span></div><pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-comment">&lt;!-- Within an SVG diagram of an electrical circuit --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lightbulb-1"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol img"</span> 
-   <span class="hljs-attr">aria-roledescription</span>=<span class="hljs-string">"load"</span> 
-   <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"lightbulb"</span>
-   <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"lightbulb-1-label"</span>
-   <span class="hljs-attr">aria-flowto</span>=<span class="hljs-string">"battery-1"</span> 
-   <span class="hljs-attr">transform</span>=<span class="hljs-string">"translate(180,50)"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lightbulb-1-label"</span>
-        <span class="hljs-attr">x</span>=<span class="hljs-string">"-15"</span> <span class="hljs-attr">dy</span>=<span class="hljs-string">"0.5ex"</span> <span class="hljs-attr">text-anchor</span>=<span class="hljs-string">"end"</span> &gt;</span>10W<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"10"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M0,-10 C0,8 5,8 5,0 C5,-8 0,-8 0,10"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
-
-</pre></div>
-				<div class="example"><div class="example-title marker"><span>Example 4</span></div><pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-comment">&lt;!-- Within an architectural blueprint-style SVG diagram --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol img"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Door<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">desc</span>&gt;</span>on West side of South wall<span class="hljs-tag">&lt;/<span class="hljs-name">desc</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"8"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"white"</span> 
-          <span class="hljs-attr">x1</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"275"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"275"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"4"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#444"</span> 
-          <span class="hljs-attr">x1</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"275"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"125"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"225"</span>/&gt;</span>        
-<span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</pre>
+              </aside>
+              <aside class="example"><div class="example-title marker"><span>Example 4</span></div>
+                <p>
+                  Within an <abbr title="Scalable Vector Graphics">SVG</abbr> diagram of an electrical circuit,
+                  the graphics that represent batteries, switches, 
+                  and loads like this lightbulb are each symbols:
+                </p>
+<object type="image/svg+xml" data="img/circuit-diagram.svg"></object>
+				<pre class="highlight hljs javascript" aria-busy="false">&lt;g id=<span class="hljs-string">"lightbulb-1"</span> role=<span class="hljs-string">"graphics-symbol img"</span>
+   aria-roledescription=<span class="hljs-string">"load"</span>
+   aria-label=<span class="hljs-string">"lightbulb"</span>
+   aria-labelledby=<span class="hljs-string">"lightbulb-1 lightbulb-1-label"</span>
+   transform=<span class="hljs-string">"translate(180,50)"</span>&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lightbulb-1-label"</span>
+        <span class="hljs-attr">x</span>=<span class="hljs-string">"-15"</span> <span class="hljs-attr">dy</span>=<span class="hljs-string">"0.5ex"</span> <span class="hljs-attr">text-anchor</span>=<span class="hljs-string">"end"</span> &gt;</span>10W<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></span>
+    &lt;circle r=<span class="hljs-string">"10"</span> /&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M0,-10 C0,8 5,8 5,0 C5,-8 0,-8 0,10"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span></span>
+</pre>
+                <p>
+                  Note that the visible text must be included in the label
+                  for its parent symbol, in this example.
+                  As the child of a <a href="#graphics-symbol" class="role-reference"><code>graphics-symbol</code></a>,
+                  it is treated as presentational content,
+                  and is therefore not accessible as a separate element of the graphic.
+                </p>
+              </aside>
+              <aside class="example"><div class="example-title marker"><span>Example 5</span></div>
+                <p>
+                  Within an architectural blueprint-style <abbr title="Scalable Vector Graphics">SVG</abbr> diagram,
+                  each <abbr title="Scalable Vector Graphics">SVG</abbr> <code>use</code> element that creates a copy
+                  of a simple <abbr title="Scalable Vector Graphics">SVG</abbr> <code>symbol</code> is a <code>graphics-symbol</code>:
+                </p>
+<object type="image/svg+xml" data="img/blueprint.svg"></object>
+				<pre class="highlight hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span>
+     <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span>
+     <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 400 300"</span>
+     <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-document document"</span> <span class="hljs-attr">xml:lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Room with 5 outlets<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">desc</span>&gt;</span>Schematic showing the minimum number and position of 
+        electrical outlets for a mid-sized room with one door.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">desc</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">defs</span>&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">symbol</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"outlet"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 30 20"</span>
+                <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#000"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"1.5"</span> <span class="hljs-attr">pointer-events</span>=<span class="hljs-string">"all"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">desc</span>&gt;</span>The symbol for an electrical outlet is a circle with 
+          a plug shape overlaid on top.  The plug consists of two horizontal 
+          lines extending from a vertical line.<span class="hljs-tag">&lt;/<span class="hljs-name">desc</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"15"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"10"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"9"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"7"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"29"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"7"</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"13"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"29"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"13"</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">"19"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">symbol</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">defs</span>&gt;</span>
 <span class="hljs-comment">&lt;!-- … --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#outlet"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol img"</span> 
-     <span class="hljs-attr">x</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"130"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"40"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Electrical outlet<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">desc</span>&gt;</span>at center of West wall<span class="hljs-tag">&lt;/<span class="hljs-name">desc</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
-
-</pre></div>
-
+    <span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#outlet"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol img"</span>
+             <span class="hljs-attr">x</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"15"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"45"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"30"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Electrical outlet<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">desc</span>&gt;</span>on West side of North wall<span class="hljs-tag">&lt;/<span class="hljs-name">desc</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#outlet"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol img"</span>
+             <span class="hljs-attr">x</span>=<span class="hljs-string">"250"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"15"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"45"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"30"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Electrical outlet<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">desc</span>&gt;</span>on East side of North wall<span class="hljs-tag">&lt;/<span class="hljs-name">desc</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- … --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></pre>
+              </aside>
 			</div>
 			<table class="role-features">
 				<caption>Characteristics:</caption>
@@ -1789,8 +1809,8 @@ OK to omit the second example?
 		</section>
  		
 	</section>
-	<section id="role_other" typeof="bibo:Chapter" resource="#role_other" property="bibo:hasPart">
-		<h3 id="x4-2-other-roles-for-graphics" resource="#x4-2-other-roles-for-graphics"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>Other Roles for Graphics<span class="permalink" typeof="bookmark"><a href="#role_other" aria-label="Permalink for 4.2 Other Roles for Graphics" title="Permalink for 4.2 Other Roles for Graphics" property="url"><span property="title" content="4.2 Other Roles for Graphics">§</span></a></span></span></h3>
+	<section id="role_other">
+		<h3 id="x4-2-other-roles-for-graphics"><span class="secno">4.2 </span>Other Roles for Graphics<span class="permalink"><a href="#role_other" aria-label="Permalink for 4.2 Other Roles for Graphics" title="Permalink for 4.2 Other Roles for Graphics"><span>§</span></a></span></h3>
 		<p>	The following core ARIA roles, defined in ARIA 1.1 [<cite><a class="bibref" href="#bib-WAI-ARIA-1.1">WAI-ARIA-1.1</a></cite>], are also 
       relevant for annotating graphics:
     </p>
@@ -1820,7 +1840,7 @@ OK to omit the second example?
       in a document.
     </p>
     
-<div class="example">
+<aside class="example"><div class="example-title marker"><span>Example 6</span></div>
   <p>
     Within an <abbr title="Hypertext Markup Language">HTML</abbr> 5 document, an inline <abbr title="Scalable Vector Graphics">SVG</abbr>
     may sometimes represent an atomic <code>img</code>.
@@ -1829,7 +1849,7 @@ OK to omit the second example?
   </p>
 
 <object type="text/html" data="img/img-role-for-svg.html"></object>
-<div class="example"><div class="example-title marker"><span>Example 5</span></div><pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A repeating SVG gradient is defined using the
+<pre class="highlight hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A repeating SVG gradient is defined using the
     <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>spreadMethod<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> attribute.  
     A value of <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>repeat<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> causes the color stops
     to repeat in the same order, from beginning to end:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -1846,7 +1866,8 @@ OK to omit the second example?
         <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"1"</span>     <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"black"</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">linearGradient</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"url(#repeat)"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+</pre>
   
   <p>
     The following example provides the same content, 
@@ -1854,7 +1875,7 @@ OK to omit the second example?
       separately from the flow of paragraph text.
   </p>
     <object type="text/html" data="img/nested-figures.html"></object>
-<div class="example"><div class="example-title marker"><span>Example 6</span></div><pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"fig1"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"figure region"</span>&gt;</span>
+<pre class="highlight hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"fig1"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"figure region"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"fig1A"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nested-figure"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"figure"</span>
          <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"fig1-caption, fig1A-caption"</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- markup omitted--&gt;</span>
@@ -1878,7 +1899,8 @@ OK to omit the second example?
     <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"fig1-caption"</span>
                 &gt;</span>Figure 1: Repeating SVG gradients<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+</pre>
   
   <p>
     Finally, the last version uses a <code>graphics-document</code>
@@ -1888,7 +1910,7 @@ OK to omit the second example?
     while the annotations have individual labels and descriptions.
   </p>
     <object type="text/html" data="img/figure-graphics-doc.html"></object>
-    <div class="example"><div class="example-title marker"><span>Example 7</span></div><pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"fig1"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"figure region"</span>&gt;</span>
+    <pre class="highlight hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"fig1"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"figure region"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-document"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Repeating versus reflecting linear gradients<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">desc</span>&gt;</span>
@@ -1943,18 +1965,18 @@ OK to omit the second example?
     <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Figure 1: spreadMethod options for
         repeating SVG gradients<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span></pre></div>
-</div>    
+<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+    </pre>
+</aside>    
 
-      <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">
-          Should we expand on the following example 
-          to demonstrate how canvas hit regions create a graphical document?
-      </p></div>
-				<div class="example"><div class="example-title marker"><span>Example 8</span></div><pre class="highlight hljs xml" aria-busy="false" aria-live="polite"><span class="hljs-comment">&lt;!-- Within the fallback DOM dynamically constructed
-     for an HTML 5 canvas game,
+<aside class="example"><div class="example-title marker"><span>Example 7</span></div>
+  <p>
+     Within the fallback <abbr title="Document Object Model">DOM</abbr> dynamically constructed
+     for an <abbr title="Hypertext Markup Language">HTML</abbr> 5 canvas game,
      elements may represent the different images
-     that create the composite graphic --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-document"</span>&gt;</span>
+     that create the composite graphic:
+  </p>
+				<pre class="highlight hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-document"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"scene-desc"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span> 
        <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"The Dungeon"</span>
        <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"scene-desc"</span>&gt;</span>
@@ -1969,12 +1991,14 @@ OK to omit the second example?
        creature blocks the passage.
    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
    <span class="hljs-comment">&lt;!-- more DOM elements representing game controls --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span></pre></div>
+<span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+</pre>
+      </aside>
     
   	</section>
 </section>
-<section class="normative" id="state_prop" typeof="bibo:Chapter" resource="#state_prop" property="bibo:hasPart">
-	<!--OddPage--><h2 id="x5-states-and-properties" resource="#x5-states-and-properties"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>States and Properties<span class="permalink" typeof="bookmark"><a href="#state_prop" aria-label="Permalink for 5. States and Properties" title="Permalink for 5. States and Properties" property="url"><span property="title" content="5. States and Properties">§</span></a></span></span></h2>
+<section class="normative" id="state_prop">
+	<!--OddPage--><h2 id="x5-states-and-properties"><span class="secno">5. </span>States and Properties<span class="permalink"><a href="#state_prop" aria-label="Permalink for 5. States and Properties" title="Permalink for 5. States and Properties"><span>§</span></a></span></h2>
 	<p><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> provides a collection of accessibility state and properties which are used to support platform accessibility APIs on various 
 	operating system platforms. Assistive technologies may access this information through an exposed user agent <abbr title="Document Object Model">DOM</abbr> or through a mapping 
 	to the platform accessibility <abbr title="Application Programming Interfaces">API</abbr>. When combined with roles, the user agent can supply the assistive technologies with user interface 
@@ -1982,18 +2006,18 @@ OK to omit the second example?
 	which could alert the user that a change has occurred.</p>
 
 	</section>
-<section class="appendix" id="changelog" typeof="bibo:Chapter" resource="#changelog" property="bibo:hasPart">
-	<!--OddPage--><h2 id="a-change-log" resource="#a-change-log"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>Change Log<span class="permalink" typeof="bookmark"><a href="#changelog" aria-label="Permalink for A. Change Log" title="Permalink for A. Change Log" property="url"><span property="title" content="A. Change Log">§</span></a></span></span></h2>
+<section class="appendix" id="changelog">
+	<!--OddPage--><h2 id="a-change-log"><span class="secno">A. </span>Change Log<span class="permalink"><a href="#changelog" aria-label="Permalink for A. Change Log" title="Permalink for A. Change Log"><span>§</span></a></span></h2>
 <p>The full <a href="https://github.com/w3c/graphics-aria/commits/master/index.html">commit history to <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module 1.0</a> is available.</p>
-	<section id="substantive-changes-since-the-last-public-working-draft" typeof="bibo:Chapter" resource="#substantive-changes-since-the-last-public-working-draft" property="bibo:hasPart">
-		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft" resource="#a-1-substantive-changes-since-the-last-public-working-draft"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.1 </span>Substantive changes since the <a href="https://www.w3.org/TR/2016/WD-graphics-aria-1.0-20160908/">last public working draft</a><span class="permalink" typeof="bookmark"><a href="#substantive-changes-since-the-last-public-working-draft" aria-label="Permalink for A.1 Substantive changes since the last public working draft" title="Permalink for A.1 Substantive changes since the last public working draft" property="url"><span property="title" content="A.1 Substantive changes since the last public working draft">§</span></a></span></span></h3>
+	<section id="substantive-changes-since-the-last-public-working-draft">
+		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1 </span>Substantive changes since the <a href="https://www.w3.org/TR/2016/WD-graphics-aria-1.0-20160908/">last public working draft</a><span class="permalink"><a href="#substantive-changes-since-the-last-public-working-draft" aria-label="Permalink for A.1 Substantive changes since the last public working draft" title="Permalink for A.1 Substantive changes since the last public working draft"><span>§</span></a></span></h3>
 		<ul>
 			<li>2017-11-15: Change superclass for graphics-object to img and graphics-symbol to group.</li>
 			<!-- EdNote: After each WD publish, move contents of this list into the next one below. -->
 		</ul>
 	</section>
-	<section id="other-substantive-changes-since-the-first-public-working-draft" typeof="bibo:Chapter" resource="#other-substantive-changes-since-the-first-public-working-draft" property="bibo:hasPart">
-		<h3 id="a-2-other-substantive-changes-since-the-first-public-working-draft" resource="#a-2-other-substantive-changes-since-the-first-public-working-draft"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.2 </span>Other substantive changes since the <a href="http://www.w3.org/TR/2015/WD-graphics-aria-1.0-20151203/">First Public Working Draft</a><span class="permalink" typeof="bookmark"><a href="#other-substantive-changes-since-the-first-public-working-draft" aria-label="Permalink for A.2 Other substantive changes since the First Public Working Draft" title="Permalink for A.2 Other substantive changes since the First Public Working Draft" property="url"><span property="title" content="A.2 Other substantive changes since the First Public Working Draft">§</span></a></span></span></h3>
+	<section id="other-substantive-changes-since-the-first-public-working-draft">
+		<h3 id="a-2-other-substantive-changes-since-the-first-public-working-draft"><span class="secno">A.2 </span>Other substantive changes since the <a href="http://www.w3.org/TR/2015/WD-graphics-aria-1.0-20151203/">First Public Working Draft</a><span class="permalink"><a href="#other-substantive-changes-since-the-first-public-working-draft" aria-label="Permalink for A.2 Other substantive changes since the First Public Working Draft" title="Permalink for A.2 Other substantive changes since the First Public Working Draft"><span>§</span></a></span></h3>
 		<ul>
 			<li>2016-01-26: changed superclass of graphics-doc to structure.</li>
 			<li>2016-04-28: removed reference to role="none" or "presentation".</li>
@@ -2003,11 +2027,11 @@ OK to omit the second example?
 		</ul>
 	</section>
 </section>
-	<section class="appendix informative section" id="acknowledgements" typeof="bibo:Chapter" resource="#acknowledgements" property="bibo:hasPart">
-		<!--OddPage--><h2 id="b-acknowledgments" resource="#b-acknowledgments"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>Acknowledgments<span class="permalink" typeof="bookmark"><a href="#acknowledgements" aria-label="Permalink for B. Acknowledgments" title="Permalink for B. Acknowledgments" property="url"><span property="title" content="B. Acknowledgments">§</span></a></span></span></h2><p><em>This section is non-normative.</em></p>
+	<section class="appendix informative section" id="acknowledgements">
+		<!--OddPage--><h2 id="b-acknowledgments"><span class="secno">B. </span>Acknowledgments<span class="permalink"><a href="#acknowledgements" aria-label="Permalink for B. Acknowledgments" title="Permalink for B. Acknowledgments"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
 		<p>The following people contributed to the development of this document.</p>
-		<section class="section" id="ack_svga11y" typeof="bibo:Chapter" resource="#ack_svga11y" property="bibo:hasPart">
-			<h3 id="b-1-participants-active-in-the-svg-accessibility-task-force-at-the-time-of-publication" resource="#b-1-participants-active-in-the-svg-accessibility-task-force-at-the-time-of-publication"><span property="xhv:role" resource="xhv:heading"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication<span class="permalink" typeof="bookmark"><a href="#ack_svga11y" aria-label="Permalink for B.1 Participants active in the SVG accessibility task force at the time of publication" title="Permalink for B.1 Participants active in the SVG accessibility task force at the time of publication" property="url"><span property="title" content="B.1 Participants active in the SVG accessibility task force at the time of publication">§</span></a></span></span></h3>
+		<section class="section" id="ack_svga11y">
+			<h3 id="b-1-participants-active-in-the-svg-accessibility-task-force-at-the-time-of-publication"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication<span class="permalink"><a href="#ack_svga11y" aria-label="Permalink for B.1 Participants active in the SVG accessibility task force at the time of publication" title="Permalink for B.1 Participants active in the SVG accessibility task force at the time of publication"><span>§</span></a></span></h3>
 			<ul>
 				<li>Amelia Bellamy-Royds (Invited expert)</li>
 				<li>Fred Esch (IBM Corporation)</li>
@@ -2019,8 +2043,8 @@ OK to omit the second example?
 				<li>Jason White (Educational Testing Service)</li>
 			</ul>
 		</section>
-		<section class="section" id="ack_group" typeof="bibo:Chapter" resource="#ack_group" property="bibo:hasPart">
-			<h3 id="b-2-participants-active-in-the-pfwg-at-the-time-of-publication" resource="#b-2-participants-active-in-the-pfwg-at-the-time-of-publication"><span property="xhv:role" resource="xhv:heading"><span class="secno">B.2 </span>Participants active in the PFWG at the time of publication<span class="permalink" typeof="bookmark"><a href="#ack_group" aria-label="Permalink for B.2 Participants active in the PFWG at the time of publication" title="Permalink for B.2 Participants active in the PFWG at the time of publication" property="url"><span property="title" content="B.2 Participants active in the PFWG at the time of publication">§</span></a></span></span></h3>
+		<section class="section" id="ack_group">
+			<h3 id="b-2-participants-active-in-the-pfwg-at-the-time-of-publication"><span class="secno">B.2 </span>Participants active in the PFWG at the time of publication<span class="permalink"><a href="#ack_group" aria-label="Permalink for B.2 Participants active in the PFWG at the time of publication" title="Permalink for B.2 Participants active in the PFWG at the time of publication"><span>§</span></a></span></h3>
 			<ul>
 				<li>Christy Blew (University of Illinois at Urbana-Champaign)</li>
 				<li>David Bolter (Mozilla Foundation) </li>
@@ -2060,25 +2084,25 @@ OK to omit the second example?
 				<li>Gottfried Zimmermann (Invited Expert, Access Technologies Group)</li>
 			</ul>
 		</section>
-		<section class="section" id="ack_funders" typeof="bibo:Chapter" resource="#ack_funders" property="bibo:hasPart">
-			<h3 id="b-3-enabling-funders" resource="#b-3-enabling-funders"><span property="xhv:role" resource="xhv:heading"><span class="secno">B.3 </span>Enabling funders<span class="permalink" typeof="bookmark"><a href="#ack_funders" aria-label="Permalink for B.3 Enabling funders" title="Permalink for B.3 Enabling funders" property="url"><span property="title" content="B.3 Enabling funders">§</span></a></span></span></h3>
+		<section class="section" id="ack_funders">
+			<h3 id="b-3-enabling-funders"><span class="secno">B.3 </span>Enabling funders<span class="permalink"><a href="#ack_funders" aria-label="Permalink for B.3 Enabling funders" title="Permalink for B.3 Enabling funders"><span>§</span></a></span></h3>
 			<p>This publication has been funded in part with U.S. Federal funds from the Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR), initially under contract number ED-OSE-10-C-0067 and currently under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
 		</section>
 	</section>
 
 
-<section id="references" class="appendix" typeof="bibo:Chapter" resource="#references" property="bibo:hasPart"><!--OddPage--><h2 id="c-references" resource="#c-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">C. </span>References<span class="permalink" typeof="bookmark"><a href="#references" aria-label="Permalink for C. References" title="Permalink for C. References" property="url"><span property="title" content="C. References">§</span></a></span></span></h2><section id="normative-references" typeof="bibo:Chapter" resource="#normative-references" property="bibo:hasPart"><h3 id="c-1-normative-references" resource="#c-1-normative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">C.1 </span>Normative references<span class="permalink" typeof="bookmark"><a href="#normative-references" aria-label="Permalink for C.1 Normative references" title="Permalink for C.1 Normative references" property="url"><span property="title" content="C.1 Normative references">§</span></a></span></span></h3><dl class="bibliography" resource=""><dt id="bib-RFC2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119" property="dc:requires"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119" property="dc:requires">https://tools.ietf.org/html/rfc2119</a>
-</dd><dt id="bib-WAI-ARIA-1.1">[WAI-ARIA-1.1]</dt><dd><a href="https://www.w3.org/TR/wai-aria-1.1/" property="dc:requires"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.1</cite></a>. Joanmarie Diggs; Shane McCarron; Michael Cooper; Richard Schwerdtfeger; James Craig. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-1.1/" property="dc:requires">https://www.w3.org/TR/wai-aria-1.1/</a>
-</dd></dl></section><section id="informative-references" typeof="bibo:Chapter" resource="#informative-references" property="bibo:hasPart"><h3 id="c-2-informative-references" resource="#c-2-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">C.2 </span>Informative references<span class="permalink" typeof="bookmark"><a href="#informative-references" aria-label="Permalink for C.2 Informative references" title="Permalink for C.2 Informative references" property="url"><span property="title" content="C.2 Informative references">§</span></a></span></span></h3><dl class="bibliography" resource=""><dt id="bib-AT-SPI">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/" property="dc:references"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/" property="dc:references">https://developer.gnome.org/libatspi/stable/</a>
-</dd><dt id="bib-ATK">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/" property="dc:references"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/" property="dc:references">https://developer.gnome.org/atk/stable/</a>
-</dd><dt id="bib-AXAPI">[AXAPI]</dt><dd><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078" property="dc:references"><cite>Accessibility Programming Guide for OS X</cite></a>.  Apple Corporation. URL: <a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078" property="dc:references">https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078</a>
-</dd><dt id="bib-HTML5">[HTML5]</dt><dd><a href="https://www.w3.org/TR/html5/" property="dc:references"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer. W3C. 28 October 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/" property="dc:references">https://www.w3.org/TR/html5/</a>
-</dd><dt id="bib-IAccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2" property="dc:references"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2" property="dc:references">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a>
-</dd><dt id="bib-MSAA">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx" property="dc:references"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx" property="dc:references">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a>
-</dd><dt id="bib-SVG-AAM-1.0">[SVG-AAM-1.0]</dt><dd><a href="https://www.w3.org/TR/svg-aam-1.0/" property="dc:references"><cite>SVG Accessibility API Mappings</cite></a>. Amelia Bellamy-Royds; Richard Schwerdtfeger. W3C. 8 September 2016. W3C Working Draft. URL: <a href="https://www.w3.org/TR/svg-aam-1.0/" property="dc:references">https://www.w3.org/TR/svg-aam-1.0/</a>
-</dd><dt id="bib-SVG2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/" property="dc:references"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/" property="dc:references">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a>
-</dd><dt id="bib-UI-AUTOMATION">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx" property="dc:references"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx" property="dc:references">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a>
-</dd><dt id="bib-UIA-EXPRESS">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx" property="dc:references"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx" property="dc:references">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a>
-</dd><dt id="bib-WAI-ARIA-IMPLEMENTATION">[WAI-ARIA-IMPLEMENTATION]</dt><dd><a href="https://www.w3.org/TR/wai-aria-implementation/" property="dc:references"><cite>WAI-ARIA 1.0 User Agent Implementation Guide</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-implementation/" property="dc:references">https://www.w3.org/TR/wai-aria-implementation/</a>
-</dd><dt id="bib-WCAG20">[WCAG20]</dt><dd><a href="https://www.w3.org/TR/WCAG20/" property="dc:references"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/" property="dc:references">https://www.w3.org/TR/WCAG20/</a>
+<section id="references" class="appendix"><!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<span class="permalink"><a href="#references" aria-label="Permalink for C. References" title="Permalink for C. References"><span>§</span></a></span></h2><section id="normative-references"><h3 id="c-1-normative-references"><span class="secno">C.1 </span>Normative references<span class="permalink"><a href="#normative-references" aria-label="Permalink for C.1 Normative references" title="Permalink for C.1 Normative references"><span>§</span></a></span></h3><dl class="bibliography"><dt id="bib-RFC2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
+</dd><dt id="bib-WAI-ARIA-1.1">[WAI-ARIA-1.1]</dt><dd><a href="https://www.w3.org/TR/wai-aria-1.1/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.1</cite></a>. Joanmarie Diggs; Shane McCarron; Michael Cooper; Richard Schwerdtfeger; James Craig. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-1.1/">https://www.w3.org/TR/wai-aria-1.1/</a>
+</dd></dl></section><section id="informative-references"><h3 id="c-2-informative-references"><span class="secno">C.2 </span>Informative references<span class="permalink"><a href="#informative-references" aria-label="Permalink for C.2 Informative references" title="Permalink for C.2 Informative references"><span>§</span></a></span></h3><dl class="bibliography"><dt id="bib-AT-SPI">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a>
+</dd><dt id="bib-ATK">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a>
+</dd><dt id="bib-AXAPI">[AXAPI]</dt><dd><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078"><cite>Accessibility Programming Guide for OS X</cite></a>.  Apple Corporation. URL: <a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078">https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078</a>
+</dd><dt id="bib-HTML5">[HTML5]</dt><dd><a href="https://www.w3.org/TR/html5/"><cite>HTML5</cite></a>. Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Theresa O'Connor; Silvia Pfeiffer. W3C. 28 October 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/">https://www.w3.org/TR/html5/</a>
+</dd><dt id="bib-IAccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a>
+</dd><dt id="bib-MSAA">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a>
+</dd><dt id="bib-SVG-AAM-1.0">[SVG-AAM-1.0]</dt><dd><a href="https://www.w3.org/TR/svg-aam-1.0/"><cite>SVG Accessibility API Mappings</cite></a>. Amelia Bellamy-Royds; Richard Schwerdtfeger. W3C. 8 September 2016. W3C Working Draft. URL: <a href="https://www.w3.org/TR/svg-aam-1.0/">https://www.w3.org/TR/svg-aam-1.0/</a>
+</dd><dt id="bib-SVG2">[SVG2]</dt><dd><a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2015/WD-SVG2-20150915/">http://www.w3.org/TR/2015/WD-SVG2-20150915/</a>
+</dd><dt id="bib-UI-AUTOMATION">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a>
+</dd><dt id="bib-UIA-EXPRESS">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a>
+</dd><dt id="bib-WAI-ARIA-IMPLEMENTATION">[WAI-ARIA-IMPLEMENTATION]</dt><dd><a href="https://www.w3.org/TR/wai-aria-implementation/"><cite>WAI-ARIA 1.0 User Agent Implementation Guide</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-implementation/">https://www.w3.org/TR/wai-aria-implementation/</a>
+</dd><dt id="bib-WCAG20">[WCAG20]</dt><dd><a href="https://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a>
 </dd></dl></section></section><p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
