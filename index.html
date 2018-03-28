@@ -121,27 +121,6 @@ input.task-list-item-checkbox {
 	
 <title>WAI-ARIA Graphics Module</title>
 
-
-	
-<link href="common/css/common.css" rel="stylesheet" type="text/css">
-
-
-
-<style>
-    /* Styles for embedded object examples */
-    .example object, .example img {
-        display: block; 
-        width: 35em; 
-        max-width: 100%; 
-        max-height: 100vh;
-        background-color: white;
-        border: solid 1px #999;
-    }
-    .example object[type="text/html"] {
-        height: 20em;
-        width: 60em;
-    }
-</style>
 <style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -415,7 +394,28 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/graphics-aria-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+	
+<link href="common/css/common.css" rel="stylesheet" type="text/css">
+
+
+
+<style>
+    /* Styles for embedded object examples */
+    .example object, .example img {
+        display: block; 
+        width: 35em; 
+        max-width: 100%; 
+        max-height: 100vh;
+        background-color: white;
+        border: solid 1px #999;
+    }
+    .example object[type="text/html"] {
+        height: 20em;
+        width: 60em;
+    }
+</style>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/graphics-aria-1.0/"><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.1",
   "includePermalinks": true,
@@ -455,7 +455,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       "name": "Fred Esch",
       "mailto": "fesch@us.ibm.com",
       "company": "IBM Corporation",
-      "companyURL": "http://www.ibm.com",
+      "companyURL": "https://www.ibm.com",
       "w3cid": 73593,
       "note": "until September 2016"
     },
@@ -463,7 +463,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       "name": "Rich Schwerdtfeger",
       "mailto": "richschwer@gmail.com",
       "company": "Knowbility",
-      "companyURL": "https://www.knowbility.org/",
+      "companyURL": "https://knowbility.org/",
       "w3cid": 2460,
       "note": "until August 2017"
     }
@@ -478,14 +478,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       "name": "Fred Esch",
       "mailto": "fesch@us.ibm.com",
       "company": "IBM Corporation",
-      "companyURL": "http://www.ibm.com/",
+      "companyURL": "https://www.ibm.com/",
       "w3cid": 73593
     },
     {
       "name": "Rich Schwerdtfeger",
       "mailto": "richschwer@gmail.com",
       "company": "Knowbility",
-      "companyURL": "https://www.knowbility.org/",
+      "companyURL": "https://knowbility.org/",
       "w3cid": 2460
     },
     {
@@ -502,7 +502,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "wgURI": [
     "https://www.w3.org/WAI/ARIA/"
   ],
-  "wgPublicList": "public-svg-a11y",
+  "wgPublicList": "public-aria",
   "wgPatentURI": [
     "https://www.w3.org/2004/01/pp-impl/83726/status"
   ],
@@ -576,9 +576,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     
     <dt>Editors:</dt>
-    <dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="68182"><a class="ed_mailto u-email email p-name" href="mailto:jdiggs@igalia.com">Joanmarie Diggs</a> (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)</dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a> (<a class="p-org org h-org h-card" href="http://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>)</dd><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a> (<a class="p-org org h-org h-card" href="http://www.ibm.com">IBM Corporation</a>) (until September 2016)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a> (<a class="p-org org h-org h-card" href="https://www.knowbility.org/">Knowbility</a>) (until August 2017)</dd>
+    <dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="68182"><a class="ed_mailto u-email email p-name" href="mailto:jdiggs@igalia.com">Joanmarie Diggs</a> (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)</dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a> (<a class="p-org org h-org h-card" href="http://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>)</dd><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a> (<a class="p-org org h-org h-card" href="https://www.ibm.com">IBM Corporation</a>) (until September 2016)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a> (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>) (until August 2017)</dd>
     
-    <dt>Authors:</dt><dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a> (<a class="p-org org h-org h-card" href="http://www.ibm.com/">IBM Corporation</a>)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a> (<a class="p-org org h-org h-card" href="https://www.knowbility.org/">Knowbility</a>)</dd><dd class="p-author h-card vcard" data-editor-id="38635"><a class="ed_mailto u-email email p-name" href="mailto:schepers@w3.org">Doug Schepers</a> (<a class="p-org org h-org h-card" href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a>)</dd>
+    <dt>Authors:</dt><dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a> (<a class="p-org org h-org h-card" href="https://www.ibm.com/">IBM Corporation</a>)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a> (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>)</dd><dd class="p-author h-card vcard" data-editor-id="38635"><a class="ed_mailto u-email email p-name" href="mailto:schepers@w3.org">Doug Schepers</a> (<a class="p-org org h-org h-card" href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a>)</dd>
     
   </dl>
   
@@ -614,9 +614,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           
           
             Comments regarding this document are welcome. Please send them to
-            <a href="mailto:public-svg-a11y@w3.org">public-svg-a11y@w3.org</a>
-            (<a href="mailto:public-svg-a11y-request@w3.org?subject=subscribe">subscribe</a>,
-            <a href="https://lists.w3.org/Archives/Public/public-svg-a11y/">archives</a>).
+            <a href="mailto:public-aria@w3.org">public-aria@w3.org</a>
+            (<a href="mailto:public-aria-request@w3.org?subject=subscribe">subscribe</a>,
+            <a href="https://lists.w3.org/Archives/Public/public-aria/">archives</a>).
           
           
           
