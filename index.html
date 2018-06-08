@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 21.0.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 21.0.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 div.example-title {
     min-width: 7.5em;
     color: #b9ab2d;
@@ -143,27 +143,6 @@ input.task-list-item-checkbox {
 	
 <title>WAI-ARIA Graphics Module</title>
 
-
-	
-<link href="common/css/common.css" rel="stylesheet" type="text/css">
-
-
-
-<style>
-    /* Styles for embedded object examples */
-    .example object, .example img {
-        display: block; 
-        width: 35em; 
-        max-width: 100%; 
-        max-height: 100vh;
-        background-color: white;
-        border: solid 1px #999;
-    }
-    .example object[type="text/html"] {
-        height: 20em;
-        width: 60em;
-    }
-</style>
 <style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -437,7 +416,28 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/graphics-aria-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+	
+<link href="common/css/common.css" rel="stylesheet" type="text/css">
+
+
+
+<style>
+    /* Styles for embedded object examples */
+    .example object, .example img {
+        display: block; 
+        width: 35em; 
+        max-width: 100%; 
+        max-height: 100vh;
+        background-color: white;
+        border: solid 1px #999;
+    }
+    .example object[type="text/html"] {
+        height: 20em;
+        width: 60em;
+    }
+</style>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/graphics-aria-1.0/"><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.1",
   "includePermalinks": true,
@@ -472,7 +472,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       "company": "W3C",
       "companyURL": "http://www.w3.org",
       "w3cid": 34017
-    },
+    }
+  ],
+  "formerEditors": [
     {
       "name": "Fred Esch",
       "mailto": "fesch@us.ibm.com",
@@ -577,9 +579,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "preProcess": [
     null
   ],
-  "publishDate": "2018-05-29",
-  "publishISODate": "2018-05-29T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 29 May 2018"
+  "publishDate": "2018-06-08",
+  "publishISODate": "2018-06-08T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 08 June 2018"
 }</script><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."></head>
 <body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -587,7 +589,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </a>
   <h1 id="title" class="title p-name"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module</h1>
   
-  <h2 id="w3c-editor-s-draft-29-may-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-05-29">29 May 2018</time></h2>
+  <h2 id="w3c-editor-s-draft-08-june-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-06-08">08 June 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/graphics-aria-1.0/">https://www.w3.org/TR/graphics-aria-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd>
@@ -598,8 +600,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     
     <dt>Editors:</dt>
-    <dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="68182"><a class="ed_mailto u-email email p-name" href="mailto:jdiggs@igalia.com">Joanmarie Diggs</a> (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)</dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a> (<a class="p-org org h-org h-card" href="http://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>)</dd><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a> (<a class="p-org org h-org h-card" href="https://www.ibm.com">IBM Corporation</a>) (until September 2016)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a> (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>) (until August 2017)</dd>
-    
+    <dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="68182"><a class="ed_mailto u-email email p-name" href="mailto:jdiggs@igalia.com">Joanmarie Diggs</a> (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)</dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a> (<a class="p-org org h-org h-card" href="http://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>)</dd>
+    <dt>Former editors:</dt><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a> (<a class="p-org org h-org h-card" href="https://www.ibm.com">IBM Corporation</a>) (until September 2016)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a> (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>) (until August 2017)</dd>
     <dt>Authors:</dt><dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a> (<a class="p-org org h-org h-card" href="https://www.ibm.com/">IBM Corporation</a>)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a> (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>)</dd><dd class="p-author h-card vcard" data-editor-id="38635"><a class="ed_mailto u-email email p-name" href="mailto:schepers@w3.org">Doug Schepers</a> (<a class="p-org org h-org h-card" href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a>)</dd>
     
   </dl>
