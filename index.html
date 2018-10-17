@@ -1,10 +1,6 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 22.3.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
-div.example-title {
-    min-width: 7.5em;
-    color: #b9ab2d;
-}
-div.example-title span {
-    text-transform: uppercase;
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 23.4.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+span.example-title {
+    text-transform: none;
 }
 aside.example, div.example, div.illegal-example {
     padding: 0.5em;
@@ -27,7 +23,7 @@ aside.example div.example {
     border-color: #999;
     background: #fff;
 }
-aside.example div.example div.example-title {
+aside.example div.example span.example-title {
     color: #999;
 }
 </style><style>/* --- ISSUES/NOTES --- */
@@ -64,6 +60,10 @@ span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
     border-color: #e05252;
     background: #fbe9e9;
 }
+.issue.closed span.issue-number {
+    text-decoration: line-through;
+}
+
 .note, .ednote {
     border-color: #52e052;
     background: #e9fbe9;
@@ -115,29 +115,6 @@ input.task-list-item-checkbox {
 .issue a.respec-label-light {
   color: #000;
   background-color: #fff;
-}
-</style><style>/* --- PERMALINKS --- */
-
-.permalink {
-  width: 1px;
-  height: 1px;
-  overflow: visible;
-  font-size: 10pt;
-  font-style: normal;
-  vertical-align: middle;
-  margin-left: 4px;
-  float: right;
-}
-
-.permalink a, .permalink a:link, .permalink a:visited, .permalink a:hover, .permalink a:focus, .permalink a:active {
-  background:transparent !important;
-  text-decoration:none;
-  font-weight: bold;
-  color:#666 !important;
-}
-
-.permalink abbr {
-  border:0;
 }
 </style>
 	
@@ -254,11 +231,11 @@ table.simple {
 
 /* --- DL --- */
 
-.section dd > p:first-child {
+.section dd>p:first-child {
   margin-top: 0;
 }
 
-.section dd > p:last-child {
+.section dd>p:last-child {
   margin-bottom: 0;
 }
 
@@ -271,7 +248,7 @@ table.simple {
   margin-bottom: 0;
 }
 
-#issue-summary > ul,
+#issue-summary>ul,
 .respec-dfn-list {
   column-count: 2;
 }
@@ -287,7 +264,7 @@ details.respec-tests-details {
   vertical-align: top;
 }
 
-details.respec-tests-details > * {
+details.respec-tests-details>* {
   padding-right: 2em;
 }
 
@@ -300,20 +277,82 @@ details.respec-tests-details[open] {
   padding-bottom: 0.5em;
 }
 
-details.respec-tests-details[open] > summary {
+details.respec-tests-details[open]>summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
   line-height: 2em;
 }
 
-details.respec-tests-details > ul {
+details.respec-tests-details>ul {
   width: 100%;
   margin-top: -0.3em;
 }
 
-details.respec-tests-details > li {
+details.respec-tests-details>li {
   padding-left: 1em;
+}
+
+a[href].self-link:hover {
+  opacity: 1;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+
+aside.example .marker > a.self-link {
+  color: inherit;
+}
+
+h2>a.self-link,
+h3>a.self-link,
+h4>a.self-link,
+h5>a.self-link,
+h6>a.self-link {
+  border: none;
+  color: inherit;
+  font-size: 83%;
+  height: 2em;
+  left: -1.6em;
+  opacity: .5;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  transition: opacity .2s;
+  width: 2em;
+}
+
+h2>a.self-link::before,
+h3>a.self-link::before,
+h4>a.self-link::before,
+h5>a.self-link::before,
+h6>a.self-link::before {
+  content: "§";
+  display: block;
+}
+
+@media (max-width: 767px) {
+  dd {
+    margin-left: 0;
+  }
+
+  /* Don't position self-link in headings off-screen */
+  h2>a.self-link,
+  h3>a.self-link,
+  h4>a.self-link,
+  h5>a.self-link,
+  h6>a.self-link {
+    left: auto;
+    top: auto;
+  }
 }
 
 @media print {
@@ -583,9 +622,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "preProcess": [
     null
   ],
-  "publishDate": "2018-07-19",
-  "publishISODate": "2018-07-19T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 19 July 2018"
+  "publishDate": "2018-10-17",
+  "publishISODate": "2018-10-17T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 17 October 2018"
 }</script><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."></head>
 <body class="h-entry toc-inline"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -593,7 +632,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </a>
   <h1 id="title" class="title p-name"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module</h1>
   
-  <h2 id="w3c-editor-s-draft-19-july-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-07-19">19 July 2018</time></h2>
+  <h2><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-10-17">17 October 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/graphics-aria-1.0/">https://www.w3.org/TR/graphics-aria-1.0/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd>
@@ -628,11 +667,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p>
   <hr title="Separator for header">
 </div>
-<section id="abstract" class="introductory"><h2 id="abstract-0">Abstract</h2>
+<section id="abstract" class="introductory"><h2>Abstract</h2>
 	<p>Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> [<cite><a class="bibref" href="#bib-wai-aria-1.1">WAI-ARIA-1.1</a></cite>] module of core <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a><!-- , <a data-lt="state">states</a> and <a data-lt="property">properties</a> Note, if we do include any states & properties in this module, edit this sentence! --> specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-html52">HTML52</a></cite>] and <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>].</p>
 	<p>This document is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="https://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Overview</a>.</p>
 </section>
-<section id="sotd" class="introductory"><h2 id="status-of-this-document">Status of This Document</h2><p>
+<section id="sotd" class="introductory"><h2>Status of This Document</h2><p>
         <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
       </p><p>This is an Editor's Draft of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module 1.0 by the <a href="https://www.w3.org/WAI/PF/svg-a11y-tf/"><abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Taskforce</a>, a joint task force of the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> and the <a href="https://www.w3.org/Graphics/SVG/WG/"><abbr title="Scalable Vector Graphics">SVG</abbr> Working Group</a>. </p><p>Feedback on any aspect of the specification is accepted. For this publication, the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Task Force particularly seeks feedback on the following questions:</p><ul>
 		<li>Are proposed roles clear and appropriate to the needs of interactive graphics?</li>
@@ -640,16 +679,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</ul><p>To comment, <a href="https://github.com/w3c/aria/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> ARIA GitHub repository</a>, using the "graphics" label in the issue. If this is not feasible, send email to <a href="mailto:public-svg-a11y@w3.org?subject=Graphics%20ARIA%20public%20comment">public-svg-a11y@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-svg-a11y/">comment archive</a>). Comments are requested by <strong>30 September 2016</strong>. In-progress updates to the document may be viewed in the <a href="https://w3c.github.io/aria/aria/graphics.html">publicly visible editors' draft</a>.</p><p>
           This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
           
-          
-            Comments regarding this document are welcome. Please send them to
-            <a href="mailto:public-aria@w3.org">public-aria@w3.org</a>
-            (<a href="mailto:public-aria-request@w3.org?subject=subscribe">subscribe</a>,
-            <a href="https://lists.w3.org/Archives/Public/public-aria/">archives</a>).
-          
-          
-          
-          
-        </p><p>
+          </p><p>
+            
+            Comments regarding this document are welcome.
+              Please send them to
+              <a href="mailto:public-aria@w3.org">public-aria@w3.org</a>
+              (<a href="https://lists.w3.org/Archives/Public/public-aria/">archives</a>).
+            
+            </p><p>
             Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
             Membership. This is a draft document and may be updated, replaced or obsoleted by other
             documents at any time. It is inappropriate to cite this document as other than work in
@@ -679,7 +716,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </p></section>
 <nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#target-audience" class="tocxref"><span class="secno">1.1 </span>Target Audience</a></li><li class="tocline"><a href="#ua-support" class="tocxref"><span class="secno">1.2 </span>User Agent Support</a></li><li class="tocline"><a href="#co-evolution" class="tocxref"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages</a></li><li class="tocline"><a href="#authoring_practices" class="tocxref"><span class="secno">1.4 </span>Authoring Practices</a><ol class="toc"><li class="tocline"><a href="#authoring_tools" class="tocxref"><span class="secno">1.4.1 </span>Authoring Tools</a></li><li class="tocline"><a href="#authoring_testing" class="tocxref"><span class="secno">1.4.2 </span>Testing Practices and Tools</a></li></ol></li><li class="tocline"><a href="#at_support" class="tocxref"><span class="secno">1.5 </span>Assistive Technologies</a></li></ol></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a href="#roles" class="tocxref"><span class="secno">4. </span>Graphics Roles</a><ol class="toc"><li class="tocline"><a href="#role_definitions" class="tocxref"><span class="secno">4.1 </span>Definition of Roles</a><ol class="toc"></ol></li><li class="tocline"><a href="#role_other" class="tocxref"><span class="secno">4.2 </span>Other Roles for Graphics</a></li></ol></li><li class="tocline"><a href="#state_prop" class="tocxref"><span class="secno">5. </span>States and Properties</a></li><li class="tocline"><a href="#changelog" class="tocxref"><span class="secno">A. </span>Change Log</a><ol class="toc"><li class="tocline"><a href="#substantive-changes-since-the-last-public-working-draft" class="tocxref"><span class="secno">A.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a href="#other-substantive-changes-since-the-first-public-working-draft" class="tocxref"><span class="secno">A.2 </span>Other substantive changes since the <span class="formerLink">First Public Working Draft</span></a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_svga11y" class="tocxref"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication</a></li><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.2 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
 <section class="informative" id="introduction">
-	<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<span class="permalink"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
+	<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
 	<p><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> is a technical specification that provides a framework to improve the accessibility and interoperability of web content and applications. It enables web browsers to map the accessibility semantics in web content to platform-specific accessibility APIs. This enables web content to be interoperable with platform assistive technologies, similar to native platform applications, without requiring authors to include platform dependencies.</p>
 	<p>This specification is a modular extension of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1">WAI-ARIA-1.1</a></cite>] designed to support graphics. The goals of this specification include:</p>
 	<ul>
@@ -695,7 +732,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	<p>For a more detailed explanation of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> please refer to the <a href="https://www.w3.org/WAI/intro/aria"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Introduction</a> and how it applies to Rich Internet Application Accessibility.</p> 
 	
 	<section id="target-audience">
-		<h3 id="x1-1-target-audience"><span class="secno">1.1 </span>Target Audience<span class="permalink"><a href="#target-audience" aria-label="Permalink for 1.1 Target Audience" title="Permalink for 1.1 Target Audience"><span>§</span></a></span></h3>
+		<h3 id="x1-1-target-audience"><span class="secno">1.1 </span>Target Audience<a class="self-link" aria-label="§" href="#target-audience"></a></h3>
 		<p>This specification defines a module of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> for graphics, consisting of graphics-specific element <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a><!-- , <a data-lt="state">states</a>, <a data-lt="property">properties</a> and values Again, edit as required re states/properties -->. It impacts several audiences:</p>
 		<ul>
 			<li><a data-lt="user agent" href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">User agents</a> that process content containing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and graphics <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> features;</li>
@@ -709,7 +746,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	
 	<section id="ua-support">
-		<h3 id="x1-2-user-agent-support"><span class="secno">1.2 </span>User Agent Support<span class="permalink"><a href="#ua-support" aria-label="Permalink for 1.2 User Agent Support" title="Permalink for 1.2 User Agent Support"><span>§</span></a></span></h3>
+		<h3 id="x1-2-user-agent-support"><span class="secno">1.2 </span>User Agent Support<a class="self-link" aria-label="§" href="#ua-support"></a></h3>
 		<p>This module follows the general <a href="https://www.w3.org/TR/wai-aria-1.1/#ua-support">User Agent support principles</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1">WAI-ARIA-1.1</a></cite>].
         The roles defined here do not require any change in behavior by user agents other than in the information exposed to the <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">API</abbr></a>.
         However, the semantics defined here provide the ability for user agents to enhance the general user interface presented to readers.
@@ -717,7 +754,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	
 	<section id="co-evolution">
-		<h3 id="x1-3-co-evolution-of-wai-aria-and-host-languages"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages<span class="permalink"><a href="#co-evolution" aria-label="Permalink for 1.3 Co-Evolution of WAI-ARIA and Host Languages" title="Permalink for 1.3 Co-Evolution of WAI-ARIA and Host Languages"><span>§</span></a></span></h3>
+		<h3 id="x1-3-co-evolution-of-wai-aria-and-host-languages"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages<a class="self-link" aria-label="§" href="#co-evolution"></a></h3>
 		<p>The <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module follows the model for <a href="https://www.w3.org/TR/wai-aria-1.1/#co-evolution">co-evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and host languages</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1">WAI-ARIA-1.1</a></cite>]. It is intended to augment semantics in supporting languages like <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-html52">HTML52</a></cite>], <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] and EPUB, or to be used as an accessibility enhancement technology in other markup-based languages that do not explicitly include support for ARIA. 
         <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> <a href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a> clarify semantics to assistive technologies when authors create new types of objects, via style and script, or use markup languages which describe the visual appearance of a document rather than its meaning.</p>
 		<p>Although markup languages may provide some of these semantics natively, it is expected that there will be a persistent need for the semantics provided by the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module.
@@ -725,20 +762,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 	
 	<section id="authoring_practices">
-		<h3 id="x1-4-authoring-practices"><span class="secno">1.4 </span>Authoring Practices<span class="permalink"><a href="#authoring_practices" aria-label="Permalink for 1.4 Authoring Practices" title="Permalink for 1.4 Authoring Practices"><span>§</span></a></span></h3>
+		<h3 id="x1-4-authoring-practices"><span class="secno">1.4 </span>Authoring Practices<a class="self-link" aria-label="§" href="#authoring_practices"></a></h3>
 		<section id="authoring_tools">
-			<h4 id="x1-4-1-authoring-tools"><span class="secno">1.4.1 </span>Authoring Tools<span class="permalink"><a href="#authoring_tools" aria-label="Permalink for 1.4.1 Authoring Tools" title="Permalink for 1.4.1 Authoring Tools"><span>§</span></a></span></h4>
+			<h4 id="x1-4-1-authoring-tools"><span class="secno">1.4.1 </span>Authoring Tools<a class="self-link" aria-label="§" href="#authoring_tools"></a></h4>
 			<p>Many of the requirements in the definitions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Graphics <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a>, <a data-lt="state" href="#dfn-state" class="internalDFN" data-link-type="dfn">states</a> and <a data-lt="property" href="#dfn-property" class="internalDFN" data-link-type="dfn">properties</a> can be checked automatically during the development process, similar to other quality control processes used for validating code. To assist authors who are creating graphics, these tools can compare the semantic structure of Graphics <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> roles from the <abbr title="Document Object Model">DOM</abbr> to that defined in this specification and notify the author of errors or simply create templates that enforce that structure.</p>
 		</section>
 		
 		<section id="authoring_testing">
-			<h4 id="x1-4-2-testing-practices-and-tools"><span class="secno">1.4.2 </span>Testing Practices and Tools<span class="permalink"><a href="#authoring_testing" aria-label="Permalink for 1.4.2 Testing Practices and Tools" title="Permalink for 1.4.2 Testing Practices and Tools"><span>§</span></a></span></h4> 
+			<h4 id="x1-4-2-testing-practices-and-tools"><span class="secno">1.4.2 </span>Testing Practices and Tools<a class="self-link" aria-label="§" href="#authoring_testing"></a></h4> 
 			<p>The accessibility of interactive content cannot be confirmed by static checks alone. Developers of interactive content should test for device-independent access to <a data-lt="widget" href="#dfn-widget" class="internalDFN" data-link-type="dfn">widgets</a> and applications, and should verify accessibility <abbr title="application programming interface">API</abbr> access to all content and changes during user interaction.</p>
 		</section>
 	</section>
 	
 	<section id="at_support">
-		<h3 id="x1-5-assistive-technologies"><span class="secno">1.5 </span>Assistive Technologies<span class="permalink"><a href="#at_support" aria-label="Permalink for 1.5 Assistive Technologies" title="Permalink for 1.5 Assistive Technologies"><span>§</span></a></span></h3>
+		<h3 id="x1-5-assistive-technologies"><span class="secno">1.5 </span>Assistive Technologies<a class="self-link" aria-label="§" href="#at_support"></a></h3>
 		<p>Programmatic access to accessibility semantics is essential for assistive technologies. For more information, refer to the <a href="https://www.w3.org/TR/wai-aria-1.1/#at_support">Assistive Technologies</a> section in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1">WAI-ARIA-1.1</a></cite>].</p> 
         <p>For the graphics roles in particular, two categories of assistive technology are particularly relevant, but have different needs:</p>
         <ul>
@@ -750,14 +787,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</section>
 </section>
 <section class="normative" id="conformance">
-	<!--OddPage--><h2 id="x2-conformance"><span class="secno">2. </span>Conformance<span class="permalink"><a href="#conformance" aria-label="Permalink for 2. Conformance" title="Permalink for 2. Conformance"><span>§</span></a></span></h2>
+	<!--OddPage--><h2 id="x2-conformance"><span class="secno">2. </span>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2>
 	<p>The main content of this specification is <a href="#dfn-normative" class="internalDFN" data-link-type="dfn">normative</a> and defines requirements that impact conformance claims. Introductory material, appendices, sections marked as "non-normative" and their subsections, diagrams, examples, and notes are <a href="#dfn-informative" class="internalDFN" data-link-type="dfn">informative</a> (non-normative). Non-normative material provides advisory information to help interpret the guidelines but does not create requirements that impact a conformance claim.</p>
 	<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <em class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></em>, <em class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></em>, <em class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></em>, <em class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></em>, and <em class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></em> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" href="#bib-rfc2119">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in an element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format, they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
 	<p>Normative sections provide requirements that authors, user agents and assistive technologies <em class="rfc2119" title="MUST">MUST</em> follow for an implementation to conform to this specification.</p>
 	<p>Non-normative (informative) sections provide information useful to understanding the specification. Such sections may contain examples of recommended practice, but it is not required to follow such recommendations in order to conform to this specification.</p>
 </section>
 <section class="informative" id="terms">
-	<!--OddPage--><h2 id="x3-important-terms"><span class="secno">3. </span>Important Terms<span class="permalink"><a href="#terms" aria-label="Permalink for 3. Important Terms" title="Permalink for 3. Important Terms"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
+	<!--OddPage--><h2 id="x3-important-terms"><span class="secno">3. </span>Important Terms<a class="self-link" aria-label="§" href="#terms"></a></h2><p><em>This section is non-normative.</em></p>
 	<div data-oninclude="restrictReferences"><p>While some terms are defined in place, the following definitions are used throughout this document. </p>
 <dl class="termlist">
     <dt><dfn data-lt="accessibility api|accessibility apis" id="dfn-accessibility-api" data-dfn-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
@@ -895,7 +932,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </div>
 </section>
 <section class="normative" id="roles">
-	<!--OddPage--><h2 id="x4-graphics-roles"><span class="secno">4. </span>Graphics Roles<span class="permalink"><a href="#roles" aria-label="Permalink for 4. Graphics Roles" title="Permalink for 4. Graphics Roles"><span>§</span></a></span></h2>    
+	<!--OddPage--><h2 id="x4-graphics-roles"><span class="secno">4. </span>Graphics Roles<a class="self-link" aria-label="§" href="#roles"></a></h2>    
 	<p>
       This section defines additions to the 
       <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 
@@ -937,7 +974,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
      A role of <code>none</code> or <code>presentation</code> will be ignored 
      for interactive elements or those with <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> states and properties.</p>
 	<section id="role_definitions">
-		<h3 id="x4-1-definition-of-roles"><span class="secno">4.1 </span>Definition of Roles<span class="permalink"><a href="#role_definitions" aria-label="Permalink for 4.1 Definition of Roles" title="Permalink for 4.1 Definition of Roles"><span>§</span></a></span></h3>
+		<h3 id="x4-1-definition-of-roles"><span class="secno">4.1 </span>Definition of Roles<a class="self-link" aria-label="§" href="#role_definitions"></a></h3>
 		<p>
         Below is an alphabetical list of the
         <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 
@@ -973,7 +1010,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 			
 				
 			<section class="role notoc" id="graphics-document">
-			<h4 class="role-name" title="graphics-document" aria-describedby="desc-graphics-document" id="graphics-document-0"><code>graphics-document</code> <span class="type-indicator">(role)</span><span class="permalink"><a href="#graphics-document" aria-label="Permalink for graphics-document (role)" title="Permalink for graphics-document (role)"><span>§</span></a></span></h4>
+			<h4 class="role-name" title="graphics-document" aria-describedby="desc-graphics-document" id="graphics-document-0"><code>graphics-document</code> <span class="type-indicator">(role)</span><a class="self-link" aria-label="§" href="#graphics-document"></a></h4>
 			<div class="role-description" id="desc-graphics-document" role="definition">
         <p>
           A type of <a href="https://w3c.github.io/aria/#document" class="role-reference"><code>document</code></a> in which 
@@ -1052,7 +1089,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
              would be subclasses of <code>graphics-document</code>.
            </p>
         </div></div>
-              <aside class="example"><div class="example-title marker"><span>Example 1</span></div>
+              <aside class="example" id="ex-1-example-1-an-svg-diagram-of-an-electrical-circuit-is-a-simple-graphical-document-svg-xmlns-https-www-w3-org-2000-svg-width-400-height-200-viewbox-0-0-200-100-role-graphics-document-document-title-a-simple-circuit-title-desc-a-circuit-with-one-source-one-switch-and-one-load-desc-style-type-text-css-omitted-style-g-id-battery-1-role-graphics-symbol-img-aria-roledescription-source-aria-label-battery-transform-translate-20-50-path-d-m-15-5-h30-m-5-5-h10-g-path-id-wire-1-role-graphics-symbol-img-aria-label-wire-connecting-aria-labelledby-wire-1-battery-1-switch-1-class-wire-d-m20-45-v20-h90-the-switch-more-wires-and-a-light-bulb-svg"><div class="marker"><a class="self-link" href="#ex-1-example-1-an-svg-diagram-of-an-electrical-circuit-is-a-simple-graphical-document-svg-xmlns-https-www-w3-org-2000-svg-width-400-height-200-viewbox-0-0-200-100-role-graphics-document-document-title-a-simple-circuit-title-desc-a-circuit-with-one-source-one-switch-and-one-load-desc-style-type-text-css-omitted-style-g-id-battery-1-role-graphics-symbol-img-aria-roledescription-source-aria-label-battery-transform-translate-20-50-path-d-m-15-5-h30-m-5-5-h10-g-path-id-wire-1-role-graphics-symbol-img-aria-label-wire-connecting-aria-labelledby-wire-1-battery-1-switch-1-class-wire-d-m20-45-v20-h90-the-switch-more-wires-and-a-light-bulb-svg">Example 1</a></div>
                 <p>
                   An <abbr title="Scalable Vector Graphics">SVG</abbr> diagram of an electrical circuit is a simple graphical document:
                 </p>
@@ -1158,7 +1195,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 						
 									
 		<section class="role notoc" id="graphics-object">
-			<h4 class="role-name" title="graphics-object" aria-describedby="desc-graphics-object" id="graphics-object-0"><code>graphics-object</code> <span class="type-indicator">(role)</span><span class="permalink"><a href="#graphics-object" aria-label="Permalink for graphics-object (role)" title="Permalink for graphics-object (role)"><span>§</span></a></span></h4>
+			<h4 class="role-name" title="graphics-object" aria-describedby="desc-graphics-object" id="graphics-object-0"><code>graphics-object</code> <span class="type-indicator">(role)</span><a class="self-link" aria-label="§" href="#graphics-object"></a></h4>
 			<div class="role-description" id="desc-graphics-object" role="definition">
         <p>
           A section of a <a href="#graphics-document" class="role-reference"><code>graphics-document</code></a>
@@ -1196,7 +1233,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </p></div>
 
         
-<aside class="example"><div class="example-title marker"><span>Example 2</span></div>
+<aside class="example" id="ex-2-example-2-the-code-that-follows-is-a-portion-of-the-markup-for-a-structured-graphic-it-includes-svg-g-grouping-elements-with-various-roles-graphics-object-for-distinct-objects-such-as-the-house-its-door-or-roof-group-to-group-together-the-windows-or-the-trees-multiple-distinct-objects-with-a-single-label-or-description-img-for-the-background-which-is-described-as-a-whole-none-for-elements-that-apply-styles-or-transformations-without-having-any-semantic-meaning-where-a-graphical-object-has-multiple-sub-components-the-group-role-is-provided-as-an-explicit-fallback-svg-xmlns-https-www-w3-org-2000-svg-width-600-height-400-viewbox-0-0-600-400-role-graphics-document-document-xml-lang-en-title-home-title-g-role-img-aria-label-background-desc-blue-sky-sunshine-and-green-grass-desc-the-multiple-parts-of-the-background-form-a-single-image-conveyed-by-that-one-description-rect-fill-lightskyblue-height-100-width-100-circle-fill-yellow-stroke-gold-stroke-width-4-cx-0-cy-0-r-50-path-fill-none-stroke-gold-stroke-width-3-d-rect-fill-6a2-y-300-width-100-height-100-g-g-role-graphics-object-group-aria-labelledby-house-label-transform-translate-100-325-desc-a-two-storey-brick-house-drawn-with-basic-shapes-desc-the-house-has-a-number-of-details-worth-calling-out-so-it-is-a-graphical-object-rect-fill-firebrick-stroke-darkred-width-300-height-200-y-200-role-none-the-walls-of-the-house-are-already-described-thoroughly-so-no-role-is-required-g-role-graphics-object-aria-label-door-transform-translate-30-90-desc-the-brown-door-on-the-left-side-of-the-building-has-a-window-and-a-round-doorknob-desc-the-graphical-object-role-allows-for-further-nested-sub-components-however-based-on-the-default-svg-api-mappings-these-shapes-which-have-neither-labels-nor-descriptions-will-be-treated-as-presentation-rect-fill-darkkhaki-stroke-632-width-50-height-90-rect-fill-lightsteelblue-stroke-632-stroke-width-4-x-5-y-5-width-40-height-30-circle-fill-gray-stroke-444-stroke-width-0-7-cx-10-cy-50-r-4-g-g-role-group-aria-label-windows-fill-lightsteelblue-stroke-632-stroke-width-6-the-windows-are-distinct-objects-grouped-together-with-a-common-label-g-role-none-transform-translate-0-85-rect-aria-label-first-floor-window-x-100-width-25-height-45-desc-a-small-window-beside-the-door-desc-rect-path-aria-label-first-floor-living-room-window-d-m180-0h100v60h-100v-60z-m30-0v60-m40-0v-60-desc-a-large-three-pane-window-fills-the-rest-of-the-first-floor-desc-path-g-g-role-none-transform-translate-0-180-more-windows-on-the-second-floor-g-g-more-markup-for-the-roof-and-chimney-text-id-house-label-font-family-cursive-font-size-36px-x-70-y-50-my-house-text-g-more-markup-for-the-trees-svg"><div class="marker"><a class="self-link" href="#ex-2-example-2-the-code-that-follows-is-a-portion-of-the-markup-for-a-structured-graphic-it-includes-svg-g-grouping-elements-with-various-roles-graphics-object-for-distinct-objects-such-as-the-house-its-door-or-roof-group-to-group-together-the-windows-or-the-trees-multiple-distinct-objects-with-a-single-label-or-description-img-for-the-background-which-is-described-as-a-whole-none-for-elements-that-apply-styles-or-transformations-without-having-any-semantic-meaning-where-a-graphical-object-has-multiple-sub-components-the-group-role-is-provided-as-an-explicit-fallback-svg-xmlns-https-www-w3-org-2000-svg-width-600-height-400-viewbox-0-0-600-400-role-graphics-document-document-xml-lang-en-title-home-title-g-role-img-aria-label-background-desc-blue-sky-sunshine-and-green-grass-desc-the-multiple-parts-of-the-background-form-a-single-image-conveyed-by-that-one-description-rect-fill-lightskyblue-height-100-width-100-circle-fill-yellow-stroke-gold-stroke-width-4-cx-0-cy-0-r-50-path-fill-none-stroke-gold-stroke-width-3-d-rect-fill-6a2-y-300-width-100-height-100-g-g-role-graphics-object-group-aria-labelledby-house-label-transform-translate-100-325-desc-a-two-storey-brick-house-drawn-with-basic-shapes-desc-the-house-has-a-number-of-details-worth-calling-out-so-it-is-a-graphical-object-rect-fill-firebrick-stroke-darkred-width-300-height-200-y-200-role-none-the-walls-of-the-house-are-already-described-thoroughly-so-no-role-is-required-g-role-graphics-object-aria-label-door-transform-translate-30-90-desc-the-brown-door-on-the-left-side-of-the-building-has-a-window-and-a-round-doorknob-desc-the-graphical-object-role-allows-for-further-nested-sub-components-however-based-on-the-default-svg-api-mappings-these-shapes-which-have-neither-labels-nor-descriptions-will-be-treated-as-presentation-rect-fill-darkkhaki-stroke-632-width-50-height-90-rect-fill-lightsteelblue-stroke-632-stroke-width-4-x-5-y-5-width-40-height-30-circle-fill-gray-stroke-444-stroke-width-0-7-cx-10-cy-50-r-4-g-g-role-group-aria-label-windows-fill-lightsteelblue-stroke-632-stroke-width-6-the-windows-are-distinct-objects-grouped-together-with-a-common-label-g-role-none-transform-translate-0-85-rect-aria-label-first-floor-window-x-100-width-25-height-45-desc-a-small-window-beside-the-door-desc-rect-path-aria-label-first-floor-living-room-window-d-m180-0h100v60h-100v-60z-m30-0v60-m40-0v-60-desc-a-large-three-pane-window-fills-the-rest-of-the-first-floor-desc-path-g-g-role-none-transform-translate-0-180-more-windows-on-the-second-floor-g-g-more-markup-for-the-roof-and-chimney-text-id-house-label-font-family-cursive-font-size-36px-x-70-y-50-my-house-text-g-more-markup-for-the-trees-svg">Example 2</a></div>
   <p>
     The code that follows is a portion of the markup for a 
     structured graphic.  It includes <abbr title="Scalable Vector Graphics">SVG</abbr> <code>g</code> grouping
@@ -1428,7 +1465,7 @@ OK to omit the second example?
 				
 		
 		<section class="role notoc" id="graphics-symbol">
-			<h4 class="role-name" title="graphics-symbol" aria-describedby="desc-graphics-symbol" id="graphics-symbol-0"><code>graphics-symbol</code> <span class="type-indicator">(role)</span><span class="permalink"><a href="#graphics-symbol" aria-label="Permalink for graphics-symbol (role)" title="Permalink for graphics-symbol (role)"><span>§</span></a></span></h4>
+			<h4 class="role-name" title="graphics-symbol" aria-describedby="desc-graphics-symbol" id="graphics-symbol-0"><code>graphics-symbol</code> <span class="type-indicator">(role)</span><a class="self-link" aria-label="§" href="#graphics-symbol"></a></h4>
 			<div class="role-description" id="desc-graphics-symbol" role="definition">
 				<p>
             A graphical object used to convey a simple meaning or category, 
@@ -1455,7 +1492,7 @@ OK to omit the second example?
             in the form <code>role="graphics-symbol img"</code>, 
             if that is not already the default semantic role for the element.
         </p></div>
-              <aside class="example"><div class="example-title marker"><span>Example 3</span></div>
+              <aside class="example" id="ex-3-example-3-within-an-html-document-for-a-restaurant-menu-an-img-element-can-represent-a-repeated-symbol-h2-appetizers-h2-ul-li-spinach-salad-with-strawberry-almonds-img-role-graphics-symbol-title-vegetarian-src-assets-leaf-svg-img-role-graphics-symbol-title-contains-nuts-src-assets-peanut-svg-li-li-chicken-satay-with-peanut-sauce-img-role-graphics-symbol-title-contains-nuts-src-assets-peanut-svg-li-ul"><div class="marker"><a class="self-link" href="#ex-3-example-3-within-an-html-document-for-a-restaurant-menu-an-img-element-can-represent-a-repeated-symbol-h2-appetizers-h2-ul-li-spinach-salad-with-strawberry-almonds-img-role-graphics-symbol-title-vegetarian-src-assets-leaf-svg-img-role-graphics-symbol-title-contains-nuts-src-assets-peanut-svg-li-li-chicken-satay-with-peanut-sauce-img-role-graphics-symbol-title-contains-nuts-src-assets-peanut-svg-li-ul">Example 3</a></div>
                 <p>
                   Within an <abbr title="Hypertext Markup Language">HTML</abbr> document for a restaurant menu,
                   an <code>img</code> element can represent a repeated symbol:
@@ -1473,7 +1510,7 @@ OK to omit the second example?
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </pre>
               </aside>
-              <aside class="example"><div class="example-title marker"><span>Example 4</span></div>
+              <aside class="example" id="ex-4-example-4-within-an-svg-diagram-of-an-electrical-circuit-the-graphics-that-represent-batteries-switches-and-loads-like-this-lightbulb-are-each-symbols-g-id-lightbulb-1-role-graphics-symbol-img-aria-roledescription-load-aria-label-lightbulb-aria-labelledby-lightbulb-1-lightbulb-1-label-transform-translate-180-50-text-id-lightbulb-1-label-x-15-dy-0-5ex-text-anchor-end-10w-text-circle-r-10-path-d-m0-10-c0-8-5-8-5-0-c5-8-0-8-0-10-g-note-that-the-visible-text-must-be-included-in-the-label-for-its-parent-symbol-in-this-example-as-the-child-of-a-graphics-symbol-it-is-treated-as-presentational-content-and-is-therefore-not-accessible-as-a-separate-element-of-the-graphic"><div class="marker"><a class="self-link" href="#ex-4-example-4-within-an-svg-diagram-of-an-electrical-circuit-the-graphics-that-represent-batteries-switches-and-loads-like-this-lightbulb-are-each-symbols-g-id-lightbulb-1-role-graphics-symbol-img-aria-roledescription-load-aria-label-lightbulb-aria-labelledby-lightbulb-1-lightbulb-1-label-transform-translate-180-50-text-id-lightbulb-1-label-x-15-dy-0-5ex-text-anchor-end-10w-text-circle-r-10-path-d-m0-10-c0-8-5-8-5-0-c5-8-0-8-0-10-g-note-that-the-visible-text-must-be-included-in-the-label-for-its-parent-symbol-in-this-example-as-the-child-of-a-graphics-symbol-it-is-treated-as-presentational-content-and-is-therefore-not-accessible-as-a-separate-element-of-the-graphic">Example 4</a></div>
                 <p>
                   Within an <abbr title="Scalable Vector Graphics">SVG</abbr> diagram of an electrical circuit,
                   the graphics that represent batteries, switches, 
@@ -1499,7 +1536,7 @@ OK to omit the second example?
                   and is therefore not accessible as a separate element of the graphic.
                 </p>
               </aside>
-              <aside class="example"><div class="example-title marker"><span>Example 5</span></div>
+              <aside class="example" id="ex-5-example-5-within-an-architectural-blueprint-style-svg-diagram-each-svg-use-element-that-creates-a-copy-of-a-simple-svg-symbol-is-a-graphics-symbol-svg-xmlns-http-www-w3-org-2000-svg-xmlns-xlink-http-www-w3-org-1999-xlink-width-400-height-300-viewbox-0-0-400-300-role-graphics-document-document-xml-lang-en-title-room-with-5-outlets-title-desc-schematic-showing-the-minimum-number-and-position-of-electrical-outlets-for-a-mid-sized-room-with-one-door-desc-defs-symbol-id-outlet-viewbox-0-0-30-20-stroke-000-stroke-width-1-5-pointer-events-all-desc-the-symbol-for-an-electrical-outlet-is-a-circle-with-a-plug-shape-overlaid-on-top-the-plug-consists-of-two-horizontal-lines-extending-from-a-vertical-line-desc-circle-cx-15-cy-10-r-9-fill-none-line-x1-1-y1-7-x2-29-y2-7-line-x1-1-y1-13-x2-29-y2-13-line-x1-1-y1-1-x2-1-y2-19-symbol-defs-g-role-group-use-xlink-href-outlet-role-graphics-symbol-img-x-100-y-15-width-45-height-30-title-electrical-outlet-title-desc-on-west-side-of-north-wall-desc-use-use-xlink-href-outlet-role-graphics-symbol-img-x-250-y-15-width-45-height-30-title-electrical-outlet-title-desc-on-east-side-of-north-wall-desc-use-g-svg"><div class="marker"><a class="self-link" href="#ex-5-example-5-within-an-architectural-blueprint-style-svg-diagram-each-svg-use-element-that-creates-a-copy-of-a-simple-svg-symbol-is-a-graphics-symbol-svg-xmlns-http-www-w3-org-2000-svg-xmlns-xlink-http-www-w3-org-1999-xlink-width-400-height-300-viewbox-0-0-400-300-role-graphics-document-document-xml-lang-en-title-room-with-5-outlets-title-desc-schematic-showing-the-minimum-number-and-position-of-electrical-outlets-for-a-mid-sized-room-with-one-door-desc-defs-symbol-id-outlet-viewbox-0-0-30-20-stroke-000-stroke-width-1-5-pointer-events-all-desc-the-symbol-for-an-electrical-outlet-is-a-circle-with-a-plug-shape-overlaid-on-top-the-plug-consists-of-two-horizontal-lines-extending-from-a-vertical-line-desc-circle-cx-15-cy-10-r-9-fill-none-line-x1-1-y1-7-x2-29-y2-7-line-x1-1-y1-13-x2-29-y2-13-line-x1-1-y1-1-x2-1-y2-19-symbol-defs-g-role-group-use-xlink-href-outlet-role-graphics-symbol-img-x-100-y-15-width-45-height-30-title-electrical-outlet-title-desc-on-west-side-of-north-wall-desc-use-use-xlink-href-outlet-role-graphics-symbol-img-x-250-y-15-width-45-height-30-title-electrical-outlet-title-desc-on-east-side-of-north-wall-desc-use-g-svg">Example 5</a></div>
                 <p>
                   Within an architectural blueprint-style <abbr title="Scalable Vector Graphics">SVG</abbr> diagram,
                   each <abbr title="Scalable Vector Graphics">SVG</abbr> <code>use</code> element that creates a copy
@@ -1616,7 +1653,7 @@ OK to omit the second example?
  		
 	</section>
 	<section id="role_other">
-		<h3 id="x4-2-other-roles-for-graphics"><span class="secno">4.2 </span>Other Roles for Graphics<span class="permalink"><a href="#role_other" aria-label="Permalink for 4.2 Other Roles for Graphics" title="Permalink for 4.2 Other Roles for Graphics"><span>§</span></a></span></h3>
+		<h3 id="x4-2-other-roles-for-graphics"><span class="secno">4.2 </span>Other Roles for Graphics<a class="self-link" aria-label="§" href="#role_other"></a></h3>
 		<p>	The following core ARIA roles, defined in ARIA 1.1 [<cite><a class="bibref" href="#bib-wai-aria-1.1">WAI-ARIA-1.1</a></cite>], are also 
       relevant for annotating graphics:
     </p>
@@ -1646,7 +1683,7 @@ OK to omit the second example?
       in a document.
     </p>
     
-<aside class="example"><div class="example-title marker"><span>Example 6</span></div>
+<aside class="example" id="ex-6-example-6-within-an-html-5-document-an-inline-svg-may-sometimes-represent-an-atomic-img-if-the-graphics-form-part-of-the-natural-reading-flow-of-the-text-then-this-role-is-sufficient-as-in-the-first-example-p-a-repeating-svg-gradient-is-defined-using-the-code-spreadmethod-code-attribute-a-value-of-code-repeat-code-causes-the-color-stops-to-repeat-in-the-same-order-from-beginning-to-end-p-svg-class-inline-example-role-img-title-a-repeating-linear-gradient-title-desc-the-gradient-starts-dark-slowly-shifting-to-light-then-quickly-dark-again-this-pattern-repeats-four-times-left-to-right-each-time-brightening-across-a-large-region-and-then-getting-dark-within-a-short-space-desc-lineargradient-id-repeat-x2-25-spreadmethod-repeat-stop-offset-0-stop-color-black-stop-offset-0-8-stop-color-white-stop-offset-1-stop-color-black-lineargradient-rect-width-100-height-100-fill-url-repeat-svg-the-following-example-provides-the-same-content-but-now-structured-as-a-figure-that-may-be-re-positioned-separately-from-the-flow-of-paragraph-text-figure-id-fig1-role-figure-region-svg-id-fig1a-class-nested-figure-role-figure-aria-labelledby-fig1-caption-fig1a-caption-markup-omitted-svg-svg-id-fig1b-class-nested-figure-role-figure-aria-labelledby-fig1-caption-fig1b-caption-lineargradient-id-reflect-spreadmethod-reflect-xlink-href-repeat-text-id-fig1b-caption-class-caption-dy-1em-b-spreadmethod-reflect-text-rect-role-img-y-25-width-100-height-75-fill-url-reflect-title-a-reflecting-linear-gradient-title-desc-the-gradient-again-starts-dark-slowly-shifting-to-light-then-quickly-dark-again-however-the-next-repeat-shifts-quickly-to-the-light-then-slowly-back-dark-the-original-pattern-is-then-repeated-followed-by-the-reflected-version-again-desc-rect-svg-figcaption-id-fig1-caption-figure-1-repeating-svg-gradients-figcaption-figure-finally-the-last-version-uses-a-graphics-document-to-include-complex-annotations-on-the-graphic-which-is-still-contained-within-a-figure-element-the-two-sections-of-the-graphic-are-graphics-object-elements-while-the-annotations-have-individual-labels-and-descriptions-figure-id-fig1-role-figure-region-svg-role-graphics-document-title-repeating-versus-reflecting-linear-gradients-title-desc-the-graphic-shows-two-gradient-patterns-annotated-with-text-labels-and-arrows-both-gradients-use-the-same-series-of-color-stops-starting-dark-slowly-shifting-to-light-then-quickly-dark-again-this-cycle-covers-one-quarter-of-the-width-of-the-graphic-starting-on-the-left-the-two-gradients-differ-in-their-repeat-cycles-desc-defs-markup-omitted-defs-g-role-graphics-object-aria-labelledby-repeat-label-markup-omitted-g-g-role-graphics-object-aria-labelledby-reflect-label-desc-the-gradient-stretches-across-the-bottom-half-of-the-graphic-each-cycle-of-the-gradient-alternates-direction-left-to-right-then-right-to-left-as-do-the-arrows-that-emphasize-the-pattern-desc-rect-y-50-width-100-height-50-fill-url-reflect-rect-use-y-70-xlink-href-gradient-vector-title-1st-cycle-title-desc-left-to-right-arrow-starting-from-x-0-desc-use-use-y-70-x-50-transform-scale-1-1-xlink-href-gradient-vector-title-2nd-cycle-reflected-title-desc-right-to-left-arrow-ending-at-x-25-desc-use-use-y-70-x-50-xlink-href-gradient-vector-title-3rd-cycle-title-desc-left-to-right-arrow-starting-from-x-50-desc-use-use-y-70-x-100-transform-scale-1-1-xlink-href-gradient-vector-title-4th-cycle-reflected-title-desc-right-to-left-arrow-ending-at-x-75-desc-use-text-id-reflect-label-class-overlay-text-aria-label-spreadmethod-reflect-dy-0-2em-dx-0-2em-x-100-y-100-reflect-text-g-svg-figcaption-figure-1-spreadmethod-options-for-repeating-svg-gradients-figcaption-figure"><div class="marker"><a class="self-link" href="#ex-6-example-6-within-an-html-5-document-an-inline-svg-may-sometimes-represent-an-atomic-img-if-the-graphics-form-part-of-the-natural-reading-flow-of-the-text-then-this-role-is-sufficient-as-in-the-first-example-p-a-repeating-svg-gradient-is-defined-using-the-code-spreadmethod-code-attribute-a-value-of-code-repeat-code-causes-the-color-stops-to-repeat-in-the-same-order-from-beginning-to-end-p-svg-class-inline-example-role-img-title-a-repeating-linear-gradient-title-desc-the-gradient-starts-dark-slowly-shifting-to-light-then-quickly-dark-again-this-pattern-repeats-four-times-left-to-right-each-time-brightening-across-a-large-region-and-then-getting-dark-within-a-short-space-desc-lineargradient-id-repeat-x2-25-spreadmethod-repeat-stop-offset-0-stop-color-black-stop-offset-0-8-stop-color-white-stop-offset-1-stop-color-black-lineargradient-rect-width-100-height-100-fill-url-repeat-svg-the-following-example-provides-the-same-content-but-now-structured-as-a-figure-that-may-be-re-positioned-separately-from-the-flow-of-paragraph-text-figure-id-fig1-role-figure-region-svg-id-fig1a-class-nested-figure-role-figure-aria-labelledby-fig1-caption-fig1a-caption-markup-omitted-svg-svg-id-fig1b-class-nested-figure-role-figure-aria-labelledby-fig1-caption-fig1b-caption-lineargradient-id-reflect-spreadmethod-reflect-xlink-href-repeat-text-id-fig1b-caption-class-caption-dy-1em-b-spreadmethod-reflect-text-rect-role-img-y-25-width-100-height-75-fill-url-reflect-title-a-reflecting-linear-gradient-title-desc-the-gradient-again-starts-dark-slowly-shifting-to-light-then-quickly-dark-again-however-the-next-repeat-shifts-quickly-to-the-light-then-slowly-back-dark-the-original-pattern-is-then-repeated-followed-by-the-reflected-version-again-desc-rect-svg-figcaption-id-fig1-caption-figure-1-repeating-svg-gradients-figcaption-figure-finally-the-last-version-uses-a-graphics-document-to-include-complex-annotations-on-the-graphic-which-is-still-contained-within-a-figure-element-the-two-sections-of-the-graphic-are-graphics-object-elements-while-the-annotations-have-individual-labels-and-descriptions-figure-id-fig1-role-figure-region-svg-role-graphics-document-title-repeating-versus-reflecting-linear-gradients-title-desc-the-graphic-shows-two-gradient-patterns-annotated-with-text-labels-and-arrows-both-gradients-use-the-same-series-of-color-stops-starting-dark-slowly-shifting-to-light-then-quickly-dark-again-this-cycle-covers-one-quarter-of-the-width-of-the-graphic-starting-on-the-left-the-two-gradients-differ-in-their-repeat-cycles-desc-defs-markup-omitted-defs-g-role-graphics-object-aria-labelledby-repeat-label-markup-omitted-g-g-role-graphics-object-aria-labelledby-reflect-label-desc-the-gradient-stretches-across-the-bottom-half-of-the-graphic-each-cycle-of-the-gradient-alternates-direction-left-to-right-then-right-to-left-as-do-the-arrows-that-emphasize-the-pattern-desc-rect-y-50-width-100-height-50-fill-url-reflect-rect-use-y-70-xlink-href-gradient-vector-title-1st-cycle-title-desc-left-to-right-arrow-starting-from-x-0-desc-use-use-y-70-x-50-transform-scale-1-1-xlink-href-gradient-vector-title-2nd-cycle-reflected-title-desc-right-to-left-arrow-ending-at-x-25-desc-use-use-y-70-x-50-xlink-href-gradient-vector-title-3rd-cycle-title-desc-left-to-right-arrow-starting-from-x-50-desc-use-use-y-70-x-100-transform-scale-1-1-xlink-href-gradient-vector-title-4th-cycle-reflected-title-desc-right-to-left-arrow-ending-at-x-75-desc-use-text-id-reflect-label-class-overlay-text-aria-label-spreadmethod-reflect-dy-0-2em-dx-0-2em-x-100-y-100-reflect-text-g-svg-figcaption-figure-1-spreadmethod-options-for-repeating-svg-gradients-figcaption-figure">Example 6</a></div>
   <p>
     Within an <abbr title="Hypertext Markup Language">HTML</abbr> 5 document, an inline <abbr title="Scalable Vector Graphics">SVG</abbr>
     may sometimes represent an atomic <code>img</code>.
@@ -1775,7 +1812,7 @@ OK to omit the second example?
     </pre>
 </aside>    
 
-<aside class="example"><div class="example-title marker"><span>Example 7</span></div>
+<aside class="example" id="ex-7-example-7-within-the-fallback-dom-dynamically-constructed-for-an-html-5-canvas-game-elements-may-represent-the-different-images-that-create-the-composite-graphic-canvas-role-graphics-document-p-id-scene-desc-role-img-aria-label-the-dungeon-aria-describedby-scene-desc-the-door-opens-into-a-long-hallway-every-few-steps-on-either-side-are-barred-doors-moisture-drips-from-the-stone-walls-p-p-id-grue-1-role-img-aria-label-grue-aria-describedby-grue-1-an-amorphous-and-poorly-defined-but-unmistakably-sinister-creature-blocks-the-passage-p-more-dom-elements-representing-game-controls-canvas"><div class="marker"><a class="self-link" href="#ex-7-example-7-within-the-fallback-dom-dynamically-constructed-for-an-html-5-canvas-game-elements-may-represent-the-different-images-that-create-the-composite-graphic-canvas-role-graphics-document-p-id-scene-desc-role-img-aria-label-the-dungeon-aria-describedby-scene-desc-the-door-opens-into-a-long-hallway-every-few-steps-on-either-side-are-barred-doors-moisture-drips-from-the-stone-walls-p-p-id-grue-1-role-img-aria-label-grue-aria-describedby-grue-1-an-amorphous-and-poorly-defined-but-unmistakably-sinister-creature-blocks-the-passage-p-more-dom-elements-representing-game-controls-canvas">Example 7</a></div>
   <p>
      Within the fallback <abbr title="Document Object Model">DOM</abbr> dynamically constructed
      for an <abbr title="Hypertext Markup Language">HTML</abbr> 5 canvas game,
@@ -1804,7 +1841,7 @@ OK to omit the second example?
   	</section>
 </section>
 <section class="normative" id="state_prop">
-	<!--OddPage--><h2 id="x5-states-and-properties"><span class="secno">5. </span>States and Properties<span class="permalink"><a href="#state_prop" aria-label="Permalink for 5. States and Properties" title="Permalink for 5. States and Properties"><span>§</span></a></span></h2>
+	<!--OddPage--><h2 id="x5-states-and-properties"><span class="secno">5. </span>States and Properties<a class="self-link" aria-label="§" href="#state_prop"></a></h2>
 	<p><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> provides a collection of accessibility state and properties which are used to support platform accessibility APIs on various 
 	operating system platforms. Assistive technologies may access this information through an exposed user agent <abbr title="Document Object Model">DOM</abbr> or through a mapping 
 	to the platform accessibility <abbr title="Application Programming Interfaces">API</abbr>. When combined with roles, the user agent can supply the assistive technologies with user interface 
@@ -1813,17 +1850,17 @@ OK to omit the second example?
 
 	</section>
 <section class="appendix" id="changelog">
-	<!--OddPage--><h2 id="a-change-log"><span class="secno">A. </span>Change Log<span class="permalink"><a href="#changelog" aria-label="Permalink for A. Change Log" title="Permalink for A. Change Log"><span>§</span></a></span></h2>
+	<!--OddPage--><h2 id="a-change-log"><span class="secno">A. </span>Change Log<a class="self-link" aria-label="§" href="#changelog"></a></h2>
 <p>The full <a href="https://github.com/w3c/graphics-aria/commits/master/index.html">commit history to <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module 1.0</a> is available.</p>
 	<section id="substantive-changes-since-the-last-public-working-draft">
-		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1 </span>Substantive changes since the <a href="https://www.w3.org/TR/2016/WD-graphics-aria-1.0-20160908/">last public working draft</a><span class="permalink"><a href="#substantive-changes-since-the-last-public-working-draft" aria-label="Permalink for A.1 Substantive changes since the last public working draft" title="Permalink for A.1 Substantive changes since the last public working draft"><span>§</span></a></span></h3>
+		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1 </span>Substantive changes since the <a href="https://www.w3.org/TR/2016/WD-graphics-aria-1.0-20160908/">last public working draft</a><a class="self-link" aria-label="§" href="#substantive-changes-since-the-last-public-working-draft"></a></h3>
 		<ul>
 			<li>2017-11-15: Change superclass for graphics-object to img and graphics-symbol to group.</li>
 			<!-- EdNote: After each WD publish, move contents of this list into the next one below. -->
 		</ul>
 	</section>
 	<section id="other-substantive-changes-since-the-first-public-working-draft">
-		<h3 id="a-2-other-substantive-changes-since-the-first-public-working-draft"><span class="secno">A.2 </span>Other substantive changes since the <a href="http://www.w3.org/TR/2015/WD-graphics-aria-1.0-20151203/">First Public Working Draft</a><span class="permalink"><a href="#other-substantive-changes-since-the-first-public-working-draft" aria-label="Permalink for A.2 Other substantive changes since the First Public Working Draft" title="Permalink for A.2 Other substantive changes since the First Public Working Draft"><span>§</span></a></span></h3>
+		<h3 id="a-2-other-substantive-changes-since-the-first-public-working-draft"><span class="secno">A.2 </span>Other substantive changes since the <a href="http://www.w3.org/TR/2015/WD-graphics-aria-1.0-20151203/">First Public Working Draft</a><a class="self-link" aria-label="§" href="#other-substantive-changes-since-the-first-public-working-draft"></a></h3>
 		<ul>
 			<li>2016-01-26: changed superclass of graphics-doc to structure.</li>
 			<li>2016-04-28: removed reference to role="none" or "presentation".</li>
@@ -1834,10 +1871,10 @@ OK to omit the second example?
 	</section>
 </section>
 	<section class="appendix informative section" id="acknowledgements">
-		<!--OddPage--><h2 id="b-acknowledgments"><span class="secno">B. </span>Acknowledgments<span class="permalink"><a href="#acknowledgements" aria-label="Permalink for B. Acknowledgments" title="Permalink for B. Acknowledgments"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
+		<!--OddPage--><h2 id="b-acknowledgments"><span class="secno">B. </span>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h2><p><em>This section is non-normative.</em></p>
 		<p>The following people contributed to the development of this document.</p>
 		<section class="section" id="ack_svga11y">
-			<h3 id="b-1-participants-active-in-the-svg-accessibility-task-force-at-the-time-of-publication"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication<span class="permalink"><a href="#ack_svga11y" aria-label="Permalink for B.1 Participants active in the SVG accessibility task force at the time of publication" title="Permalink for B.1 Participants active in the SVG accessibility task force at the time of publication"><span>§</span></a></span></h3>
+			<h3 id="b-1-participants-active-in-the-svg-accessibility-task-force-at-the-time-of-publication"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication<a class="self-link" aria-label="§" href="#ack_svga11y"></a></h3>
 			<ul>
 				<li>Amelia Bellamy-Royds (Invited expert)</li>
 				<li>Fred Esch (IBM Corporation)</li>
@@ -1850,7 +1887,7 @@ OK to omit the second example?
 			</ul>
 		</section>
 		<section class="section" id="ack_group">
-			<h3 id="b-2-participants-active-in-the-aria-wg-at-the-time-of-publication"><span class="secno">B.2 </span>Participants active in the ARIA WG at the time of publication<span class="permalink"><a href="#ack_group" aria-label="Permalink for B.2 Participants active in the ARIA WG at the time of publication" title="Permalink for B.2 Participants active in the ARIA WG at the time of publication"><span>§</span></a></span></h3>
+			<h3 id="b-2-participants-active-in-the-aria-wg-at-the-time-of-publication"><span class="secno">B.2 </span>Participants active in the ARIA WG at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
 			<ul>
 				<li>David Bolter (Mozilla Foundation) </li>
 				<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
@@ -1872,21 +1909,21 @@ OK to omit the second example?
 			</ul>
 		</section>
 		<section class="section" id="ack_funders">
-			<h3 id="b-3-enabling-funders"><span class="secno">B.3 </span>Enabling funders<span class="permalink"><a href="#ack_funders" aria-label="Permalink for B.3 Enabling funders" title="Permalink for B.3 Enabling funders"><span>§</span></a></span></h3>
+			<h3 id="b-3-enabling-funders"><span class="secno">B.3 </span>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h3>
 			<p>This publication has been funded in part with U.S. Federal funds from the Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR), initially under contract number ED-OSE-10-C-0067 and currently under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
 		</section>
 	</section>
 
 
 <section id="references" class="appendix">
-      <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<span class="permalink"><a href="#references" aria-label="Permalink for C. References" title="Permalink for C. References"><span>§</span></a></span></h2>
+      <!--OddPage--><h2 id="c-references"><span class="secno">C. </span>References<a class="self-link" aria-label="§" href="#references"></a></h2>
       
     <section id="normative-references">
-        <h3 id="c-1-normative-references"><span class="secno">C.1 </span>Normative references<span class="permalink"><a href="#normative-references" aria-label="Permalink for C.1 Normative references" title="Permalink for C.1 Normative references"><span>§</span></a></span></h3>
+        <h3 id="c-1-normative-references"><span class="secno">C.1 </span>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd><dt id="bib-wai-aria-1.1">[WAI-ARIA-1.1]</dt><dd><a href="https://www.w3.org/TR/wai-aria-1.1/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.1</cite></a>. Joanmarie Diggs; Shane McCarron; Michael Cooper; Richard Schwerdtfeger; James Craig. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-1.1/">https://www.w3.org/TR/wai-aria-1.1/</a></dd>
+        <dt id="bib-html52">[HTML52]</dt><dd><a href="https://www.w3.org/TR/html52/"><cite>HTML 5.2</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo; Sangwhan Moon. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd><dt id="bib-svg-aam-1.0">[SVG-AAM-1.0]</dt><dd><a href="https://www.w3.org/TR/svg-aam-1.0/"><cite>SVG Accessibility API Mappings</cite></a>. Amelia Bellamy-Royds; Ian Pouncey. W3C. 10 May 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/svg-aam-1.0/">https://www.w3.org/TR/svg-aam-1.0/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="https://www.w3.org/TR/SVG2/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Amelia Bellamy-Royds; Bogdan Brinza; Chris Lilley; Dirk Schulze; David Storey; Eric Willigers. W3C. 4 October 2018. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/SVG2/">https://www.w3.org/TR/SVG2/</a></dd><dt id="bib-wai-aria-1.1">[WAI-ARIA-1.1]</dt><dd><a href="https://www.w3.org/TR/wai-aria-1.1/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.1</cite></a>. Joanmarie Diggs; Shane McCarron; Michael Cooper; Richard Schwerdtfeger; James Craig. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-1.1/">https://www.w3.org/TR/wai-aria-1.1/</a></dd>
       </dl></section><section id="informative-references">
-        <h3 id="c-2-informative-references"><span class="secno">C.2 </span>Informative references<span class="permalink"><a href="#informative-references" aria-label="Permalink for C.2 Informative references" title="Permalink for C.2 Informative references"><span>§</span></a></span></h3>
+        <h3 id="c-2-informative-references"><span class="secno">C.2 </span>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-at-spi">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a></dd><dt id="bib-atk">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a></dd><dt id="bib-axapi">[AXAPI]</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsaccessibility"><cite>The NSAccessibility Protocol for macOS</cite></a>.  Apple, Inc. URL: <a href="https://developer.apple.com/documentation/appkit/nsaccessibility">https://developer.apple.com/documentation/appkit/nsaccessibility</a></dd><dt id="bib-core-aam-1.1">[CORE-AAM-1.1]</dt><dd><a href="https://www.w3.org/TR/core-aam-1.1/"><cite>Core Accessibility API Mappings 1.1</cite></a>. Joanmarie Diggs; Joseph Scheuhammer; Richard Schwerdtfeger; Michael Cooper; Andi Snow-Weaver; Aaron Leventhal. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/core-aam-1.1/">https://www.w3.org/TR/core-aam-1.1/</a></dd><dt id="bib-html52">[HTML52]</dt><dd><a href="https://www.w3.org/TR/html52/"><cite>HTML 5.2</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo; Sangwhan Moon. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a></dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a></dd><dt id="bib-msaa">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a></dd><dt id="bib-svg-aam-1.0">[SVG-AAM-1.0]</dt><dd><a href="https://www.w3.org/TR/svg-aam-1.0/"><cite>SVG Accessibility API Mappings</cite></a>. Amelia Bellamy-Royds; Ian Pouncey. W3C. 10 May 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/svg-aam-1.0/">https://www.w3.org/TR/svg-aam-1.0/</a></dd><dt id="bib-svg2">[SVG2]</dt><dd><a href="https://www.w3.org/TR/SVG2/"><cite>Scalable Vector Graphics (SVG) 2</cite></a>. Nikos Andronikos; Rossen Atanassov; Tavmjong Bah; Amelia Bellamy-Royds; Brian Birtles; Bogdan Brinza; Cyril Concolato; Erik Dahlström; Chris Lilley; Cameron McCormack; Doug Schepers; Dirk Schulze; Richard Schwerdtfeger; Satoru Takagi; Jonathan Watt. W3C. 15 September 2016. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/SVG2/">https://www.w3.org/TR/SVG2/</a></dd><dt id="bib-ui-automation">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a></dd><dt id="bib-uia-express">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a></dd><dt id="bib-wcag21">[WCAG21]</dt><dd><a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Andrew Kirkpatrick; Joshue O Connor; Alastair Campbell; Michael Cooper. W3C. 5 June 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></dd>
+        <dt id="bib-at-spi">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a></dd><dt id="bib-atk">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a></dd><dt id="bib-axapi">[AXAPI]</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsaccessibility"><cite>The NSAccessibility Protocol for macOS</cite></a>.  Apple, Inc. URL: <a href="https://developer.apple.com/documentation/appkit/nsaccessibility">https://developer.apple.com/documentation/appkit/nsaccessibility</a></dd><dt id="bib-core-aam-1.1">[CORE-AAM-1.1]</dt><dd><a href="https://www.w3.org/TR/core-aam-1.1/"><cite>Core Accessibility API Mappings 1.1</cite></a>. Joanmarie Diggs; Joseph Scheuhammer; Richard Schwerdtfeger; Michael Cooper; Andi Snow-Weaver; Aaron Leventhal. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/core-aam-1.1/">https://www.w3.org/TR/core-aam-1.1/</a></dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a></dd><dt id="bib-msaa">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a></dd><dt id="bib-ui-automation">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a></dd><dt id="bib-uia-express">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a></dd><dt id="bib-wcag21">[WCAG21]</dt><dd><a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Andrew Kirkpatrick; Joshue O Connor; Alastair Campbell; Michael Cooper. W3C. 5 June 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
