@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 23.4.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 23.7.4"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -622,98 +622,137 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "preProcess": [
     null
   ],
-  "publishDate": "2018-10-17",
-  "publishISODate": "2018-10-17T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 17 October 2018"
+  "publishDate": "2018-12-17",
+  "publishISODate": "2018-12-17T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 17 December 2018"
 }</script><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."></head>
 <body class="h-entry toc-inline"><div class="head">
-  <a href="https://www.w3.org/" class="logo">
+      <a href="https://www.w3.org/" class="logo">
       <img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C">
-  </a>
-  <h1 id="title" class="title p-name"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module</h1>
-  
-  <h2><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-10-17">17 October 2018</time></h2>
-  <dl>
-    <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/graphics-aria-1.0/">https://www.w3.org/TR/graphics-aria-1.0/</a></dd>
-    <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd>
-    
-    
-    
-    
-    
-    
-    <dt>Editors:</dt>
-    <dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="68182"><a class="ed_mailto u-email email p-name" href="mailto:jdiggs@igalia.com">Joanmarie Diggs</a> (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)</dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a> (<a class="p-org org h-org h-card" href="http://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>)</dd>
-    <dt>Former editors:</dt><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a> (<a class="p-org org h-org h-card" href="https://www.ibm.com">IBM Corporation</a>) (until September 2016)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a> (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>) (until August 2017)</dd>
-    <dt>Authors:</dt><dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a> (<a class="p-org org h-org h-card" href="https://www.ibm.com/">IBM Corporation</a>)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a> (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>)</dd><dd class="p-author h-card vcard" data-editor-id="38635"><a class="ed_mailto u-email email p-name" href="mailto:schepers@w3.org">Doug Schepers</a> (<a class="p-org org h-org h-card" href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a>)</dd>
-    
-  </dl>
-  
-  
-  
-  <p class="copyright">
-        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
-        2015-2018
+  </a> <h1 id="title" class="title p-name"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module</h1>
+      
+      <h2>
+        <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
+        <time class="dt-published" datetime="2018-12-17">17 December 2018</time>
+      </h2>
+      <dl>
+        <dt>This version:</dt><dd>
+                  <a class="u-url" href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a>
+                </dd><dt>Latest published version:</dt><dd>
+                  <a href="https://www.w3.org/TR/graphics-aria-1.0/">https://www.w3.org/TR/graphics-aria-1.0/</a>
+                </dd>
+        <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd>
         
-        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
-        (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
-        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
-        <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
         
-        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
-        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
-        rules apply.
-      </p>
-  <hr title="Separator for header">
-</div>
+        
+        
+        
+        
+        <dt>Editors:</dt>
+        <dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="68182"><a class="ed_mailto u-email email p-name" href="mailto:jdiggs@igalia.com">Joanmarie Diggs</a>
+            (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)
+          </dd><dd class="p-author h-card vcard" data-editor-id="34017"><a class="ed_mailto u-email email p-name" href="mailto:cooper@w3.org">Michael Cooper</a>
+            (<a class="p-org org h-org h-card" href="http://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>)
+          </dd>
+        <dt>
+                  Former editors:
+                </dt><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a>
+            (<a class="p-org org h-org h-card" href="https://www.ibm.com">IBM Corporation</a>)
+           (until September 2016)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a>
+            (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>)
+           (until August 2017)</dd>
+        <dt>
+                  Authors:
+                </dt><dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a>
+            (<a class="p-org org h-org h-card" href="https://www.ibm.com/">IBM Corporation</a>)
+          </dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a>
+            (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>)
+          </dd><dd class="p-author h-card vcard" data-editor-id="38635"><a class="ed_mailto u-email email p-name" href="mailto:schepers@w3.org">Doug Schepers</a>
+            (<a class="p-org org h-org h-card" href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a>)
+          </dd>
+        
+      </dl>
+      
+      
+      
+      <p class="copyright">
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+                        ©
+                        2015-2018
+                        
+                        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+                        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+                        <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+                        
+                        <abbr title="World Wide Web Consortium">W3C</abbr>
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>
+                        and
+                        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
+                        rules apply.
+                      </p>
+      <hr title="Separator for header">
+    </div>
 <section id="abstract" class="introductory"><h2>Abstract</h2>
 	<p>Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> [<cite><a class="bibref" href="#bib-wai-aria-1.1">WAI-ARIA-1.1</a></cite>] module of core <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a><!-- , <a data-lt="state">states</a> and <a data-lt="property">properties</a> Note, if we do include any states & properties in this module, edit this sentence! --> specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-html52">HTML52</a></cite>] and <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>].</p>
 	<p>This document is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="https://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Overview</a>.</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status of This Document</h2><p>
-        <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
-      </p><p>This is an Editor's Draft of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module 1.0 by the <a href="https://www.w3.org/WAI/PF/svg-a11y-tf/"><abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Taskforce</a>, a joint task force of the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> and the <a href="https://www.w3.org/Graphics/SVG/WG/"><abbr title="Scalable Vector Graphics">SVG</abbr> Working Group</a>. </p><p>Feedback on any aspect of the specification is accepted. For this publication, the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Task Force particularly seeks feedback on the following questions:</p><ul>
+<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>This is an Editor's Draft of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module 1.0 by the <a href="https://www.w3.org/WAI/PF/svg-a11y-tf/"><abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Taskforce</a>, a joint task force of the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> and the <a href="https://www.w3.org/Graphics/SVG/WG/"><abbr title="Scalable Vector Graphics">SVG</abbr> Working Group</a>. </p><p>Feedback on any aspect of the specification is accepted. For this publication, the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Task Force particularly seeks feedback on the following questions:</p><ul>
 		<li>Are proposed roles clear and appropriate to the needs of interactive graphics?</li>
 		<li>Is the relationship of this specification to <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> clear?</li>
 	</ul><p>To comment, <a href="https://github.com/w3c/aria/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> ARIA GitHub repository</a>, using the "graphics" label in the issue. If this is not feasible, send email to <a href="mailto:public-svg-a11y@w3.org?subject=Graphics%20ARIA%20public%20comment">public-svg-a11y@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-svg-a11y/">comment archive</a>). Comments are requested by <strong>30 September 2016</strong>. In-progress updates to the document may be viewed in the <a href="https://w3c.github.io/aria/aria/graphics.html">publicly visible editors' draft</a>.</p><p>
-          This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an Editor's Draft.
-          
-          </p><p>
-            
-            Comments regarding this document are welcome.
-              Please send them to
-              <a href="mailto:public-aria@w3.org">public-aria@w3.org</a>
-              (<a href="https://lists.w3.org/Archives/Public/public-aria/">archives</a>).
-            
-            </p><p>
-            Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
-            Membership. This is a draft document and may be updated, replaced or obsoleted by other
-            documents at any time. It is inappropriate to cite this document as other than work in
-            progress.
-          </p><p>
-          
-            This document was produced by
-            a group
-            operating under the
-            <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-          
-          
-          
-              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83726/status">public list of any patent
-              disclosures</a>
-            made in connection with the deliverables of
-            the group; that page also includes
-            instructions for disclosing a patent. An individual who has actual knowledge of a patent
-            which the individual believes contains
-            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential
-            Claim(s)</a> must disclose the information in accordance with
-            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section
-            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-          
-          
-        </p><p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-        </p></section>
+                                              This document was published by
+                                              the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an
+                                              Editor's Draft.
+                                              
+                                            </p><p>
+                                                      
+                                                      Comments regarding this document are welcome.
+                                                              Please send them
+                                                              to
+                                                              <a href="mailto:public-aria@w3.org">public-aria@w3.org</a>
+                                                              (<a href="https://lists.w3.org/Archives/Public/public-aria/">archives</a>).
+                                                            
+                                                    </p><p>
+                                              Publication as an
+                                              Editor's Draft does not imply
+                                              endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
+                                              This is a draft document and may
+                                              be updated, replaced or obsoleted
+                                              by other documents at any time. It
+                                              is inappropriate to cite this
+                                              document as other than work in
+                                              progress.
+                                            </p><p>
+                                      
+                                              This document was produced by
+                                              a group
+                                              operating under the
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                                            
+                                      
+                                      
+                                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83726/status">public list of any
+                                                        patent disclosures</a>
+                                              made in connection with the
+                                              deliverables of
+                                              the group; that page also includes
+                                              instructions for disclosing a
+                                              patent. An individual who has
+                                              actual knowledge of a patent which
+                                              the individual believes contains
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+                                              must disclose the information in
+                                              accordance with
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent
+                                                Policy</a>.
+                                            
+                                      
+                                    </p><p>
+                                      This document is governed by the
+                                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                                    </p></section>
 <nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#target-audience" class="tocxref"><span class="secno">1.1 </span>Target Audience</a></li><li class="tocline"><a href="#ua-support" class="tocxref"><span class="secno">1.2 </span>User Agent Support</a></li><li class="tocline"><a href="#co-evolution" class="tocxref"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages</a></li><li class="tocline"><a href="#authoring_practices" class="tocxref"><span class="secno">1.4 </span>Authoring Practices</a><ol class="toc"><li class="tocline"><a href="#authoring_tools" class="tocxref"><span class="secno">1.4.1 </span>Authoring Tools</a></li><li class="tocline"><a href="#authoring_testing" class="tocxref"><span class="secno">1.4.2 </span>Testing Practices and Tools</a></li></ol></li><li class="tocline"><a href="#at_support" class="tocxref"><span class="secno">1.5 </span>Assistive Technologies</a></li></ol></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a href="#roles" class="tocxref"><span class="secno">4. </span>Graphics Roles</a><ol class="toc"><li class="tocline"><a href="#role_definitions" class="tocxref"><span class="secno">4.1 </span>Definition of Roles</a><ol class="toc"></ol></li><li class="tocline"><a href="#role_other" class="tocxref"><span class="secno">4.2 </span>Other Roles for Graphics</a></li></ol></li><li class="tocline"><a href="#state_prop" class="tocxref"><span class="secno">5. </span>States and Properties</a></li><li class="tocline"><a href="#changelog" class="tocxref"><span class="secno">A. </span>Change Log</a><ol class="toc"><li class="tocline"><a href="#substantive-changes-since-the-last-public-working-draft" class="tocxref"><span class="secno">A.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a href="#other-substantive-changes-since-the-first-public-working-draft" class="tocxref"><span class="secno">A.2 </span>Other substantive changes since the <span class="formerLink">First Public Working Draft</span></a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_svga11y" class="tocxref"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication</a></li><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.2 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
 <section class="informative" id="introduction">
 	<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
@@ -799,7 +838,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <dl class="termlist">
     <dt><dfn data-lt="accessibility api|accessibility apis" id="dfn-accessibility-api" data-dfn-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
     <dd>
-      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN respec-offending-element" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN respec-offending-element" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express">UIA-EXPRESS</a></cite>], the
+      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN respec-offending-element" data-lt="object" href="#dfn-object" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">objects</a> and <a class="termref internalDFN respec-offending-element" data-lt="event" href="#dfn-event" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-0">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express">UIA-EXPRESS</a></cite>], the
       	<a href="https://developer.apple.com/documentation/appkit/accessibility/nsaccessibility">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-axapi">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" href="#bib-iaccessible2">IAccessible2</a></cite>].</p>
     </dd>
     
@@ -888,13 +927,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     <dt><dfn data-lt="property|properties" id="dfn-property" data-dfn-type="dfn">Property</dfn></dt>
     <dd>
-      <p><a class="termref internalDFN respec-offending-element" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">Attributes</a> that are essential to the nature of a given <a href="#dfn-object" class="internalDFN respec-offending-element" data-link-type="dfn">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example, <a href="https://w3c.github.io/aria/#aria-multiline" class="property-reference"><code>aria-multiline</code></a>) are less likely to change than <a class="termref" href="#dfn-state">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as <a href="https://w3c.github.io/aria/#aria-activedescendant" class="property-reference"><code>aria-activedescendant</code></a>, <a href="https://w3c.github.io/aria/#aria-valuenow" class="property-reference"><code>aria-valuenow</code></a>, and <a href="https://w3c.github.io/aria/#aria-valuetext" class="property-reference"><code>aria-valuetext</code></a> are expected to change often. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
+      <p><a class="termref internalDFN respec-offending-element" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-1">Attributes</a> that are essential to the nature of a given <a href="#dfn-object" class="internalDFN respec-offending-element" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-2">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example, <a href="https://w3c.github.io/aria/#aria-multiline" class="property-reference"><code>aria-multiline</code></a>) are less likely to change than <a class="termref" href="#dfn-state">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as <a href="https://w3c.github.io/aria/#aria-activedescendant" class="property-reference"><code>aria-activedescendant</code></a>, <a href="https://w3c.github.io/aria/#aria-valuenow" class="property-reference"><code>aria-valuenow</code></a>, and <a href="https://w3c.github.io/aria/#aria-valuetext" class="property-reference"><code>aria-valuetext</code></a> are expected to change often. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
     
     
     <dt><dfn data-lt="role|roles" id="dfn-role" data-dfn-type="dfn">Role</dfn></dt>
     <dd>
-      <p>Main indicator of type. <!-- (removing, vague) The object's role is the class of <a class="termref" data-lt="object">objects</a> of which it is a member. --> This <a class="termref internalDFN respec-offending-element" data-lt="semantics" href="#dfn-semantics" data-link-type="dfn">semantic</a> association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.</p>
+      <p>Main indicator of type. <!-- (removing, vague) The object's role is the class of <a class="termref" data-lt="object">objects</a> of which it is a member. --> This <a class="termref internalDFN respec-offending-element" data-lt="semantics" href="#dfn-semantics" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-3">semantic</a> association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.</p>
     </dd>
     
     
@@ -902,7 +941,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     <dt><dfn data-lt="state|states" id="dfn-state" data-dfn-type="dfn">State</dfn></dt>
     <dd>
-      <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-object" class="internalDFN respec-offending-element" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
+      <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-object" class="internalDFN respec-offending-element" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-4">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
     
     
@@ -910,7 +949,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     <dt><dfn id="dfn-taxonomy" data-dfn-type="dfn">Taxonomy</dfn></dt>
     <dd>
-      <p>A hierarchical definition of how the characteristics of various <a class="termref internalDFN respec-offending-element" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> relate to each other, in which classes inherit the properties of superclasses in the hierarchy. A taxonomy can comprise part of the formal definition of an <a href="#dfn-ontology" class="internalDFN respec-offending-element" data-link-type="dfn">ontology</a>.</p>
+      <p>A hierarchical definition of how the characteristics of various <a class="termref internalDFN respec-offending-element" data-lt="class" href="#dfn-class" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-5">classes</a> relate to each other, in which classes inherit the properties of superclasses in the hierarchy. A taxonomy can comprise part of the formal definition of an <a href="#dfn-ontology" class="internalDFN respec-offending-element" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-6">ontology</a>.</p>
     </dd>
     
     
@@ -926,7 +965,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     <dt><dfn data-lt="widget|widgets" id="dfn-widget" data-dfn-type="dfn">Widget</dfn></dt>
     <dd>
-      <p>Discrete user interface <a class="termref respec-offending-element" href="#dfn-object">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
+      <p>Discrete user interface <a class="termref respec-offending-element" href="#dfn-object" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-7">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
     </dd>
   </dl>
 </div>
