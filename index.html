@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 23.7.4"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 23.8.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -493,7 +493,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "license": "document",
   "previousPublishDate": "2015-12-03",
   "previousMaturity": "WD",
-  "edDraftURI": "https://w3c.github.io/graphics-aria/",
+  "github": "https://github.com/w3c/graphics-aria/",
   "editors": [
     {
       "name": "Amelia Bellamy-Royds",
@@ -622,18 +622,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "preProcess": [
     null
   ],
-  "publishDate": "2018-12-17",
-  "publishISODate": "2018-12-17T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 17 December 2018"
+  "publishDate": "2018-12-21",
+  "publishISODate": "2018-12-21T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 21 December 2018"
 }</script><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."></head>
 <body class="h-entry toc-inline"><div class="head">
-      <a href="https://www.w3.org/" class="logo">
-      <img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C">
-  </a> <h1 id="title" class="title p-name"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module</h1>
+      <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module</h1>
       
       <h2>
         <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2018-12-17">17 December 2018</time>
+        <time class="dt-published" datetime="2018-12-21">21 December 2018</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -670,7 +668,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </dd><dd class="p-author h-card vcard" data-editor-id="38635"><a class="ed_mailto u-email email p-name" href="mailto:schepers@w3.org">Doug Schepers</a>
             (<a class="p-org org h-org h-card" href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a>)
           </dd>
-        
+        <dt>Participate:</dt><dd>
+      <a href="https://github.com/w3c/graphics-aria/">GitHub w3c/graphics-aria</a>
+    </dd><dd>
+      <a href="https://github.com/w3c/graphics-aria/issues/">File a bug</a>
+    </dd><dd>
+      <a href="https://github.com/w3c/graphics-aria/commits/gh-pages">Commit history</a>
+    </dd><dd>
+      <a href="https://github.com/w3c/graphics-aria/pulls/">Pull requests</a>
+    </dd>
       </dl>
       
       
@@ -697,17 +703,35 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	<p>Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> [<cite><a class="bibref" href="#bib-wai-aria-1.1">WAI-ARIA-1.1</a></cite>] module of core <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a><!-- , <a data-lt="state">states</a> and <a data-lt="property">properties</a> Note, if we do include any states & properties in this module, edit this sentence! --> specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-html52">HTML52</a></cite>] and <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>].</p>
 	<p>This document is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="https://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Overview</a>.</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>This is an Editor's Draft of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module 1.0 by the <a href="https://www.w3.org/WAI/PF/svg-a11y-tf/"><abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Taskforce</a>, a joint task force of the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> and the <a href="https://www.w3.org/Graphics/SVG/WG/"><abbr title="Scalable Vector Graphics">SVG</abbr> Working Group</a>. </p><p>Feedback on any aspect of the specification is accepted. For this publication, the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Task Force particularly seeks feedback on the following questions:</p><ul>
+<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p>
+	<p>This is an Editor's Draft of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module 1.0 by the <a href="https://www.w3.org/WAI/PF/svg-a11y-tf/"><abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Taskforce</a>, a joint task force of the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> and the <a href="https://www.w3.org/Graphics/SVG/WG/"><abbr title="Scalable Vector Graphics">SVG</abbr> Working Group</a>. </p>
+	<p>Feedback on any aspect of the specification is accepted. For this publication, the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility Task Force particularly seeks feedback on the following questions:</p>
+	<ul>
 		<li>Are proposed roles clear and appropriate to the needs of interactive graphics?</li>
 		<li>Is the relationship of this specification to <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> clear?</li>
-	</ul><p>To comment, <a href="https://github.com/w3c/aria/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> ARIA GitHub repository</a>, using the "graphics" label in the issue. If this is not feasible, send email to <a href="mailto:public-svg-a11y@w3.org?subject=Graphics%20ARIA%20public%20comment">public-svg-a11y@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-svg-a11y/">comment archive</a>). Comments are requested by <strong>30 September 2016</strong>. In-progress updates to the document may be viewed in the <a href="https://w3c.github.io/aria/aria/graphics.html">publicly visible editors' draft</a>.</p><p>
+	</ul>
+	<p>To comment, <a href="https://github.com/w3c/graphics-aria/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> graphics-aria GitHub repository</a>. If this is not feasible, send email to <a href="mailto:public-aria@w3.org?subject=Graphics%20ARIA%20public%20comment">public-aria@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-aria/">comment archive</a>). In-progress updates to the document may be viewed in the <a href="https://w3c.github.io/graphics-aria/">publicly visible editors' draft</a>.</p>
+<p>
                                               This document was published by
                                               the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an
                                               Editor's Draft.
                                               
                                             </p><p>
+                                                      <a href="https://github.com/w3c/graphics-aria/issues/">GitHub
+                                                                Issues</a>
+                                                              are preferred for
+                                                              discussion of this
+                                                              specification.
+                                                            
                                                       
-                                                      Comments regarding this document are welcome.
+                                                                      Alternatively,
+                                                                      you can
+                                                                      send
+                                                                      comments
+                                                                      to our
+                                                                      mailing
+                                                                      list.
+                                                                    
                                                               Please send them
                                                               to
                                                               <a href="mailto:public-aria@w3.org">public-aria@w3.org</a>
@@ -753,7 +777,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                                       This document is governed by the
                                       <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
                                     </p></section>
-<nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#target-audience" class="tocxref"><span class="secno">1.1 </span>Target Audience</a></li><li class="tocline"><a href="#ua-support" class="tocxref"><span class="secno">1.2 </span>User Agent Support</a></li><li class="tocline"><a href="#co-evolution" class="tocxref"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages</a></li><li class="tocline"><a href="#authoring_practices" class="tocxref"><span class="secno">1.4 </span>Authoring Practices</a><ol class="toc"><li class="tocline"><a href="#authoring_tools" class="tocxref"><span class="secno">1.4.1 </span>Authoring Tools</a></li><li class="tocline"><a href="#authoring_testing" class="tocxref"><span class="secno">1.4.2 </span>Testing Practices and Tools</a></li></ol></li><li class="tocline"><a href="#at_support" class="tocxref"><span class="secno">1.5 </span>Assistive Technologies</a></li></ol></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a href="#terms" class="tocxref"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a href="#roles" class="tocxref"><span class="secno">4. </span>Graphics Roles</a><ol class="toc"><li class="tocline"><a href="#role_definitions" class="tocxref"><span class="secno">4.1 </span>Definition of Roles</a><ol class="toc"></ol></li><li class="tocline"><a href="#role_other" class="tocxref"><span class="secno">4.2 </span>Other Roles for Graphics</a></li></ol></li><li class="tocline"><a href="#state_prop" class="tocxref"><span class="secno">5. </span>States and Properties</a></li><li class="tocline"><a href="#changelog" class="tocxref"><span class="secno">A. </span>Change Log</a><ol class="toc"><li class="tocline"><a href="#substantive-changes-since-the-last-public-working-draft" class="tocxref"><span class="secno">A.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a href="#other-substantive-changes-since-the-first-public-working-draft" class="tocxref"><span class="secno">A.2 </span>Other substantive changes since the <span class="formerLink">First Public Working Draft</span></a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_svga11y" class="tocxref"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication</a></li><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">B.2 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
+<nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#target-audience"><span class="secno">1.1 </span>Target Audience</a></li><li class="tocline"><a class="tocxref" href="#ua-support"><span class="secno">1.2 </span>User Agent Support</a></li><li class="tocline"><a class="tocxref" href="#co-evolution"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages</a></li><li class="tocline"><a class="tocxref" href="#authoring_practices"><span class="secno">1.4 </span>Authoring Practices</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authoring_tools"><span class="secno">1.4.1 </span>Authoring Tools</a></li><li class="tocline"><a class="tocxref" href="#authoring_testing"><span class="secno">1.4.2 </span>Testing Practices and Tools</a></li></ol></li><li class="tocline"><a class="tocxref" href="#at_support"><span class="secno">1.5 </span>Assistive Technologies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a class="tocxref" href="#terms"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#roles"><span class="secno">4. </span>Graphics Roles</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#role_definitions"><span class="secno">4.1 </span>Definition of Roles</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#role_other"><span class="secno">4.2 </span>Other Roles for Graphics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#state_prop"><span class="secno">5. </span>States and Properties</a></li><li class="tocline"><a class="tocxref" href="#changelog"><span class="secno">A. </span>Change Log</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a class="tocxref" href="#other-substantive-changes-since-the-first-public-working-draft"><span class="secno">A.2 </span>Other substantive changes since the <span class="formerLink">First Public Working Draft</span></a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_svga11y"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.2 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
 <section class="informative" id="introduction">
 	<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
 	<p><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> is a technical specification that provides a framework to improve the accessibility and interoperability of web content and applications. It enables web browsers to map the accessibility semantics in web content to platform-specific accessibility APIs. This enables web content to be interoperable with platform assistive technologies, similar to native platform applications, without requiring authors to include platform dependencies.</p>
