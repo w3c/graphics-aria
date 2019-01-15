@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 23.8.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 24.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -119,7 +119,6 @@ input.task-list-item-checkbox {
 </style>
 	
 <title>WAI-ARIA Graphics Module</title>
-
 <style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -460,6 +459,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 </style>
+
 	
 <link href="common/css/common.css" rel="stylesheet" type="text/css">
 
@@ -622,16 +622,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "preProcess": [
     null
   ],
-  "publishDate": "2018-12-21",
-  "publishISODate": "2018-12-21T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 21 December 2018"
+  "publishDate": "2019-01-15",
+  "publishISODate": "2019-01-15T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 15 January 2019"
 }</script><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."></head>
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
       <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module</h1>
       
       <h2>
         <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2018-12-21">21 December 2018</time>
+        <time class="dt-published" datetime="2019-01-15">15 January 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -684,7 +684,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <p class="copyright">
                         <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
                         ©
-                        2015-2018
+                        2015-2019
                         
                         <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
                         <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
@@ -777,7 +777,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                                       This document is governed by the
                                       <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
                                     </p></section>
-<nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#target-audience"><span class="secno">1.1 </span>Target Audience</a></li><li class="tocline"><a class="tocxref" href="#ua-support"><span class="secno">1.2 </span>User Agent Support</a></li><li class="tocline"><a class="tocxref" href="#co-evolution"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages</a></li><li class="tocline"><a class="tocxref" href="#authoring_practices"><span class="secno">1.4 </span>Authoring Practices</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authoring_tools"><span class="secno">1.4.1 </span>Authoring Tools</a></li><li class="tocline"><a class="tocxref" href="#authoring_testing"><span class="secno">1.4.2 </span>Testing Practices and Tools</a></li></ol></li><li class="tocline"><a class="tocxref" href="#at_support"><span class="secno">1.5 </span>Assistive Technologies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a class="tocxref" href="#terms"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#roles"><span class="secno">4. </span>Graphics Roles</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#role_definitions"><span class="secno">4.1 </span>Definition of Roles</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#role_other"><span class="secno">4.2 </span>Other Roles for Graphics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#state_prop"><span class="secno">5. </span>States and Properties</a></li><li class="tocline"><a class="tocxref" href="#changelog"><span class="secno">A. </span>Change Log</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a class="tocxref" href="#other-substantive-changes-since-the-first-public-working-draft"><span class="secno">A.2 </span>Other substantive changes since the <span class="formerLink">First Public Working Draft</span></a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_svga11y"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.2 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
+<nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#target-audience"><span class="secno">1.1 </span>Target Audience</a></li><li class="tocline"><a class="tocxref" href="#ua-support"><span class="secno">1.2 </span>User Agent Support</a></li><li class="tocline"><a class="tocxref" href="#co-evolution"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages</a></li><li class="tocline"><a class="tocxref" href="#authoring_practices"><span class="secno">1.4 </span>Authoring Practices</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authoring_tools"><span class="secno">1.4.1 </span>Authoring Tools</a></li><li class="tocline"><a class="tocxref" href="#authoring_testing"><span class="secno">1.4.2 </span>Testing Practices and Tools</a></li></ol></li><li class="tocline"><a class="tocxref" href="#at_support"><span class="secno">1.5 </span>Assistive Technologies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a class="tocxref" href="#terms"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#roles"><span class="secno">4. </span>Graphics Roles</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#role_definitions"><span class="secno">4.1 </span>Definition of Roles</a></li><li class="tocline"><a class="tocxref" href="#role_other"><span class="secno">4.2 </span>Other Roles for Graphics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#state_prop"><span class="secno">5. </span>States and Properties</a></li><li class="tocline"><a class="tocxref" href="#changelog"><span class="secno">A. </span>Change Log</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a class="tocxref" href="#other-substantive-changes-since-the-first-public-working-draft"><span class="secno">A.2 </span>Other substantive changes since the <span class="formerLink">First Public Working Draft</span></a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_svga11y"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.2 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
 <section class="informative" id="introduction">
 	<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
 	<p><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> is a technical specification that provides a framework to improve the accessibility and interoperability of web content and applications. It enables web browsers to map the accessibility semantics in web content to platform-specific accessibility APIs. This enables web content to be interoperable with platform assistive technologies, similar to native platform applications, without requiring authors to include platform dependencies.</p>
