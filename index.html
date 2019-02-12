@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 24.2.3"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 24.3.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -56,10 +56,6 @@ div.issue, div.note , div.ednote,  div.warning {
 }
 span.warning { padding: .1em .5em .15em; }
 
-.issue {
-    border-color: #e05252;
-    background: #fbe9e9;
-}
 .issue.closed span.issue-number {
     text-decoration: line-through;
 }
@@ -617,23 +613,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "preProcess": [
     null
   ],
-  "publishDate": "2019-01-24",
-  "publishISODate": "2019-01-24T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 24 January 2019"
+  "publishDate": "2019-02-12",
+  "publishISODate": "2019-02-12T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 12 February 2019"
 }</script><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."></head>
 <body class="h-entry"><div class="head">
       <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics Module</h1>
       
       <h2>
         <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2019-01-24">24 January 2019</time>
+        <time class="dt-published" datetime="2019-02-12">12 February 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
-                  <a class="u-url" href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a>
-                </dd><dt>Latest published version:</dt><dd>
-                  <a href="https://www.w3.org/TR/graphics-aria-1.0/">https://www.w3.org/TR/graphics-aria-1.0/</a>
-                </dd>
+                <a class="u-url" href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a>
+              </dd><dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/TR/graphics-aria-1.0/">https://www.w3.org/TR/graphics-aria-1.0/</a>
+              </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd>
         
         
@@ -648,15 +644,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             (<a class="p-org org h-org h-card" href="http://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>)
           </dd>
         <dt>
-                  Former editors:
-                </dt><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a>
+                Former editors:
+              </dt><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a>
             (<a class="p-org org h-org h-card" href="https://www.ibm.com">IBM Corporation</a>)
            (until September 2016)</dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a>
             (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>)
            (until August 2017)</dd>
         <dt>
-                  Authors:
-                </dt><dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a>
+                Authors:
+              </dt><dd class="p-author h-card vcard" data-editor-id="75809"><a class="ed_mailto u-email email p-name" href="mailto:amelia.bellamy.royds@gmail.com">Amelia Bellamy-Royds</a></dd><dd class="p-author h-card vcard" data-editor-id="73593"><a class="ed_mailto u-email email p-name" href="mailto:fesch@us.ibm.com">Fred Esch</a>
             (<a class="p-org org h-org h-card" href="https://www.ibm.com/">IBM Corporation</a>)
           </dd><dd class="p-author h-card vcard" data-editor-id="2460"><a class="ed_mailto u-email email p-name" href="mailto:richschwer@gmail.com">Rich Schwerdtfeger</a>
             (<a class="p-org org h-org h-card" href="https://knowbility.org/">Knowbility</a>)
@@ -703,51 +699,49 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	</ul>
 	<p>To comment, <a href="https://github.com/w3c/graphics-aria/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> graphics-aria GitHub repository</a>. If this is not feasible, send email to <a href="mailto:public-aria@w3.org?subject=Graphics%20ARIA%20public%20comment">public-aria@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-aria/">comment archive</a>). In-progress updates to the document may be viewed in the <a href="https://w3c.github.io/graphics-aria/">publicly visible editors' draft</a>.</p>
 <p>
-                              This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as
-                              an Editor's Draft.
-                              
-                            </p><p>
+                        This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as
+                        an Editor's Draft.
+                        
+                      </p><p>
       <a href="https://github.com/w3c/graphics-aria/issues/">GitHub Issues</a> are preferred for
-              discussion of this specification.
-            
+            discussion of this specification.
+          
       Alternatively, you can send comments to our mailing list.
-              Please send them to
-              <a href="mailto:public-aria@w3.org">public-aria@w3.org</a>
-              (<a href="https://lists.w3.org/Archives/Public/public-aria/">archives</a>).
-            
+            Please send them to
+            <a href="mailto:public-aria@w3.org">public-aria@w3.org</a>
+            (<a href="https://lists.w3.org/Archives/Public/public-aria/">archives</a>).
+          
     </p><p>
-                              Publication as an Editor's Draft
-                              does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
-                              This is a draft document and may be updated,
-                              replaced or obsoleted by other documents at any
-                              time. It is inappropriate to cite this document as
-                              other than work in progress.
-                            </p><p>
+                        Publication as an Editor's Draft does not
+                        imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft
+                        document and may be updated, replaced or obsoleted by
+                        other documents at any time. It is inappropriate to cite
+                        this document as other than work in progress.
+                      </p><p>
+                  
+                        This document was produced by
+                        a group operating
+                        under the
+                        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
                       
-                              This document was produced by
-                              a group
-                              operating under the
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                            
+                  
+                  
+                              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                              <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83726/status">public list of any patent disclosures</a>
+                        made in connection with the deliverables of
+                        the group; that page also includes
+                        instructions for disclosing a patent. An individual who
+                        has actual knowledge of a patent which the individual
+                        believes contains
+                        <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+                        must disclose the information in accordance with
+                        <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
                       
-                      
-                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                                      <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83726/status">public list of any patent
-                                        disclosures</a>
-                              made in connection with the deliverables of
-                              the group; that page also includes
-                              instructions for disclosing a patent. An
-                              individual who has actual knowledge of a patent
-                              which the individual believes contains
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
-                              must disclose the information in accordance with
-                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                            
-                      
-                    </p><p>
-                      This document is governed by the
-                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                    </p></section>
+                  
+                </p><p>
+                  This document is governed by the
+                  <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                </p></section>
 <nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#target-audience"><span class="secno">1.1 </span>Target Audience</a></li><li class="tocline"><a class="tocxref" href="#ua-support"><span class="secno">1.2 </span>User Agent Support</a></li><li class="tocline"><a class="tocxref" href="#co-evolution"><span class="secno">1.3 </span>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages</a></li><li class="tocline"><a class="tocxref" href="#authoring_practices"><span class="secno">1.4 </span>Authoring Practices</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authoring_tools"><span class="secno">1.4.1 </span>Authoring Tools</a></li><li class="tocline"><a class="tocxref" href="#authoring_testing"><span class="secno">1.4.2 </span>Testing Practices and Tools</a></li></ol></li><li class="tocline"><a class="tocxref" href="#at_support"><span class="secno">1.5 </span>Assistive Technologies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a class="tocxref" href="#terms"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#roles"><span class="secno">4. </span>Graphics Roles</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#role_definitions"><span class="secno">4.1 </span>Definition of Roles</a></li><li class="tocline"><a class="tocxref" href="#role_other"><span class="secno">4.2 </span>Other Roles for Graphics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#state_prop"><span class="secno">5. </span>States and Properties</a></li><li class="tocline"><a class="tocxref" href="#changelog"><span class="secno">A. </span>Change Log</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a class="tocxref" href="#other-substantive-changes-since-the-first-public-working-draft"><span class="secno">A.2 </span>Other substantive changes since the <span class="formerLink">First Public Working Draft</span></a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_svga11y"><span class="secno">B.1 </span>Participants active in the <abbr title="Scalable Vector Graphics">SVG</abbr> accessibility task force at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_group"><span class="secno">B.2 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">B.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
 <section class="informative" id="introduction">
 	<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
@@ -833,7 +827,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <dl class="termlist">
     <dt><dfn data-lt="accessibility api|accessibility apis" id="dfn-accessibility-api" data-dfn-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
     <dd>
-      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN respec-offending-element" data-lt="object" href="#dfn-object" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">objects</a> and <a class="termref internalDFN respec-offending-element" data-lt="event" href="#dfn-event" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-0">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express">UIA-EXPRESS</a></cite>], the
+      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express">UIA-EXPRESS</a></cite>], the
       	<a href="https://developer.apple.com/documentation/appkit/accessibility/nsaccessibility">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-axapi">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" href="#bib-iaccessible2">IAccessible2</a></cite>].</p>
     </dd>
     
@@ -922,13 +916,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     <dt><dfn data-lt="property|properties" id="dfn-property" data-dfn-type="dfn">Property</dfn></dt>
     <dd>
-      <p><a class="termref internalDFN respec-offending-element" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-1">Attributes</a> that are essential to the nature of a given <a href="#dfn-object" class="internalDFN respec-offending-element" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-2">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example, <a href="https://w3c.github.io/aria/#aria-multiline" class="property-reference"><code>aria-multiline</code></a>) are less likely to change than <a class="termref" href="#dfn-state">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as <a href="https://w3c.github.io/aria/#aria-activedescendant" class="property-reference"><code>aria-activedescendant</code></a>, <a href="https://w3c.github.io/aria/#aria-valuenow" class="property-reference"><code>aria-valuenow</code></a>, and <a href="https://w3c.github.io/aria/#aria-valuetext" class="property-reference"><code>aria-valuetext</code></a> are expected to change often. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
+      <p><a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">Attributes</a> that are essential to the nature of a given <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example, <a href="https://w3c.github.io/aria/#aria-multiline" class="property-reference"><code>aria-multiline</code></a>) are less likely to change than <a class="termref" href="#dfn-state">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as <a href="https://w3c.github.io/aria/#aria-activedescendant" class="property-reference"><code>aria-activedescendant</code></a>, <a href="https://w3c.github.io/aria/#aria-valuenow" class="property-reference"><code>aria-valuenow</code></a>, and <a href="https://w3c.github.io/aria/#aria-valuetext" class="property-reference"><code>aria-valuetext</code></a> are expected to change often. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
     
     
     <dt><dfn data-lt="role|roles" id="dfn-role" data-dfn-type="dfn">Role</dfn></dt>
     <dd>
-      <p>Main indicator of type. <!-- (removing, vague) The object's role is the class of <a class="termref" data-lt="object">objects</a> of which it is a member. --> This <a class="termref internalDFN respec-offending-element" data-lt="semantics" href="#dfn-semantics" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-3">semantic</a> association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.</p>
+      <p>Main indicator of type. <!-- (removing, vague) The object's role is the class of <a class="termref" data-lt="object">objects</a> of which it is a member. --> This <a class="termref internalDFN" data-lt="semantics" href="#dfn-semantics" data-link-type="dfn">semantic</a> association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.</p>
     </dd>
     
     
@@ -936,7 +930,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     <dt><dfn data-lt="state|states" id="dfn-state" data-dfn-type="dfn">State</dfn></dt>
     <dd>
-      <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-object" class="internalDFN respec-offending-element" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-4">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
+      <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
     
     
@@ -944,7 +938,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     <dt><dfn id="dfn-taxonomy" data-dfn-type="dfn">Taxonomy</dfn></dt>
     <dd>
-      <p>A hierarchical definition of how the characteristics of various <a class="termref internalDFN respec-offending-element" data-lt="class" href="#dfn-class" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-5">classes</a> relate to each other, in which classes inherit the properties of superclasses in the hierarchy. A taxonomy can comprise part of the formal definition of an <a href="#dfn-ontology" class="internalDFN respec-offending-element" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-6">ontology</a>.</p>
+      <p>A hierarchical definition of how the characteristics of various <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> relate to each other, in which classes inherit the properties of superclasses in the hierarchy. A taxonomy can comprise part of the formal definition of an <a href="#dfn-ontology" class="internalDFN" data-link-type="dfn">ontology</a>.</p>
     </dd>
     
     
@@ -960,7 +954,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     <dt><dfn data-lt="widget|widgets" id="dfn-widget" data-dfn-type="dfn">Widget</dfn></dt>
     <dd>
-      <p>Discrete user interface <a class="termref respec-offending-element" href="#dfn-object" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-7">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
+      <p>Discrete user interface <a class="termref" href="#dfn-object">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
     </dd>
   </dl>
 </div>
@@ -1108,7 +1102,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           navigation between components of 
           the inner and outer graphics should be explicit.
 			 </p>
-         <div class="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><div class="">
+         <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><div class="">
            <p>
             To support user agents and assistive technologies 
             based on the ARIA 1.0 specification, 
@@ -1123,7 +1117,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
              would be subclasses of <code>graphics-document</code>.
            </p>
         </div></div>
-              <aside class="example" id="ex-1-example-1-an-svg-diagram-of-an-electrical-circuit-is-a-simple-graphical-document-svg-xmlns-https-www-w3-org-2000-svg-width-400-height-200-viewbox-0-0-200-100-role-graphics-document-document-title-a-simple-circuit-title-desc-a-circuit-with-one-source-one-switch-and-one-load-desc-style-type-text-css-omitted-style-g-id-battery-1-role-graphics-symbol-img-aria-roledescription-source-aria-label-battery-transform-translate-20-50-path-d-m-15-5-h30-m-5-5-h10-g-path-id-wire-1-role-graphics-symbol-img-aria-label-wire-connecting-aria-labelledby-wire-1-battery-1-switch-1-class-wire-d-m20-45-v20-h90-the-switch-more-wires-and-a-light-bulb-svg"><div class="marker"><a class="self-link" href="#ex-1-example-1-an-svg-diagram-of-an-electrical-circuit-is-a-simple-graphical-document-svg-xmlns-https-www-w3-org-2000-svg-width-400-height-200-viewbox-0-0-200-100-role-graphics-document-document-title-a-simple-circuit-title-desc-a-circuit-with-one-source-one-switch-and-one-load-desc-style-type-text-css-omitted-style-g-id-battery-1-role-graphics-symbol-img-aria-roledescription-source-aria-label-battery-transform-translate-20-50-path-d-m-15-5-h30-m-5-5-h10-g-path-id-wire-1-role-graphics-symbol-img-aria-label-wire-connecting-aria-labelledby-wire-1-battery-1-switch-1-class-wire-d-m20-45-v20-h90-the-switch-more-wires-and-a-light-bulb-svg">Example 1</a></div>
+              <aside class="example" id="example-1"><div class="marker">
+      <a class="self-link" href="#example-1">Example 1</a>
+    </div>
                 <p>
                   An <abbr title="Scalable Vector Graphics">SVG</abbr> diagram of an electrical circuit is a simple graphical document:
                 </p>
@@ -1146,8 +1142,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"wire-1 battery-1 switch-1"</span>
           <span class="hljs-attr">class</span>=<span class="hljs-string">"wire"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M20,45 V20 H90"</span>/&gt;</span>
      <span class="hljs-comment">&lt;!-- the switch, more wires, and a light bulb --&gt;</span> 
-<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-</pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></pre>
               </aside>
 			</div>
 			<table class="role-features">
@@ -1258,7 +1253,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           to navigate the nested structure of objects 
           in a hierarchical manner, similar to nested lists.
         </p>
-         <div class="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><p class="">
+         <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><p class="">
             To support user agents and assistive technologies 
             based on the ARIA 1.0 specification, 
             authors may wish to include the <code>group</code> role
@@ -1267,7 +1262,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </p></div>
 
         
-<aside class="example" id="ex-2-example-2-the-code-that-follows-is-a-portion-of-the-markup-for-a-structured-graphic-it-includes-svg-g-grouping-elements-with-various-roles-graphics-object-for-distinct-objects-such-as-the-house-its-door-or-roof-group-to-group-together-the-windows-or-the-trees-multiple-distinct-objects-with-a-single-label-or-description-img-for-the-background-which-is-described-as-a-whole-none-for-elements-that-apply-styles-or-transformations-without-having-any-semantic-meaning-where-a-graphical-object-has-multiple-sub-components-the-group-role-is-provided-as-an-explicit-fallback-svg-xmlns-https-www-w3-org-2000-svg-width-600-height-400-viewbox-0-0-600-400-role-graphics-document-document-xml-lang-en-title-home-title-g-role-img-aria-label-background-desc-blue-sky-sunshine-and-green-grass-desc-the-multiple-parts-of-the-background-form-a-single-image-conveyed-by-that-one-description-rect-fill-lightskyblue-height-100-width-100-circle-fill-yellow-stroke-gold-stroke-width-4-cx-0-cy-0-r-50-path-fill-none-stroke-gold-stroke-width-3-d-rect-fill-6a2-y-300-width-100-height-100-g-g-role-graphics-object-group-aria-labelledby-house-label-transform-translate-100-325-desc-a-two-storey-brick-house-drawn-with-basic-shapes-desc-the-house-has-a-number-of-details-worth-calling-out-so-it-is-a-graphical-object-rect-fill-firebrick-stroke-darkred-width-300-height-200-y-200-role-none-the-walls-of-the-house-are-already-described-thoroughly-so-no-role-is-required-g-role-graphics-object-aria-label-door-transform-translate-30-90-desc-the-brown-door-on-the-left-side-of-the-building-has-a-window-and-a-round-doorknob-desc-the-graphical-object-role-allows-for-further-nested-sub-components-however-based-on-the-default-svg-api-mappings-these-shapes-which-have-neither-labels-nor-descriptions-will-be-treated-as-presentation-rect-fill-darkkhaki-stroke-632-width-50-height-90-rect-fill-lightsteelblue-stroke-632-stroke-width-4-x-5-y-5-width-40-height-30-circle-fill-gray-stroke-444-stroke-width-0-7-cx-10-cy-50-r-4-g-g-role-group-aria-label-windows-fill-lightsteelblue-stroke-632-stroke-width-6-the-windows-are-distinct-objects-grouped-together-with-a-common-label-g-role-none-transform-translate-0-85-rect-aria-label-first-floor-window-x-100-width-25-height-45-desc-a-small-window-beside-the-door-desc-rect-path-aria-label-first-floor-living-room-window-d-m180-0h100v60h-100v-60z-m30-0v60-m40-0v-60-desc-a-large-three-pane-window-fills-the-rest-of-the-first-floor-desc-path-g-g-role-none-transform-translate-0-180-more-windows-on-the-second-floor-g-g-more-markup-for-the-roof-and-chimney-text-id-house-label-font-family-cursive-font-size-36px-x-70-y-50-my-house-text-g-more-markup-for-the-trees-svg"><div class="marker"><a class="self-link" href="#ex-2-example-2-the-code-that-follows-is-a-portion-of-the-markup-for-a-structured-graphic-it-includes-svg-g-grouping-elements-with-various-roles-graphics-object-for-distinct-objects-such-as-the-house-its-door-or-roof-group-to-group-together-the-windows-or-the-trees-multiple-distinct-objects-with-a-single-label-or-description-img-for-the-background-which-is-described-as-a-whole-none-for-elements-that-apply-styles-or-transformations-without-having-any-semantic-meaning-where-a-graphical-object-has-multiple-sub-components-the-group-role-is-provided-as-an-explicit-fallback-svg-xmlns-https-www-w3-org-2000-svg-width-600-height-400-viewbox-0-0-600-400-role-graphics-document-document-xml-lang-en-title-home-title-g-role-img-aria-label-background-desc-blue-sky-sunshine-and-green-grass-desc-the-multiple-parts-of-the-background-form-a-single-image-conveyed-by-that-one-description-rect-fill-lightskyblue-height-100-width-100-circle-fill-yellow-stroke-gold-stroke-width-4-cx-0-cy-0-r-50-path-fill-none-stroke-gold-stroke-width-3-d-rect-fill-6a2-y-300-width-100-height-100-g-g-role-graphics-object-group-aria-labelledby-house-label-transform-translate-100-325-desc-a-two-storey-brick-house-drawn-with-basic-shapes-desc-the-house-has-a-number-of-details-worth-calling-out-so-it-is-a-graphical-object-rect-fill-firebrick-stroke-darkred-width-300-height-200-y-200-role-none-the-walls-of-the-house-are-already-described-thoroughly-so-no-role-is-required-g-role-graphics-object-aria-label-door-transform-translate-30-90-desc-the-brown-door-on-the-left-side-of-the-building-has-a-window-and-a-round-doorknob-desc-the-graphical-object-role-allows-for-further-nested-sub-components-however-based-on-the-default-svg-api-mappings-these-shapes-which-have-neither-labels-nor-descriptions-will-be-treated-as-presentation-rect-fill-darkkhaki-stroke-632-width-50-height-90-rect-fill-lightsteelblue-stroke-632-stroke-width-4-x-5-y-5-width-40-height-30-circle-fill-gray-stroke-444-stroke-width-0-7-cx-10-cy-50-r-4-g-g-role-group-aria-label-windows-fill-lightsteelblue-stroke-632-stroke-width-6-the-windows-are-distinct-objects-grouped-together-with-a-common-label-g-role-none-transform-translate-0-85-rect-aria-label-first-floor-window-x-100-width-25-height-45-desc-a-small-window-beside-the-door-desc-rect-path-aria-label-first-floor-living-room-window-d-m180-0h100v60h-100v-60z-m30-0v60-m40-0v-60-desc-a-large-three-pane-window-fills-the-rest-of-the-first-floor-desc-path-g-g-role-none-transform-translate-0-180-more-windows-on-the-second-floor-g-g-more-markup-for-the-roof-and-chimney-text-id-house-label-font-family-cursive-font-size-36px-x-70-y-50-my-house-text-g-more-markup-for-the-trees-svg">Example 2</a></div>
+<aside class="example" id="example-2"><div class="marker">
+      <a class="self-link" href="#example-2">Example 2</a>
+    </div>
   <p>
     The code that follows is a portion of the markup for a 
     structured graphic.  It includes <abbr title="Scalable Vector Graphics">SVG</abbr> <code>g</code> grouping
@@ -1368,8 +1365,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <span class="hljs-attr">x</span>=<span class="hljs-string">"70"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"50"</span>&gt;</span>My House<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- more markup for the trees --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-</pre>    
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></pre>    
 </aside>
       <!-- 
 FRED: I've added more explanation to the house example,
@@ -1518,7 +1514,7 @@ OK to omit the second example?
             separately from the name and description 
             for the particular instance of the symbol.
         </p>
-        <div class="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><p class="">
+        <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><p class="">
             To support user agents and assistive technologies 
             based on the ARIA 1.0 specification, 
             authors may wish to include the <a href="https://w3c.github.io/aria/#img" class="role-reference"><code>img</code></a> role 
@@ -1526,7 +1522,9 @@ OK to omit the second example?
             in the form <code>role="graphics-symbol img"</code>, 
             if that is not already the default semantic role for the element.
         </p></div>
-              <aside class="example" id="ex-3-example-3-within-an-html-document-for-a-restaurant-menu-an-img-element-can-represent-a-repeated-symbol-h2-appetizers-h2-ul-li-spinach-salad-with-strawberry-almonds-img-role-graphics-symbol-title-vegetarian-src-assets-leaf-svg-img-role-graphics-symbol-title-contains-nuts-src-assets-peanut-svg-li-li-chicken-satay-with-peanut-sauce-img-role-graphics-symbol-title-contains-nuts-src-assets-peanut-svg-li-ul"><div class="marker"><a class="self-link" href="#ex-3-example-3-within-an-html-document-for-a-restaurant-menu-an-img-element-can-represent-a-repeated-symbol-h2-appetizers-h2-ul-li-spinach-salad-with-strawberry-almonds-img-role-graphics-symbol-title-vegetarian-src-assets-leaf-svg-img-role-graphics-symbol-title-contains-nuts-src-assets-peanut-svg-li-li-chicken-satay-with-peanut-sauce-img-role-graphics-symbol-title-contains-nuts-src-assets-peanut-svg-li-ul">Example 3</a></div>
+              <aside class="example" id="example-3"><div class="marker">
+      <a class="self-link" href="#example-3">Example 3</a>
+    </div>
                 <p>
                   Within an <abbr title="Hypertext Markup Language">HTML</abbr> document for a restaurant menu,
                   an <code>img</code> element can represent a repeated symbol:
@@ -1541,10 +1539,11 @@ OK to omit the second example?
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"graphics-symbol"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Contains Nuts"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../assets/peanut.svg"</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- … --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-</pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></pre>
               </aside>
-              <aside class="example" id="ex-4-example-4-within-an-svg-diagram-of-an-electrical-circuit-the-graphics-that-represent-batteries-switches-and-loads-like-this-lightbulb-are-each-symbols-g-id-lightbulb-1-role-graphics-symbol-img-aria-roledescription-load-aria-label-lightbulb-aria-labelledby-lightbulb-1-lightbulb-1-label-transform-translate-180-50-text-id-lightbulb-1-label-x-15-dy-0-5ex-text-anchor-end-10w-text-circle-r-10-path-d-m0-10-c0-8-5-8-5-0-c5-8-0-8-0-10-g-note-that-the-visible-text-must-be-included-in-the-label-for-its-parent-symbol-in-this-example-as-the-child-of-a-graphics-symbol-it-is-treated-as-presentational-content-and-is-therefore-not-accessible-as-a-separate-element-of-the-graphic"><div class="marker"><a class="self-link" href="#ex-4-example-4-within-an-svg-diagram-of-an-electrical-circuit-the-graphics-that-represent-batteries-switches-and-loads-like-this-lightbulb-are-each-symbols-g-id-lightbulb-1-role-graphics-symbol-img-aria-roledescription-load-aria-label-lightbulb-aria-labelledby-lightbulb-1-lightbulb-1-label-transform-translate-180-50-text-id-lightbulb-1-label-x-15-dy-0-5ex-text-anchor-end-10w-text-circle-r-10-path-d-m0-10-c0-8-5-8-5-0-c5-8-0-8-0-10-g-note-that-the-visible-text-must-be-included-in-the-label-for-its-parent-symbol-in-this-example-as-the-child-of-a-graphics-symbol-it-is-treated-as-presentational-content-and-is-therefore-not-accessible-as-a-separate-element-of-the-graphic">Example 4</a></div>
+              <aside class="example" id="example-4"><div class="marker">
+      <a class="self-link" href="#example-4">Example 4</a>
+    </div>
                 <p>
                   Within an <abbr title="Scalable Vector Graphics">SVG</abbr> diagram of an electrical circuit,
                   the graphics that represent batteries, switches, 
@@ -1560,8 +1559,7 @@ OK to omit the second example?
         <span class="hljs-attr">x</span>=<span class="hljs-string">"-15"</span> <span class="hljs-attr">dy</span>=<span class="hljs-string">"0.5ex"</span> <span class="hljs-attr">text-anchor</span>=<span class="hljs-string">"end"</span> &gt;</span>10W<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></span>
     &lt;circle r=<span class="hljs-string">"10"</span> /&gt;
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M0,-10 C0,8 5,8 5,0 C5,-8 0,-8 0,10"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span></span>
-</pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span></span></pre>
                 <p>
                   Note that the visible text must be included in the label
                   for its parent symbol, in this example.
@@ -1570,7 +1568,9 @@ OK to omit the second example?
                   and is therefore not accessible as a separate element of the graphic.
                 </p>
               </aside>
-              <aside class="example" id="ex-5-example-5-within-an-architectural-blueprint-style-svg-diagram-each-svg-use-element-that-creates-a-copy-of-a-simple-svg-symbol-is-a-graphics-symbol-svg-xmlns-http-www-w3-org-2000-svg-xmlns-xlink-http-www-w3-org-1999-xlink-width-400-height-300-viewbox-0-0-400-300-role-graphics-document-document-xml-lang-en-title-room-with-5-outlets-title-desc-schematic-showing-the-minimum-number-and-position-of-electrical-outlets-for-a-mid-sized-room-with-one-door-desc-defs-symbol-id-outlet-viewbox-0-0-30-20-stroke-000-stroke-width-1-5-pointer-events-all-desc-the-symbol-for-an-electrical-outlet-is-a-circle-with-a-plug-shape-overlaid-on-top-the-plug-consists-of-two-horizontal-lines-extending-from-a-vertical-line-desc-circle-cx-15-cy-10-r-9-fill-none-line-x1-1-y1-7-x2-29-y2-7-line-x1-1-y1-13-x2-29-y2-13-line-x1-1-y1-1-x2-1-y2-19-symbol-defs-g-role-group-use-xlink-href-outlet-role-graphics-symbol-img-x-100-y-15-width-45-height-30-title-electrical-outlet-title-desc-on-west-side-of-north-wall-desc-use-use-xlink-href-outlet-role-graphics-symbol-img-x-250-y-15-width-45-height-30-title-electrical-outlet-title-desc-on-east-side-of-north-wall-desc-use-g-svg"><div class="marker"><a class="self-link" href="#ex-5-example-5-within-an-architectural-blueprint-style-svg-diagram-each-svg-use-element-that-creates-a-copy-of-a-simple-svg-symbol-is-a-graphics-symbol-svg-xmlns-http-www-w3-org-2000-svg-xmlns-xlink-http-www-w3-org-1999-xlink-width-400-height-300-viewbox-0-0-400-300-role-graphics-document-document-xml-lang-en-title-room-with-5-outlets-title-desc-schematic-showing-the-minimum-number-and-position-of-electrical-outlets-for-a-mid-sized-room-with-one-door-desc-defs-symbol-id-outlet-viewbox-0-0-30-20-stroke-000-stroke-width-1-5-pointer-events-all-desc-the-symbol-for-an-electrical-outlet-is-a-circle-with-a-plug-shape-overlaid-on-top-the-plug-consists-of-two-horizontal-lines-extending-from-a-vertical-line-desc-circle-cx-15-cy-10-r-9-fill-none-line-x1-1-y1-7-x2-29-y2-7-line-x1-1-y1-13-x2-29-y2-13-line-x1-1-y1-1-x2-1-y2-19-symbol-defs-g-role-group-use-xlink-href-outlet-role-graphics-symbol-img-x-100-y-15-width-45-height-30-title-electrical-outlet-title-desc-on-west-side-of-north-wall-desc-use-use-xlink-href-outlet-role-graphics-symbol-img-x-250-y-15-width-45-height-30-title-electrical-outlet-title-desc-on-east-side-of-north-wall-desc-use-g-svg">Example 5</a></div>
+              <aside class="example" id="example-5"><div class="marker">
+      <a class="self-link" href="#example-5">Example 5</a>
+    </div>
                 <p>
                   Within an architectural blueprint-style <abbr title="Scalable Vector Graphics">SVG</abbr> diagram,
                   each <abbr title="Scalable Vector Graphics">SVG</abbr> <code>use</code> element that creates a copy
@@ -1717,7 +1717,9 @@ OK to omit the second example?
       in a document.
     </p>
     
-<aside class="example" id="ex-6-example-6-within-an-html-5-document-an-inline-svg-may-sometimes-represent-an-atomic-img-if-the-graphics-form-part-of-the-natural-reading-flow-of-the-text-then-this-role-is-sufficient-as-in-the-first-example-p-a-repeating-svg-gradient-is-defined-using-the-code-spreadmethod-code-attribute-a-value-of-code-repeat-code-causes-the-color-stops-to-repeat-in-the-same-order-from-beginning-to-end-p-svg-class-inline-example-role-img-title-a-repeating-linear-gradient-title-desc-the-gradient-starts-dark-slowly-shifting-to-light-then-quickly-dark-again-this-pattern-repeats-four-times-left-to-right-each-time-brightening-across-a-large-region-and-then-getting-dark-within-a-short-space-desc-lineargradient-id-repeat-x2-25-spreadmethod-repeat-stop-offset-0-stop-color-black-stop-offset-0-8-stop-color-white-stop-offset-1-stop-color-black-lineargradient-rect-width-100-height-100-fill-url-repeat-svg-the-following-example-provides-the-same-content-but-now-structured-as-a-figure-that-may-be-re-positioned-separately-from-the-flow-of-paragraph-text-figure-id-fig1-role-figure-region-svg-id-fig1a-class-nested-figure-role-figure-aria-labelledby-fig1-caption-fig1a-caption-markup-omitted-svg-svg-id-fig1b-class-nested-figure-role-figure-aria-labelledby-fig1-caption-fig1b-caption-lineargradient-id-reflect-spreadmethod-reflect-xlink-href-repeat-text-id-fig1b-caption-class-caption-dy-1em-b-spreadmethod-reflect-text-rect-role-img-y-25-width-100-height-75-fill-url-reflect-title-a-reflecting-linear-gradient-title-desc-the-gradient-again-starts-dark-slowly-shifting-to-light-then-quickly-dark-again-however-the-next-repeat-shifts-quickly-to-the-light-then-slowly-back-dark-the-original-pattern-is-then-repeated-followed-by-the-reflected-version-again-desc-rect-svg-figcaption-id-fig1-caption-figure-1-repeating-svg-gradients-figcaption-figure-finally-the-last-version-uses-a-graphics-document-to-include-complex-annotations-on-the-graphic-which-is-still-contained-within-a-figure-element-the-two-sections-of-the-graphic-are-graphics-object-elements-while-the-annotations-have-individual-labels-and-descriptions-figure-id-fig1-role-figure-region-svg-role-graphics-document-title-repeating-versus-reflecting-linear-gradients-title-desc-the-graphic-shows-two-gradient-patterns-annotated-with-text-labels-and-arrows-both-gradients-use-the-same-series-of-color-stops-starting-dark-slowly-shifting-to-light-then-quickly-dark-again-this-cycle-covers-one-quarter-of-the-width-of-the-graphic-starting-on-the-left-the-two-gradients-differ-in-their-repeat-cycles-desc-defs-markup-omitted-defs-g-role-graphics-object-aria-labelledby-repeat-label-markup-omitted-g-g-role-graphics-object-aria-labelledby-reflect-label-desc-the-gradient-stretches-across-the-bottom-half-of-the-graphic-each-cycle-of-the-gradient-alternates-direction-left-to-right-then-right-to-left-as-do-the-arrows-that-emphasize-the-pattern-desc-rect-y-50-width-100-height-50-fill-url-reflect-rect-use-y-70-xlink-href-gradient-vector-title-1st-cycle-title-desc-left-to-right-arrow-starting-from-x-0-desc-use-use-y-70-x-50-transform-scale-1-1-xlink-href-gradient-vector-title-2nd-cycle-reflected-title-desc-right-to-left-arrow-ending-at-x-25-desc-use-use-y-70-x-50-xlink-href-gradient-vector-title-3rd-cycle-title-desc-left-to-right-arrow-starting-from-x-50-desc-use-use-y-70-x-100-transform-scale-1-1-xlink-href-gradient-vector-title-4th-cycle-reflected-title-desc-right-to-left-arrow-ending-at-x-75-desc-use-text-id-reflect-label-class-overlay-text-aria-label-spreadmethod-reflect-dy-0-2em-dx-0-2em-x-100-y-100-reflect-text-g-svg-figcaption-figure-1-spreadmethod-options-for-repeating-svg-gradients-figcaption-figure"><div class="marker"><a class="self-link" href="#ex-6-example-6-within-an-html-5-document-an-inline-svg-may-sometimes-represent-an-atomic-img-if-the-graphics-form-part-of-the-natural-reading-flow-of-the-text-then-this-role-is-sufficient-as-in-the-first-example-p-a-repeating-svg-gradient-is-defined-using-the-code-spreadmethod-code-attribute-a-value-of-code-repeat-code-causes-the-color-stops-to-repeat-in-the-same-order-from-beginning-to-end-p-svg-class-inline-example-role-img-title-a-repeating-linear-gradient-title-desc-the-gradient-starts-dark-slowly-shifting-to-light-then-quickly-dark-again-this-pattern-repeats-four-times-left-to-right-each-time-brightening-across-a-large-region-and-then-getting-dark-within-a-short-space-desc-lineargradient-id-repeat-x2-25-spreadmethod-repeat-stop-offset-0-stop-color-black-stop-offset-0-8-stop-color-white-stop-offset-1-stop-color-black-lineargradient-rect-width-100-height-100-fill-url-repeat-svg-the-following-example-provides-the-same-content-but-now-structured-as-a-figure-that-may-be-re-positioned-separately-from-the-flow-of-paragraph-text-figure-id-fig1-role-figure-region-svg-id-fig1a-class-nested-figure-role-figure-aria-labelledby-fig1-caption-fig1a-caption-markup-omitted-svg-svg-id-fig1b-class-nested-figure-role-figure-aria-labelledby-fig1-caption-fig1b-caption-lineargradient-id-reflect-spreadmethod-reflect-xlink-href-repeat-text-id-fig1b-caption-class-caption-dy-1em-b-spreadmethod-reflect-text-rect-role-img-y-25-width-100-height-75-fill-url-reflect-title-a-reflecting-linear-gradient-title-desc-the-gradient-again-starts-dark-slowly-shifting-to-light-then-quickly-dark-again-however-the-next-repeat-shifts-quickly-to-the-light-then-slowly-back-dark-the-original-pattern-is-then-repeated-followed-by-the-reflected-version-again-desc-rect-svg-figcaption-id-fig1-caption-figure-1-repeating-svg-gradients-figcaption-figure-finally-the-last-version-uses-a-graphics-document-to-include-complex-annotations-on-the-graphic-which-is-still-contained-within-a-figure-element-the-two-sections-of-the-graphic-are-graphics-object-elements-while-the-annotations-have-individual-labels-and-descriptions-figure-id-fig1-role-figure-region-svg-role-graphics-document-title-repeating-versus-reflecting-linear-gradients-title-desc-the-graphic-shows-two-gradient-patterns-annotated-with-text-labels-and-arrows-both-gradients-use-the-same-series-of-color-stops-starting-dark-slowly-shifting-to-light-then-quickly-dark-again-this-cycle-covers-one-quarter-of-the-width-of-the-graphic-starting-on-the-left-the-two-gradients-differ-in-their-repeat-cycles-desc-defs-markup-omitted-defs-g-role-graphics-object-aria-labelledby-repeat-label-markup-omitted-g-g-role-graphics-object-aria-labelledby-reflect-label-desc-the-gradient-stretches-across-the-bottom-half-of-the-graphic-each-cycle-of-the-gradient-alternates-direction-left-to-right-then-right-to-left-as-do-the-arrows-that-emphasize-the-pattern-desc-rect-y-50-width-100-height-50-fill-url-reflect-rect-use-y-70-xlink-href-gradient-vector-title-1st-cycle-title-desc-left-to-right-arrow-starting-from-x-0-desc-use-use-y-70-x-50-transform-scale-1-1-xlink-href-gradient-vector-title-2nd-cycle-reflected-title-desc-right-to-left-arrow-ending-at-x-25-desc-use-use-y-70-x-50-xlink-href-gradient-vector-title-3rd-cycle-title-desc-left-to-right-arrow-starting-from-x-50-desc-use-use-y-70-x-100-transform-scale-1-1-xlink-href-gradient-vector-title-4th-cycle-reflected-title-desc-right-to-left-arrow-ending-at-x-75-desc-use-text-id-reflect-label-class-overlay-text-aria-label-spreadmethod-reflect-dy-0-2em-dx-0-2em-x-100-y-100-reflect-text-g-svg-figcaption-figure-1-spreadmethod-options-for-repeating-svg-gradients-figcaption-figure">Example 6</a></div>
+<aside class="example" id="example-6"><div class="marker">
+      <a class="self-link" href="#example-6">Example 6</a>
+    </div>
   <p>
     Within an <abbr title="Hypertext Markup Language">HTML</abbr> 5 document, an inline <abbr title="Scalable Vector Graphics">SVG</abbr>
     may sometimes represent an atomic <code>img</code>.
@@ -1743,8 +1745,7 @@ OK to omit the second example?
         <span class="hljs-tag">&lt;<span class="hljs-name">stop</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">"1"</span>     <span class="hljs-attr">stop-color</span>=<span class="hljs-string">"black"</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">linearGradient</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"url(#repeat)"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-</pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></pre>
   
   <p>
     The following example provides the same content, 
@@ -1776,8 +1777,7 @@ OK to omit the second example?
     <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"fig1-caption"</span>
                 &gt;</span>Figure 1: Repeating SVG gradients<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
-</pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span></pre>
   
   <p>
     Finally, the last version uses a <code>graphics-document</code>
@@ -1842,11 +1842,12 @@ OK to omit the second example?
     <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Figure 1: spreadMethod options for
         repeating SVG gradients<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
-    </pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span></pre>
 </aside>    
 
-<aside class="example" id="ex-7-example-7-within-the-fallback-dom-dynamically-constructed-for-an-html-5-canvas-game-elements-may-represent-the-different-images-that-create-the-composite-graphic-canvas-role-graphics-document-p-id-scene-desc-role-img-aria-label-the-dungeon-aria-describedby-scene-desc-the-door-opens-into-a-long-hallway-every-few-steps-on-either-side-are-barred-doors-moisture-drips-from-the-stone-walls-p-p-id-grue-1-role-img-aria-label-grue-aria-describedby-grue-1-an-amorphous-and-poorly-defined-but-unmistakably-sinister-creature-blocks-the-passage-p-more-dom-elements-representing-game-controls-canvas"><div class="marker"><a class="self-link" href="#ex-7-example-7-within-the-fallback-dom-dynamically-constructed-for-an-html-5-canvas-game-elements-may-represent-the-different-images-that-create-the-composite-graphic-canvas-role-graphics-document-p-id-scene-desc-role-img-aria-label-the-dungeon-aria-describedby-scene-desc-the-door-opens-into-a-long-hallway-every-few-steps-on-either-side-are-barred-doors-moisture-drips-from-the-stone-walls-p-p-id-grue-1-role-img-aria-label-grue-aria-describedby-grue-1-an-amorphous-and-poorly-defined-but-unmistakably-sinister-creature-blocks-the-passage-p-more-dom-elements-representing-game-controls-canvas">Example 7</a></div>
+<aside class="example" id="example-7"><div class="marker">
+      <a class="self-link" href="#example-7">Example 7</a>
+    </div>
   <p>
      Within the fallback <abbr title="Document Object Model">DOM</abbr> dynamically constructed
      for an <abbr title="Hypertext Markup Language">HTML</abbr> 5 canvas game,
@@ -1868,8 +1869,7 @@ OK to omit the second example?
        creature blocks the passage.
    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
    <span class="hljs-comment">&lt;!-- more DOM elements representing game controls --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
-</pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span></pre>
       </aside>
     
   	</section>
