@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 24.17.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 24.19.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -503,6 +503,50 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
+</style><style>var {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+var[data-type]::before,
+var[data-type]::after {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+/* the triangle or arrow or caret or whatever */
+var[data-type]::before {
+  content: "";
+  transform: translateX(-50%);
+  border-width: 4px 6px 0 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #000;
+}
+
+/* actual text */
+var[data-type]::after {
+  content: attr(data-type);
+  transform: translateX(-50%) translateY(-100%);
+  background: #000;
+  text-align: center;
+  /* additional styling */
+  font-family: "Dank Mono", "Fira Code", monospace;
+  font-style: normal;
+  padding: 6px;
+  border-radius: 3px;
+  color: #daca88;
+}
+
+var[data-type]:hover::after,
+var[data-type]:hover::before {
+  opacity: 1;
+}
 </style><script id="initialUserConfig" type="application/json">{
   "trace": true,
   "doRDFa": "1.1",
@@ -645,16 +689,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "preProcess": [
     null
   ],
-  "publishDate": "2019-04-18",
-  "publishISODate": "2019-04-18T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 18 April 2019"
+  "publishDate": "2019-04-23",
+  "publishISODate": "2019-04-23T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 23 April 2019"
 }</script><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
-<body class="h-entry informative"><div class="head">
+<body class="h-entry informative toc-inline"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">WAI-ARIA Graphics Module</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-04-18">18 April 2019</time>
+        <time class="dt-published" datetime="2019-04-23">23 April 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -889,18 +933,26 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <li>alternate pointing devices, which are used to simulate mouse pointing and clicking.</li>
     </ul>
     </dd>
+    <dt><dfn data-lt="attribute|attributes" id="dfn-attribute" data-dfn-type="dfn">Attribute</dfn></dt>
+    <dd>
+      <p>In this specification, attribute is used as it is in markup languages. Attributes are structural features added to <a class="termref" href="#dfn-element">elements</a> to provide information about the <a class="termref" href="#dfn-state">states</a> and <a class="termref" href="#dfn-property">properties</a> of the <a class="termref" href="#dfn-object">object</a> represented by the element.</p>
+    </dd>
+    <dt><dfn data-lt="class|classes" id="dfn-class" data-dfn-type="dfn">Class</dfn></dt>
+    <dd>
+      <p>A set of instance <a class="termref" href="#dfn-object">objects</a> that share similar characteristics.</p>
+    </dd>
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+    <dt><dfn data-lt="element|elements|element's" id="dfn-element" data-dfn-type="dfn">Element</dfn></dt>
+    <dd>
+      <p>In this specification, element is used as it is in markup languages. Elements are the structural elements in markup language that contains the data profile for <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a>.</p>
+    </dd>
+    <dt><dfn data-lt="event|events" id="dfn-event" data-dfn-type="dfn">Event</dfn></dt>
+    <dd>
+      <p>A programmatic message used to communicate discrete changes in the <a href="#dfn-state" class="internalDFN" data-link-type="dfn">state</a> of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> to other objects in a computational system. User input to a web page is commonly mediated through abstract events that describe the interaction and can provide notice of changes to the state of a document object. In some programming languages, events are more commonly known as notifications.</p>
+    </dd>
     
     
 	
@@ -929,8 +981,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <dd>
       <p>Required for conformance. By contrast, content identified as <a href="#dfn-informative" class="internalDFN" data-link-type="dfn">informative</a> or "non-normative" is not required for conformance.</p>
     </dd>
-    
-    
+    <dt><dfn data-lt="object|objects" id="dfn-object" data-dfn-type="dfn">Object</dfn></dt>
+    <dd>
+      <p>In the context of user interfaces,  an item in the   perceptual user experience, represented in markup languages by one or   more <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a>, and rendered by <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agent" data-link-type="dfn">user agents</a>.</p>
+    In the context of programming, the instantiation of one or more <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> and interfaces which define the general characteristics of similar objects. An object in an <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">API</abbr></a> may represent one or more <abbr title="Document Object Model">DOM</abbr> objects. <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">Accessibility APIs</a> have defined interfaces that are distinct from <abbr title="Document Object Model">DOM</abbr> interfaces.</dd>
   
     
     
@@ -954,8 +1008,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dd>
     
     
-    
-    
+    <dt><dfn data-lt="semantics|semantic|semantically" id="dfn-semantics" data-dfn-type="dfn">Semantics</dfn></dt>
+    <dd>
+      <p>The meaning of something as understood by a human, defined in a way that computers can process a representation of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>, such as <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a> and <a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">attributes</a>, and reliably represent the object in a way that various humans will achieve a mutually consistent understanding of the object.</p>
+    </dd>
     <dt><dfn data-lt="state|states" id="dfn-state" data-dfn-type="dfn">State</dfn></dt>
     <dd>
       <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
@@ -966,7 +1022,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     
     <dt><dfn id="dfn-taxonomy" data-dfn-type="dfn">Taxonomy</dfn></dt>
     <dd>
-      <p>A hierarchical definition of how the characteristics of various <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> relate to each other, in which classes inherit the properties of superclasses in the hierarchy. A taxonomy can comprise part of the formal definition of an <a href="#dfn-ontology" class="internalDFN" data-link-type="dfn">ontology</a>.</p>
+      <p>A hierarchical definition of how the characteristics of various <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> relate to each other, in which classes inherit the properties of superclasses in the hierarchy. A taxonomy can comprise part of the formal definition of an <a href="#dfn-ontology" class="internalDFN respec-offending-element" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">ontology</a>.</p>
     </dd>
     
     
