@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 24.21.7"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 24.23.6"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -506,7 +506,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </style><style>var {
   position: relative;
   cursor: pointer;
-  display: inline-block;
 }
 
 var[data-type]::before,
@@ -541,6 +540,8 @@ var[data-type]::after {
   padding: 6px;
   border-radius: 3px;
   color: #daca88;
+  text-indent: 0;
+  font-weight: normal;
 }
 
 var[data-type]:hover::after,
@@ -689,16 +690,16 @@ var[data-type]:hover::before {
   "preProcess": [
     null
   ],
-  "publishDate": "2019-05-22",
-  "publishISODate": "2019-05-22T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 22 May 2019"
+  "publishDate": "2019-06-28",
+  "publishISODate": "2019-06-28T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 28 June 2019"
 }</script><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry informative"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">WAI-ARIA Graphics Module</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-05-22">22 May 2019</time>
+        <time class="dt-published" datetime="2019-06-28">28 June 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -763,7 +764,7 @@ var[data-type]:hover::before {
       <hr title="Separator for header">
     </div>
 <section id="abstract" class="introductory"><h2>Abstract</h2>
-	<p>Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!WAI-ARIA-1.1]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-wai-aria-1-1"><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>] module of core <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a> specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-html52" title="HTML 5.2">HTML52</a></cite>] and <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2">SVG2</a></cite>].</p>
+	<p>Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!WAI-ARIA-1.1]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-wai-aria-1-1"><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>] module of core <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a> specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-html52" title="HTML 5.2" data-link-type="biblio">HTML52</a></cite>] and <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>].</p>
 	<p>This document is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="https://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Overview</a>.</p>
 </section>
 <section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p>
@@ -818,7 +819,7 @@ var[data-type]:hover::before {
 <section class="informative" id="introduction">
 	<h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
 	<p><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> is a technical specification that provides a framework to improve the accessibility and interoperability of web content and applications. It enables web browsers to map the accessibility semantics in web content to platform-specific accessibility APIs. This enables web content to be interoperable with platform assistive technologies, similar to native platform applications, without requiring authors to include platform dependencies.</p>
-	<p>This specification is a modular extension of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>] designed to support graphics. The goals of this specification include:</p>
+	<p>This specification is a modular extension of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>] designed to support graphics. The goals of this specification include:</p>
 	<ul>
 		<li>Expanding <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> to produce semantic extensions to support structured graphics such as charts, graphs, maps, technical drawings and scientific diagrams. It has applicability to both Scalable Vector Graphics as well as <abbr title="Hypertext Markup Language">HTML</abbr> 5 Canvas and graphics produced with CSS styling of <abbr title="Hypertext Markup Language">HTML</abbr> and other markup languages.</li> 
 		<li>Align with a new governance model for modularization and extensions to <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr>.</li> 
@@ -847,7 +848,7 @@ var[data-type]:hover::before {
 	
 	<section id="ua-support">
 		<h3 id="x1-2-user-agent-support"><bdi class="secno">1.2 </bdi>User Agent Support<a class="self-link" aria-label="§" href="#ua-support"></a></h3>
-		<p>This module follows the general <a href="https://www.w3.org/TR/wai-aria-1.1/#ua-support">User Agent support principles</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>].
+		<p>This module follows the general <a href="https://www.w3.org/TR/wai-aria-1.1/#ua-support">User Agent support principles</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>].
         The roles defined here do not require any change in behavior by user agents other than in the information exposed to the <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">API</abbr></a>.
         However, the semantics defined here provide the ability for user agents to enhance the general user interface presented to readers.
         For example, a user agent may provide alternative keyboard navigation suitable to a graphical environment, or may allow users to extract a copy of a graphic from a larger document.</p> 
@@ -855,7 +856,7 @@ var[data-type]:hover::before {
 	
 	<section id="co-evolution">
 		<h3 id="x1-3-co-evolution-of-wai-aria-and-host-languages"><bdi class="secno">1.3 </bdi>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages<a class="self-link" aria-label="§" href="#co-evolution"></a></h3>
-		<p>The <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module follows the model for <a href="https://www.w3.org/TR/wai-aria-1.1/#co-evolution">co-evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and host languages</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>]. It is intended to augment semantics in supporting languages like <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-html52" title="HTML 5.2">HTML52</a></cite>], <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2">SVG2</a></cite>] and EPUB, or to be used as an accessibility enhancement technology in other markup-based languages that do not explicitly include support for ARIA. 
+		<p>The <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module follows the model for <a href="https://www.w3.org/TR/wai-aria-1.1/#co-evolution">co-evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and host languages</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>]. It is intended to augment semantics in supporting languages like <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-html52" title="HTML 5.2" data-link-type="biblio">HTML52</a></cite>], <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>] and EPUB, or to be used as an accessibility enhancement technology in other markup-based languages that do not explicitly include support for ARIA. 
         <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> <a href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a> clarify semantics to assistive technologies when authors create new types of objects, via style and script, or use markup languages which describe the visual appearance of a document rather than its meaning.</p>
 		<p>Although markup languages may provide some of these semantics natively, it is expected that there will be a persistent need for the semantics provided by the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module.
 		Some host languages exist to create semantics for features other than the user interface. For example, <abbr title="Scalable Vector Graphics">SVG</abbr> expresses the semantics behind production of graphical objects, not of user interface components that those objects may represent. Host languages such as these might, by design, not provide native semantics that map to all of this specification's features. In these host languages, the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module could be adopted as a long-term approach to add semantic information.</p>
@@ -876,7 +877,7 @@ var[data-type]:hover::before {
 	
 	<section id="at_support">
 		<h3 id="x1-5-assistive-technologies"><bdi class="secno">1.5 </bdi>Assistive Technologies<a class="self-link" aria-label="§" href="#at_support"></a></h3>
-		<p>Programmatic access to accessibility semantics is essential for assistive technologies. For more information, refer to the <a href="https://www.w3.org/TR/wai-aria-1.1/#at_support">Assistive Technologies</a> section in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>].</p> 
+		<p>Programmatic access to accessibility semantics is essential for assistive technologies. For more information, refer to the <a href="https://www.w3.org/TR/wai-aria-1.1/#at_support">Assistive Technologies</a> section in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>].</p> 
         <p>For the graphics roles in particular, two categories of assistive technology are particularly relevant, but have different needs:</p>
         <ul>
             <li>Text-based presentations, such as screen readers, braille displays, and text-only displays or printers.  These technologies need to replace a complex graphic with semantic text descriptions, preserving any meaningful structure and relationships between components.
@@ -889,7 +890,7 @@ var[data-type]:hover::before {
 <section class="normative" id="conformance">
 	<h2 id="x2-conformance"><bdi class="secno">2. </bdi>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2>
 	<p>The main content of this specification is <a href="#dfn-normative" class="internalDFN" data-link-type="dfn">normative</a> and defines requirements that impact conformance claims. Introductory material, appendices, sections marked as "non-normative" and their subsections, diagrams, examples, and notes are <a href="#dfn-informative" class="internalDFN" data-link-type="dfn">informative</a> (non-normative). Non-normative material provides advisory information to help interpret the guidelines but does not create requirements that impact a conformance claim.</p>
-	<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <em class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></em>, <em class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></em>, <em class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></em>, <em class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></em>, and <em class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></em> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in an element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format, they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
+	<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <em class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></em>, <em class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></em>, <em class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></em>, <em class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></em>, and <em class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></em> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels" data-link-type="biblio">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in an element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format, they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
 	<p>Normative sections provide requirements that authors, user agents and assistive technologies <em class="rfc2119" title="MUST">MUST</em> follow for an implementation to conform to this specification.</p>
 	<p>Non-normative (informative) sections provide information useful to understanding the specification. Such sections may contain examples of recommended practice, but it is not required to follow such recommendations in order to conform to this specification.</p>
 </section>
@@ -899,8 +900,8 @@ var[data-type]:hover::before {
 <dl class="termlist">
     <dt><dfn data-lt="accessibility api|accessibility apis" id="dfn-accessibility-api" data-dfn-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
     <dd>
-      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa" title="Microsoft Active Accessibility (MSAA) 2.0">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation" title="UI Automation">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express" title="The IAccessibleEx Interface">UIA-EXPRESS</a></cite>], the
-      	<a href="https://developer.apple.com/documentation/appkit/accessibility/nsaccessibility">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-axapi" title="The NSAccessibility Protocol for macOS">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk" title="ATK - Accessibility Toolkit">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi" title="Assistive Technology Service Provider Interface">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" href="#bib-iaccessible2" title="IAccessible2">IAccessible2</a></cite>].</p>
+      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa" title="Microsoft Active Accessibility (MSAA) 2.0" data-link-type="biblio">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation" title="UI Automation" data-link-type="biblio">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express" title="The IAccessibleEx Interface" data-link-type="biblio">UIA-EXPRESS</a></cite>], the
+      	<a href="https://developer.apple.com/documentation/appkit/accessibility/nsaccessibility">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-axapi" title="The NSAccessibility Protocol for macOS" data-link-type="biblio">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk" title="ATK - Accessibility Toolkit" data-link-type="biblio">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi" title="Assistive Technology Service Provider Interface" data-link-type="biblio">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" href="#bib-iaccessible2" title="IAccessible2" data-link-type="biblio">IAccessible2</a></cite>].</p>
     </dd>
     
     
@@ -1078,7 +1079,7 @@ var[data-type]:hover::before {
      value in the role characteristics table.
      Finally, the native semantics of the graphics language 
      may also default to ignoring <abbr title="Document Object Model">DOM</abbr> structure that does not have
-     semantic data attached; for <abbr title="Scalable Vector Graphics">SVG</abbr>, this is defined in the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility <abbr title="Application Programming Interfaces">API</abbr> Mappings specification [<cite><a class="bibref" href="#bib-svg-aam-1.0" title="SVG Accessibility API Mappings">SVG-AAM-1.0</a></cite>].
+     semantic data attached; for <abbr title="Scalable Vector Graphics">SVG</abbr>, this is defined in the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility <abbr title="Application Programming Interfaces">API</abbr> Mappings specification [<cite><a class="bibref" href="#bib-svg-aam-1.0" title="SVG Accessibility API Mappings" data-link-type="biblio">SVG-AAM-1.0</a></cite>].
   </p>
   <p>
      In all cases, to be considered presentational, an element must not be interactive 
@@ -1093,7 +1094,7 @@ var[data-type]:hover::before {
         <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a> defined in this specification.  
         They would normally be used in combination with other roles 
         defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 
-        to annotate graphics within documents and rich internet applications [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>].
+        to annotate graphics within documents and rich internet applications [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>].
       </p>
       
 		<dl id="index_role" class="compact"><dt><a href="#graphics-document" class="role-reference">graphics-document</a></dt>
@@ -1553,7 +1554,7 @@ var[data-type]:hover::before {
         <p>
             When used as part of a structured symbolic language, 
             the <a href="https://w3c.github.io/aria/#aria-roledescription" class="property-reference"><code>aria-roledescription</code></a> property 
-            (introduced in ARIA 1.1 [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>])
+            (introduced in ARIA 1.1 [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>])
             can be used to name the symbol type 
             separately from the name and description 
             for the particular instance of the symbol.
@@ -1732,7 +1733,7 @@ var[data-type]:hover::before {
 	</section>
 	<section id="role_other">
 		<h3 id="x4-2-other-roles-for-graphics"><bdi class="secno">4.2 </bdi>Other Roles for Graphics<a class="self-link" aria-label="§" href="#role_other"></a></h3>
-		<p>	The following core ARIA roles, defined in ARIA 1.1 [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>], are also 
+		<p>	The following core ARIA roles, defined in ARIA 1.1 [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>], are also 
       relevant for annotating graphics:
     </p>
 		<ul>
