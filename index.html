@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 24.23.6"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 25.1.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -52,12 +52,10 @@ span.warning { padding: .1em .5em .15em; }
 
 .warning-title:before{
     content: "⚠"; /*U+26A0 WARNING SIGN*/
-    font-size: 3em;
+    font-size: 1.3em;
     float: left;
-    height: 100%;
     padding-right: .3em;
-    vertical-align: top;
-    margin-top: -0.5em;
+    margin-top: -0.3em;
 }
 
 li.task-list-item {
@@ -80,6 +78,7 @@ input.task-list-item-checkbox {
   position: relative;
   bottom: 2px;
   border: none;
+  display: inline-block;
 }
 
 .issue a.respec-label-dark {
@@ -91,14 +90,78 @@ input.task-list-item-checkbox {
   color: #000;
   background-color: #fff;
 }
+</style><style>/* dfn popup panel that list all local references to a dfn */
+dfn {
+  cursor: pointer;
+}
+
+.dfn-panel {
+  position: absolute;
+  left: var(--left); /* set via JS */
+  top: var(--top); /* set via JS */
+  z-index: 35;
+  height: auto;
+  width: max-content;
+  max-width: 300px;
+  max-height: 500px;
+  overflow: auto;
+  padding: 0.5em 0.75em;
+  font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+  background: #dddddd;
+  color: black;
+  border: outset 0.2em;
+}
+
+.dfn-panel * {
+  margin: 0;
+}
+
+.dfn-panel > b {
+  display: block;
+}
+
+.dfn-panel ul a[href] {
+  color: black;
+}
+
+.dfn-panel a:not(:hover) {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.dfn-panel a[href]:hover {
+  border-bottom-width: 1px;
+}
+
+.dfn-panel > b + b {
+  margin-top: 0.25em;
+}
+
+.dfn-panel ul {
+  padding: 0;
+}
+
+.dfn-panel li {
+  list-style: inside;
+}
+
+.dfn-panel.docked {
+  display: inline-block;
+  position: fixed;
+  left: 0.5em;
+  top: unset;
+  bottom: 2em;
+  margin: 0 auto;
+  /* 0.75em from padding (x2), 0.5em from left position, 0.2em border (x2) */
+  max-width: calc(100vw - 0.75em * 2 - 0.5em - 0.2em * 2);
+  max-height: 30vh;
+}
 </style>
 	
 <title>WAI-ARIA Graphics Module</title>
 <style id="respec-mainstyle">/*****************************************************************
- * ReSpec 3 CSS
- * Robin Berjon - http://berjon.com/
+ * ReSpec specific CSS
  *****************************************************************/
-
 @keyframes pop {
   0% {
     transform: scale(1, 1);
@@ -152,24 +215,18 @@ a.bibref {
   animation: pop 0.25s ease-in-out 0s 1;
 }
 
-/* TODO: Remove once https://github.com/w3c/tr-design/pull/176 is merged. */
-.respec-offending-element a[href] {
-  margin: 0;
+.respec-offending-element,
+a[href].respec-offending-element {
+  text-decoration: red wavy underline;
 }
-
-.respec-offending-element {
-  display: inline-block;
-  position: relative;
-  /* Red squiggly line */
-  background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=)
-    bottom repeat-x;
-}
-@supports (text-decoration-style: wavy) {
+@supports not (text-decoration: red wavy underline) {
+  .respec-offending-element:not(pre) {
+    display: inline-block;
+  }
   .respec-offending-element {
-    background: none;
-    text-decoration-line: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: red;
+    /* Red squiggly line */
+    background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=)
+      bottom repeat-x;
   }
 }
 
@@ -231,6 +288,12 @@ table.simple {
 
 .simple th {
   background: #005a9c;
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th a {
   color: #fff;
   padding: 3px 5px;
   text-align: left;
@@ -404,96 +467,86 @@ h6 > a.self-link::before {
         width: 60em;
     }
 </style>
-<link rel="canonical" href="https://www.w3.org/TR/graphics-aria-1.0/"><style>/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
+<meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."><link rel="canonical" href="https://www.w3.org/TR/graphics-aria-1.0/"><style>/*
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
 */
 
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
+  color: #383a42;
+  background: #fafafa;
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #998;
+  color: #717277;
   font-style: italic;
 }
 
+.hljs-doctag,
 .hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: bold;
+.hljs-formula {
+  color: #a626a4;
 }
 
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
 }
 
 .hljs-string,
-.hljs-doctag {
-  color: #d14;
-}
-
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold;
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
-}
-
 .hljs-regexp,
-.hljs-link {
-  color: #009926;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #42803C;
 }
 
 .hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
+.hljs-class .hljs-title {
+  color: #c18401;
 }
 
-.hljs-meta {
-  color: #999;
-  font-weight: bold;
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
 }
 
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
 }
 
 .hljs-emphasis {
@@ -502,6 +555,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 .hljs-strong {
   font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
 }
 </style><style>var {
   position: relative;
@@ -677,6 +734,14 @@ var[data-type]:hover::before {
     "HTML-AAM": {
       "aliasOf": "HTML-AAM-1.0"
     },
+    "MathML-Core": {
+      "href": "https://mathml-refresh.github.io/mathml-core/",
+      "title": "MathML Core",
+      "authors": [
+        "David Carlisle",
+        "Frédéric Wang"
+      ]
+    },
     "SVG-AAM": {
       "aliasOf": "SVG-AAM-1.0"
     },
@@ -690,16 +755,16 @@ var[data-type]:hover::before {
   "preProcess": [
     null
   ],
-  "publishDate": "2019-06-28",
-  "publishISODate": "2019-06-28T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 28 June 2019"
-}</script><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
+  "publishDate": "2020-02-10",
+  "publishISODate": "2020-02-10T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 10 February 2020"
+}</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry informative"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">WAI-ARIA Graphics Module</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-06-28">28 June 2019</time>
+        <time class="dt-published" datetime="2020-02-10">10 February 2020</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -708,7 +773,6 @@ var[data-type]:hover::before {
                 <a href="https://www.w3.org/TR/graphics-aria-1.0/">https://www.w3.org/TR/graphics-aria-1.0/</a>
               </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/graphics-aria/">https://w3c.github.io/graphics-aria/</a></dd>
-        
         
         
         
@@ -752,7 +816,7 @@ var[data-type]:hover::before {
       <p class="copyright">
       <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
       ©
-      2015-2019
+      2015-2020
       
       <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
       <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
@@ -764,7 +828,7 @@ var[data-type]:hover::before {
       <hr title="Separator for header">
     </div>
 <section id="abstract" class="introductory"><h2>Abstract</h2>
-	<p>Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!WAI-ARIA-1.1]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-wai-aria-1-1"><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>] module of core <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a> specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-html52" title="HTML 5.2" data-link-type="biblio">HTML52</a></cite>] and <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>].</p>
+	<p>Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a <a href="https://w3c.github.io/aria/" class="specref"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.1</a> [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!WAI-ARIA-1.1]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-wai-aria-1-1"><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>] module of core <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a> specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" data-link-type="biblio" href="#bib-html52" title="HTML 5.2">HTML52</a></cite>] and <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" data-link-type="biblio" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2">SVG2</a></cite>].</p>
 	<p>This document is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="https://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Overview</a>.</p>
 </section>
 <section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p>
@@ -776,10 +840,10 @@ var[data-type]:hover::before {
 	</ul>
 	<p>To comment, <a href="https://github.com/w3c/graphics-aria/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> graphics-aria GitHub repository</a>. If this is not feasible, send email to <a href="mailto:public-aria@w3.org?subject=Graphics%20ARIA%20public%20comment">public-aria@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-aria/">comment archive</a>). In-progress updates to the document may be viewed in the <a href="https://w3c.github.io/graphics-aria/">publicly visible editors' draft</a>.</p>
 <p>
-                        This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as
-                        an Editor's Draft.
-                        
-                      </p><p>
+      This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> as an
+      Editor's Draft.
+      
+    </p><p>
       <a href="https://github.com/w3c/graphics-aria/issues/">GitHub Issues</a> are preferred for
             discussion of this specification.
           
@@ -819,7 +883,7 @@ var[data-type]:hover::before {
 <section class="informative" id="introduction">
 	<h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2><p><em>This section is non-normative.</em></p>
 	<p><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> is a technical specification that provides a framework to improve the accessibility and interoperability of web content and applications. It enables web browsers to map the accessibility semantics in web content to platform-specific accessibility APIs. This enables web content to be interoperable with platform assistive technologies, similar to native platform applications, without requiring authors to include platform dependencies.</p>
-	<p>This specification is a modular extension of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>] designed to support graphics. The goals of this specification include:</p>
+	<p>This specification is a modular extension of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>] designed to support graphics. The goals of this specification include:</p>
 	<ul>
 		<li>Expanding <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> to produce semantic extensions to support structured graphics such as charts, graphs, maps, technical drawings and scientific diagrams. It has applicability to both Scalable Vector Graphics as well as <abbr title="Hypertext Markup Language">HTML</abbr> 5 Canvas and graphics produced with CSS styling of <abbr title="Hypertext Markup Language">HTML</abbr> and other markup languages.</li> 
 		<li>Align with a new governance model for modularization and extensions to <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr>.</li> 
@@ -848,7 +912,7 @@ var[data-type]:hover::before {
 	
 	<section id="ua-support">
 		<h3 id="x1-2-user-agent-support"><bdi class="secno">1.2 </bdi>User Agent Support<a class="self-link" aria-label="§" href="#ua-support"></a></h3>
-		<p>This module follows the general <a href="https://www.w3.org/TR/wai-aria-1.1/#ua-support">User Agent support principles</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>].
+		<p>This module follows the general <a href="https://www.w3.org/TR/wai-aria-1.1/#ua-support">User Agent support principles</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>].
         The roles defined here do not require any change in behavior by user agents other than in the information exposed to the <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">API</abbr></a>.
         However, the semantics defined here provide the ability for user agents to enhance the general user interface presented to readers.
         For example, a user agent may provide alternative keyboard navigation suitable to a graphical environment, or may allow users to extract a copy of a graphic from a larger document.</p> 
@@ -856,7 +920,7 @@ var[data-type]:hover::before {
 	
 	<section id="co-evolution">
 		<h3 id="x1-3-co-evolution-of-wai-aria-and-host-languages"><bdi class="secno">1.3 </bdi>Co-Evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and Host Languages<a class="self-link" aria-label="§" href="#co-evolution"></a></h3>
-		<p>The <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module follows the model for <a href="https://www.w3.org/TR/wai-aria-1.1/#co-evolution">co-evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and host languages</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>]. It is intended to augment semantics in supporting languages like <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" href="#bib-html52" title="HTML 5.2" data-link-type="biblio">HTML52</a></cite>], <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2" data-link-type="biblio">SVG2</a></cite>] and EPUB, or to be used as an accessibility enhancement technology in other markup-based languages that do not explicitly include support for ARIA. 
+		<p>The <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module follows the model for <a href="https://www.w3.org/TR/wai-aria-1.1/#co-evolution">co-evolution of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> and host languages</a> defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>]. It is intended to augment semantics in supporting languages like <abbr title="Hypertext Markup Language">HTML</abbr> [<cite><a class="bibref" data-link-type="biblio" href="#bib-html52" title="HTML 5.2">HTML52</a></cite>], <abbr title="Scalable Vector Graphics">SVG</abbr> [<cite><a class="bibref" data-link-type="biblio" href="#bib-svg2" title="Scalable Vector Graphics (SVG) 2">SVG2</a></cite>] and EPUB, or to be used as an accessibility enhancement technology in other markup-based languages that do not explicitly include support for ARIA. 
         <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> <a href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a> clarify semantics to assistive technologies when authors create new types of objects, via style and script, or use markup languages which describe the visual appearance of a document rather than its meaning.</p>
 		<p>Although markup languages may provide some of these semantics natively, it is expected that there will be a persistent need for the semantics provided by the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module.
 		Some host languages exist to create semantics for features other than the user interface. For example, <abbr title="Scalable Vector Graphics">SVG</abbr> expresses the semantics behind production of graphical objects, not of user interface components that those objects may represent. Host languages such as these might, by design, not provide native semantics that map to all of this specification's features. In these host languages, the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Graphics module could be adopted as a long-term approach to add semantic information.</p>
@@ -877,7 +941,7 @@ var[data-type]:hover::before {
 	
 	<section id="at_support">
 		<h3 id="x1-5-assistive-technologies"><bdi class="secno">1.5 </bdi>Assistive Technologies<a class="self-link" aria-label="§" href="#at_support"></a></h3>
-		<p>Programmatic access to accessibility semantics is essential for assistive technologies. For more information, refer to the <a href="https://www.w3.org/TR/wai-aria-1.1/#at_support">Assistive Technologies</a> section in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>].</p> 
+		<p>Programmatic access to accessibility semantics is essential for assistive technologies. For more information, refer to the <a href="https://www.w3.org/TR/wai-aria-1.1/#at_support">Assistive Technologies</a> section in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>].</p> 
         <p>For the graphics roles in particular, two categories of assistive technology are particularly relevant, but have different needs:</p>
         <ul>
             <li>Text-based presentations, such as screen readers, braille displays, and text-only displays or printers.  These technologies need to replace a complex graphic with semantic text descriptions, preserving any meaningful structure and relationships between components.
@@ -890,7 +954,7 @@ var[data-type]:hover::before {
 <section class="normative" id="conformance">
 	<h2 id="x2-conformance"><bdi class="secno">2. </bdi>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2>
 	<p>The main content of this specification is <a href="#dfn-normative" class="internalDFN" data-link-type="dfn">normative</a> and defines requirements that impact conformance claims. Introductory material, appendices, sections marked as "non-normative" and their subsections, diagrams, examples, and notes are <a href="#dfn-informative" class="internalDFN" data-link-type="dfn">informative</a> (non-normative). Non-normative material provides advisory information to help interpret the guidelines but does not create requirements that impact a conformance claim.</p>
-	<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <em class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></em>, <em class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></em>, <em class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></em>, <em class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></em>, and <em class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></em> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels" data-link-type="biblio">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in an element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format, they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
+	<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <em class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></em>, <em class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></em>, <em class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></em>, <em class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></em>, <em class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></em>, and <em class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></em> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in an element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format, they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
 	<p>Normative sections provide requirements that authors, user agents and assistive technologies <em class="rfc2119" title="MUST">MUST</em> follow for an implementation to conform to this specification.</p>
 	<p>Non-normative (informative) sections provide information useful to understanding the specification. Such sections may contain examples of recommended practice, but it is not required to follow such recommendations in order to conform to this specification.</p>
 </section>
@@ -898,24 +962,35 @@ var[data-type]:hover::before {
 	<h2 id="x3-important-terms"><bdi class="secno">3. </bdi>Important Terms<a class="self-link" aria-label="§" href="#terms"></a></h2><p><em>This section is non-normative.</em></p>
 	<div data-oninclude="restrictReferences"><p>While some terms are defined in place, the following definitions are used throughout this document. </p>
 <dl class="termlist">
-    <dt><dfn data-lt="accessibility api|accessibility apis" id="dfn-accessibility-api" data-dfn-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
+    <dt><dfn data-lt="accessibility api|accessibility apis|Accessibility API" id="dfn-accessibility-api" data-dfn-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
     <dd>
-      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa" title="Microsoft Active Accessibility (MSAA) 2.0" data-link-type="biblio">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation" title="UI Automation" data-link-type="biblio">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express" title="The IAccessibleEx Interface" data-link-type="biblio">UIA-EXPRESS</a></cite>], the
-      	<a href="https://developer.apple.com/documentation/appkit/accessibility/nsaccessibility">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-axapi" title="The NSAccessibility Protocol for macOS" data-link-type="biblio">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk" title="ATK - Accessibility Toolkit" data-link-type="biblio">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi" title="Assistive Technology Service Provider Interface" data-link-type="biblio">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" href="#bib-iaccessible2" title="IAccessible2" data-link-type="biblio">IAccessible2</a></cite>].</p>
+      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility APIs are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-msaa" title="Microsoft Active Accessibility (MSAA) 2.0">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ui-automation" title="UI Automation">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-uia-express" title="The IAccessibleEx Interface">UIA-EXPRESS</a></cite>], the
+      	<a href="https://developer.apple.com/documentation/appkit/accessibility/nsaccessibility">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-axapi" title="The NSAccessibility Protocol for macOS">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-atk" title="ATK - Accessibility Toolkit">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-at-spi" title="Assistive Technology Service Provider Interface">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-iaccessible2" title="IAccessible2">IAccessible2</a></cite>].</p>
     </dd>
     
     
-    
-    
-    
-    
-	
-    
-	
-    
-    
-    
-    <dt><dfn data-lt="assistive technology|assistive technologies" id="dfn-assistive-technology" data-dfn-type="dfn">Assistive Technologies</dfn></dt>
+    <dt><dfn id="dfn-accessibility-tree" data-dfn-type="dfn">Accessibility Tree</dfn></dt>
+    <dd>
+      <p>Tree of <a class="termref internalDFN" data-lt="accessible object" href="#dfn-accessible-object" data-link-type="dfn">accessible objects</a> that represents the structure of the user interface (<abbr title="user interface">UI</abbr>). Each node in the accessibility tree represents an element in the <abbr title="user interface">UI</abbr> as exposed through the <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programming Interface">API</abbr></a>; for example, a push button, a check box, or container.</p>
+    </dd>
+    <dt><dfn id="dfn-accessible-description" data-dfn-type="dfn">Accessible Description</dfn></dt>
+    <dd>
+      <p>An accessible description provides additional information, related to an interface element, that complements the <a href="#dfn-accessible-name" class="internalDFN" data-link-type="dfn">accessible name</a>. The accessible description might or might not be visually perceivable. </p>
+    </dd>
+	<dt><dfn data-lt="accessible name|accessible names|Accessible Name" id="dfn-accessible-name" data-dfn-type="dfn">Accessible Name</dfn></dt>
+    <dd>
+      <p>The accessible name is the name of a user interface element. Each platform <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="application programming interface">API</abbr></a> provides the accessible name property. The value of the accessible name may be derived from a visible (e.g., the visible text on a button) or invisible (e.g., the text alternative that describes an icon) property of the user interface element.  See related <a href="#dfn-accessible-description" class="internalDFN" data-link-type="dfn">accessible description</a>.</p>
+      <p>A simple use for the accessible name property may be illustrated by an "OK" button. The text "OK" is the accessible name. When the button receives focus, assistive technologies may concatenate the platform's role description with the accessible name. For example, a screen reader may speak "push-button OK" or "OK button". The order of concatenation and specifics of the role description (e.g., "button", "push-button", "clickable button") are determined by platform <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">API</abbr></a>s or <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>.</p>
+    </dd>
+	<dt><dfn data-lt="accessible object|accessible objects|Accessible object" id="dfn-accessible-object" data-dfn-type="dfn">Accessible object</dfn></dt>
+    <dd>
+      <p>A <a href="#dfn-node" class="internalDFN" data-link-type="dfn">node</a> in the <a href="#dfn-accessibility-tree" class="internalDFN" data-link-type="dfn">accessibility tree</a> of a platform <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="application programming interface">API</abbr></a>. Accessible objects expose various <a class="termref internalDFN" data-lt="state" href="#dfn-state" data-link-type="dfn">states</a>, <a class="termref internalDFN" data-lt="property" href="#dfn-property" data-link-type="dfn">properties</a>, and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> for use by <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>.  In the context of markup languages (e.g., <abbr title="Hypertext Markup Language">HTML</abbr> and <abbr title="Scalable Vector Graphics">SVG</abbr>) in general, and of <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> in particular, markup <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a> and their <a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">attributes</a> are represented as accessible objects.  </p>
+    </dd>
+    <dt><dfn id="dfn-activation-behavior" data-dfn-type="dfn">Activation behavior</dfn></dt>
+    <dd>
+      <p>The action taken when an <a href="#dfn-event" class="internalDFN" data-link-type="dfn">event</a>, typically initiated by users through an input device, causes an element to fulfill a defined role. The role may be defined for that element by the host language, or by author-defined variables, or both. The role for any given element may be a generic action, or may be unique to that element. For example, the activation behavior of an <abbr title="Hypertext Markup Language">HTML</abbr> or <abbr title="Scalable Vector Graphics">SVG</abbr> <code>&lt;a&gt;</code> element shall be to cause the user agent to traverse the link specified in the <code>href</code> attribute, with the further optional parameter of specifying the browsing context for the traversal (such as the current window or tab, a named window, or a new window); the activation behavior of an <abbr title="Hypertext Markup Language">HTML</abbr> <code>&lt;input&gt;</code> element with the <code>type</code> attribute value <code>submit</code> shall be to send the values of the form elements to an author-defined <abbr title="Internationalized Resource Identifiers">IRI</abbr> by the author-defined <abbr title="Hypertext Transfer Protocol">HTTP</abbr> method.</p>
+    </dd>
+    <dt><dfn data-lt="assistive technology|Assistive Technologies" id="dfn-assistive-technology" data-dfn-type="dfn">Assistive Technologies</dfn></dt>
     <dd><p>Hardware and/or software that:</p>
 			<ul>
 				<li>relies on services provided by a <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> to retrieve and render Web content </li>
@@ -934,110 +1009,160 @@ var[data-type]:hover::before {
       <li>alternate pointing devices, which are used to simulate mouse pointing and clicking.</li>
     </ul>
     </dd>
-    <dt><dfn data-lt="attribute|attributes" id="dfn-attribute" data-dfn-type="dfn">Attribute</dfn></dt>
+    <dt><dfn data-lt="attribute|attributes|Attribute" id="dfn-attribute" data-dfn-type="dfn">Attribute</dfn></dt>
     <dd>
       <p>In this specification, attribute is used as it is in markup languages. Attributes are structural features added to <a class="termref" href="#dfn-element">elements</a> to provide information about the <a class="termref" href="#dfn-state">states</a> and <a class="termref" href="#dfn-property">properties</a> of the <a class="termref" href="#dfn-object">object</a> represented by the element.</p>
     </dd>
-    <dt><dfn data-lt="class|classes" id="dfn-class" data-dfn-type="dfn">Class</dfn></dt>
+    <dt><dfn data-lt="class|classes|Class" id="dfn-class" data-dfn-type="dfn">Class</dfn></dt>
     <dd>
       <p>A set of instance <a class="termref" href="#dfn-object">objects</a> that share similar characteristics.</p>
     </dd>
-    
-    
-    
-    
-    <dt><dfn data-lt="element|elements|element's" id="dfn-element" data-dfn-type="dfn">Element</dfn></dt>
+    <dt><dfn data-lt="deprecated|deprecate|deprecation|Deprecated" id="dfn-deprecated" data-dfn-type="dfn">Deprecated</dfn></dt>
+    <dd>
+      <p>A deprecated <a class="termref" href="#dfn-role">role</a>, <a class="termref" href="#dfn-state">state</a>, or <a class="termref" href="#dfn-property">property</a> is one which has been outdated by newer constructs or changed circumstances, and which may be removed in future versions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> specification. <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agent" data-link-type="dfn">User agents</a> are encouraged to continue to support items identified as deprecated for backward compatibility. For more information, see <a href="#deprecated" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">Deprecated Requirements</a> in the Conformance section.</p>
+    </dd>
+    <dt><dfn data-lt="desktop focus|desktop focus events|Desktop focus event" id="dfn-desktop-focus" data-dfn-type="dfn">Desktop focus event</dfn></dt>
+    <dd>
+      <p>Event from/to the host operating system via the accessibility <abbr title="application programming interface">API</abbr>, notifying of a change of input focus.</p>
+    </dd>
+    <dt><dfn data-lt="element|elements|element's|Element" id="dfn-element" data-dfn-type="dfn">Element</dfn></dt>
     <dd>
       <p>In this specification, element is used as it is in markup languages. Elements are the structural elements in markup language that contains the data profile for <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a>.</p>
     </dd>
-    <dt><dfn data-lt="event|events" id="dfn-event" data-dfn-type="dfn">Event</dfn></dt>
+    <dt><dfn data-lt="event|events|Event" id="dfn-event" data-dfn-type="dfn">Event</dfn></dt>
     <dd>
       <p>A programmatic message used to communicate discrete changes in the <a href="#dfn-state" class="internalDFN" data-link-type="dfn">state</a> of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> to other objects in a computational system. User input to a web page is commonly mediated through abstract events that describe the interaction and can provide notice of changes to the state of a document object. In some programming languages, events are more commonly known as notifications.</p>
     </dd>
-    
-    
-	
-    
-    
-    
-    <dt><dfn data-lt="informative|non-normative" id="dfn-informative" data-dfn-type="dfn">Informative</dfn></dt>
+    <dt><dfn id="dfn-expose" data-dfn-type="dfn">Expose</dfn></dt>
+    <dd>
+      <p>Translated to platform-specific <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">accessibility APIs</a> as defined in the <a href="" class="core-mapping">Core Accessibility <abbr title="Application Programming Interfaces">API</abbr> Mappings</a>. [<cite><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM-1.1</a></cite>]</p>
+    </dd>
+	<dt><dfn data-lt="graphical document|graphical documents|Graphical Document" id="dfn-graphical-document" data-dfn-type="dfn">Graphical Document</dfn></dt>
+    <dd>
+      <p>A document containing graphic representations with user-navigable parts. Charts, maps, diagrams, blueprints, and dashboards are examples of graphical documents. A graphical document is composed using any combination of symbols, images, text, and graphic primitives (shapes such as circles, points, lines, paths, rectangles, etc).</p>
+    </dd>
+    <dt><dfn id="dfn-hidden" data-dfn-type="dfn">Hidden</dfn></dt>
+    <dd>
+        <p>Indicates that the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> is not visible, <a href="#dfn-perceivable" class="internalDFN" data-link-type="dfn">perceivable</a>, or interactive to <em>any</em> user. An element is considered <em>hidden</em> if it or any one of its ancestor elements is not rendered or is explicitly hidden.</p>
+    </dd>
+    <dt><dfn data-lt="informative|non-normative|Informative" id="dfn-informative" data-dfn-type="dfn">Informative</dfn></dt>
     <dd>
       <p>Content provided for information purposes and not required for conformance. Content required for conformance is referred to as <a href="#dfn-normative" class="internalDFN" data-link-type="dfn">normative</a>.</p>
     </dd>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    <dt><dfn id="dfn-keyboard-accessible" data-dfn-type="dfn">Keyboard Accessible</dfn></dt>
+    <dd>
+    	<p>Accessible to the user using a keyboard or <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> that mimic keyboard input, such as a sip and puff tube. References in this document relate to <cite><a href="https://www.w3.org/TR/WCAG21/#keyboard-accessible"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Guideline 2.1: Make all functionality available from a keyboard</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">WCAG21</a></cite>].</p>
+    </dd>
+    <dt><dfn data-lt="landmark|landmarks|Landmark" id="dfn-landmark" data-dfn-type="dfn">Landmark</dfn></dt>
+    <dd>
+      <p>A type of region on a page to which the user may want quick access. Content in such a region is different from that of other regions on the page and relevant to a specific user purpose, such as navigating, searching, perusing the primary content, etc.</p>
+    </dd>
+    <dt><dfn data-lt="live region|live regions|Live Region" id="dfn-live-region" data-dfn-type="dfn">Live Region</dfn></dt>
+    <dd>
+      <p>Live regions are perceivable regions of a web page that are typically updated as a result of an external event when user focus may be elsewhere. These regions are not always updated as a result of a user interaction. This practice has become commonplace with the growing use of Ajax. Examples of live regions include a chat log, stock ticker, or a sport scoring section that updates periodically to reflect game statistics. Since these asynchronous areas are expected to update outside the user's area of focus, assistive technologies such as screen readers have either been unaware of their existence or unable to process them for the user. <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> has provided a collection of properties that allow the author to identify these live regions and process them: aria-live, aria-relevant, aria-atomic, and aria-busy.</p>
+    </dd>
+    <dt><dfn id="dfn-primary-content-element" data-dfn-type="dfn">Primary Content Element</dfn></dt>
+    <dd>
+      <p>An implementing host language's primary content element, such as the <code>body</code> element in <abbr title="Hypertext Markup Language">HTML</abbr>.</p>
+    </dd>
+    <dt><dfn data-lt="managed state|managed states|Managed State" id="dfn-managed-state" data-dfn-type="dfn">Managed State</dfn></dt>
+    <dd>
+      <p><a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">Accessibility <abbr title="Application Programming Interfaces">API</abbr></a> <a href="#dfn-state" class="internalDFN" data-link-type="dfn">state</a> that is controlled by the user agent, such as focus and selection. These are contrasted with "unmanaged states" that are typically controlled by the author. Nevertheless, authors can override some managed states, such as aria-posinset and aria-setsize. Many managed states have corresponding CSS pseudo-classes, such as :focus, and pseudo-elements, such as ::selection, that are also updated by the user agent.</p>
+    </dd>
+    <dt><dfn id="dfn-nemeth-braille" data-dfn-type="dfn">Nemeth Braille</dfn></dt>
+    <dd>
+        <p>The Nemeth Braille Code for Mathematics is a braille code for encoding mathematical and scientific notation. See <cite><a href="https://en.wikipedia.org/wiki/Nemeth_Braille">Nemeth Braille on Wikipedia</a>.</cite></p>
+    </dd>
+    <dt><dfn id="dfn-node" data-dfn-type="dfn">Node</dfn></dt>
+    <dd>
+      <p>Basic type of <a class="termref internalDFN" href="#dfn-object" data-link-type="dfn">object</a> in the <abbr title="Document Object Model">DOM</abbr> tree or <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>. <abbr title="Document Object Model">DOM</abbr> nodes are further specified as <a class="termref internalDFN" href="#dfn-element" data-link-type="dfn">Element</a> or <a class="termref internalDFN" data-lt="Text node" href="#dfn-text-node" data-link-type="dfn">Text nodes</a>, among other types. The nodes of an <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a> are <a class="termref internalDFN" data-lt="accessible object" href="#dfn-accessible-object" data-link-type="dfn">accessible objects</a>.  </p>
+    </dd>
     <dt><dfn id="dfn-normative" data-dfn-type="dfn">Normative</dfn></dt>
     <dd>
       <p>Required for conformance. By contrast, content identified as <a href="#dfn-informative" class="internalDFN" data-link-type="dfn">informative</a> or "non-normative" is not required for conformance.</p>
     </dd>
-    <dt><dfn data-lt="object|objects" id="dfn-object" data-dfn-type="dfn">Object</dfn></dt>
+    <dt><dfn data-lt="object|objects|Object" id="dfn-object" data-dfn-type="dfn">Object</dfn></dt>
     <dd>
       <p>In the context of user interfaces,  an item in the   perceptual user experience, represented in markup languages by one or   more <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a>, and rendered by <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agent" data-link-type="dfn">user agents</a>.</p>
     In the context of programming, the instantiation of one or more <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> and interfaces which define the general characteristics of similar objects. An object in an <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">API</abbr></a> may represent one or more <abbr title="Document Object Model">DOM</abbr> objects. <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">Accessibility APIs</a> have defined interfaces that are distinct from <abbr title="Document Object Model">DOM</abbr> interfaces.</dd>
   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt><dfn data-lt="property|properties" id="dfn-property" data-dfn-type="dfn">Property</dfn></dt>
+    <dt><dfn id="dfn-ontology" data-dfn-type="dfn">Ontology</dfn></dt>
+    <dd>
+      <p>A description of the characteristics of <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> and how they relate to each other.</p>
+    </dd>
+    <dt><dfn id="dfn-operable" data-dfn-type="dfn">Operable</dfn></dt>
+    <dd>
+      <p>Usable by users in ways they can control. References in this document relate to <cite><a href="https://www.w3.org/TR/WCAG21/#operable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Principle 2: Content must be operable</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">WCAG21</a></cite>]. See <a href="#dfn-keyboard-accessible" class="internalDFN" data-link-type="dfn">Keyboard Accessible</a>.</p>
+    </dd>
+    <dt><dfn data-lt="owned element|owned|owned element's|owned elements|Owned Element" id="dfn-owned-element" data-dfn-type="dfn">Owned Element</dfn></dt>
+    <dd>
+      <p>An 'owned element' is any <abbr title="Document Object Model">DOM</abbr> descendant of the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a>, any element specified as a child via <a href="https://w3c.github.io/aria/#aria-owns" class="property-reference"><code>aria-owns</code></a>, or any <abbr title="Document Object Model">DOM</abbr> descendant of the owned child.</p>
+    </dd>
+    <dt><dfn data-lt="owning element|owning|Owning Element" id="dfn-owning-element" data-dfn-type="dfn">Owning Element</dfn></dt>
+    <dd>
+      <p>An 'owning element' is any <abbr title="Document Object Model">DOM</abbr> ancestor of the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a>, or any element with an <a href="https://w3c.github.io/aria/#aria-owns" class="property-reference"><code>aria-owns</code></a> attribute which references the ID of the   element. </p>
+    </dd>
+    <dt><dfn id="dfn-perceivable" data-dfn-type="dfn">Perceivable</dfn></dt>
+    <dd>
+      <p>Presentable to users in ways they can sense. References in this document relate to <cite><a href="https://www.w3.org/TR/WCAG21/#perceivable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Principle 1: Content must be perceivable</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">WCAG21</a></cite>].</p>
+    </dd>
+    <dt><dfn data-lt="property|properties|Property" id="dfn-property" data-dfn-type="dfn">Property</dfn></dt>
     <dd>
       <p><a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">Attributes</a> that are essential to the nature of a given <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example, <a href="https://w3c.github.io/aria/#aria-multiline" class="property-reference"><code>aria-multiline</code></a>) are less likely to change than <a class="termref" href="#dfn-state">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as <a href="https://w3c.github.io/aria/#aria-activedescendant" class="property-reference"><code>aria-activedescendant</code></a>, <a href="https://w3c.github.io/aria/#aria-valuenow" class="property-reference"><code>aria-valuenow</code></a>, and <a href="https://w3c.github.io/aria/#aria-valuetext" class="property-reference"><code>aria-valuetext</code></a> are expected to change often. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
-    
-    
-    <dt><dfn data-lt="role|roles" id="dfn-role" data-dfn-type="dfn">Role</dfn></dt>
+    <dt><dfn data-lt="relationship|relationships|Relationship" id="dfn-relationship" data-dfn-type="dfn">Relationship</dfn></dt>
+    <dd>
+      <p>A connection between two distinct things. Relationships may be of various types to indicate which <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> labels another, controls another, etc.</p>
+    </dd>
+    <dt><dfn data-lt="role|roles|Role" id="dfn-role" data-dfn-type="dfn">Role</dfn></dt>
     <dd>
       <p>Main indicator of type.  This <a class="termref internalDFN" data-lt="semantics" href="#dfn-semantics" data-link-type="dfn">semantic</a> association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.</p>
     </dd>
-    
-    
-    <dt><dfn data-lt="semantics|semantic|semantically" id="dfn-semantics" data-dfn-type="dfn">Semantics</dfn></dt>
+    <dt><dfn id="dfn-root-wai-aria-node" data-dfn-type="dfn">Root <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> node</dfn></dt>
+    <dd>
+      <p> The primary element containing non-metadata content. In many languages, this is  the document element but in <abbr title="Hypertext Markup Language">HTML</abbr>, it is the <code>&lt;body&gt;</code>.</p>
+    </dd>
+    <dt><dfn data-lt="semantics|semantic|semantically|Semantics" id="dfn-semantics" data-dfn-type="dfn">Semantics</dfn></dt>
     <dd>
       <p>The meaning of something as understood by a human, defined in a way that computers can process a representation of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>, such as <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a> and <a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">attributes</a>, and reliably represent the object in a way that various humans will achieve a mutually consistent understanding of the object.</p>
     </dd>
-    <dt><dfn data-lt="state|states" id="dfn-state" data-dfn-type="dfn">State</dfn></dt>
+    <dt><dfn data-lt="state|states|State" id="dfn-state" data-dfn-type="dfn">State</dfn></dt>
     <dd>
       <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
-    
-    
-    
-    
+    <dt><dfn id="dfn-sub-document" data-dfn-type="dfn">Sub-document</dfn></dt>
+    <dd>
+      <p>Any document created from a <code>&lt;frame&gt;</code>, <code>&lt;iframe&gt;</code> or similar mechanism. A sub-document may contain a document, an application or any widget such as a calendar pulled in from another server. In the <a href="#dfn-accessibility-tree" class="internalDFN" data-link-type="dfn">accessibility tree</a> there are two <a class="termref internalDFN" data-lt="accessible object" href="#dfn-accessible-object" data-link-type="dfn">accessible objects</a> for this situation—one represents the <code>&lt;frame&gt;</code>/<code>&lt;iframe&gt;</code> element in the parent document, which parents a single <a href="#dfn-accessible-object" class="internalDFN" data-link-type="dfn">accessible object</a> child representing the spawned document contents.</p>
+    </dd>
+    <dt><dfn id="dfn-target-element" data-dfn-type="dfn">Target Element</dfn></dt>
+    <dd>
+      <p>An element specified in a <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> relation. For example, in <code> &lt;div aria-controls=”elem1”&gt;</code>, where <code>“elem1”</code> is the ID for the target element.</p>
+    </dd>
     <dt><dfn id="dfn-taxonomy" data-dfn-type="dfn">Taxonomy</dfn></dt>
     <dd>
       <p>A hierarchical definition of how the characteristics of various <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> relate to each other, in which classes inherit the properties of superclasses in the hierarchy. A taxonomy can comprise part of the formal definition of an <a href="#dfn-ontology" class="internalDFN" data-link-type="dfn">ontology</a>.</p>
     </dd>
-    
-    
-    
-    
-    
-    
-    <dt><dfn data-lt="user agent|user agents" id="dfn-user-agent" data-dfn-type="dfn">User Agent</dfn></dt>
+    <dt><dfn id="dfn-text-node" data-dfn-type="dfn" data-plurals="text nodes">Text node</dfn></dt>
+    <dd>
+      <p>Type of <abbr title="Document Object Model">DOM</abbr> <a class="termref internalDFN" data-lt="node" href="#dfn-node" data-link-type="dfn">node</a> that represents the textual content of an <a class="termref internalDFN" href="#dfn-attribute" data-link-type="dfn">attribute</a> or an <a class="termref internalDFN" href="#dfn-element" data-link-type="dfn">element</a>. A Text node has no child nodes.  </p>
+    </dd>
+    <dt><dfn id="dfn-tooltip-attribute" data-dfn-type="dfn">Tooltip attribute</dfn></dt>
+    <dd>
+      <p>Any host language attribute that would result in a user agent generating a tooltip such as in response to a mouse hover in desktop user agents.</p>
+    </dd>
+    <dt><dfn id="dfn-understandable" data-dfn-type="dfn">Understandable</dfn></dt>
+    <dd>
+      <p>Presentable to users in ways they can construct an appropriate meaning. References in this document relate to <cite><a href="https://www.w3.org/TR/WCAG21/#understandable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Principle 3: Information and the operation of user interface must be understandable</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">WCAG21</a></cite>].</p>
+    </dd>
+    <dt><dfn data-lt="user agent|user agents|User Agent" id="dfn-user-agent" data-dfn-type="dfn">User Agent</dfn></dt>
     <dd>
       <p>Any software that retrieves, renders and facilitates end user interaction with Web content. This definition may differ from that used in other documents.</p>
     </dd>
-    
-    
-    <dt><dfn data-lt="widget|widgets" id="dfn-widget" data-dfn-type="dfn">Widget</dfn></dt>
+    <dt><dfn id="dfn-valid-idref" data-dfn-type="dfn">Valid IDREF</dfn></dt>
+    <dd>
+      <p>A reference to a target element in the same document that has a matching ID</p>
+    </dd>
+    <dt><dfn data-lt="widget|widgets|Widget" id="dfn-widget" data-dfn-type="dfn">Widget</dfn></dt>
     <dd>
       <p>Discrete user interface <a class="termref" href="#dfn-object">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
     </dd>
@@ -1079,7 +1204,7 @@ var[data-type]:hover::before {
      value in the role characteristics table.
      Finally, the native semantics of the graphics language 
      may also default to ignoring <abbr title="Document Object Model">DOM</abbr> structure that does not have
-     semantic data attached; for <abbr title="Scalable Vector Graphics">SVG</abbr>, this is defined in the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility <abbr title="Application Programming Interfaces">API</abbr> Mappings specification [<cite><a class="bibref" href="#bib-svg-aam-1.0" title="SVG Accessibility API Mappings" data-link-type="biblio">SVG-AAM-1.0</a></cite>].
+     semantic data attached; for <abbr title="Scalable Vector Graphics">SVG</abbr>, this is defined in the <abbr title="Scalable Vector Graphics">SVG</abbr> Accessibility <abbr title="Application Programming Interfaces">API</abbr> Mappings specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-svg-aam-1.0" title="SVG Accessibility API Mappings">SVG-AAM-1.0</a></cite>].
   </p>
   <p>
      In all cases, to be considered presentational, an element must not be interactive 
@@ -1094,7 +1219,7 @@ var[data-type]:hover::before {
         <a data-lt="role" href="#dfn-role" class="internalDFN" data-link-type="dfn">roles</a> defined in this specification.  
         They would normally be used in combination with other roles 
         defined in <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 
-        to annotate graphics within documents and rich internet applications [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>].
+        to annotate graphics within documents and rich internet applications [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>].
       </p>
       
 		<dl id="index_role" class="compact"><dt><a href="#graphics-document" class="role-reference">graphics-document</a></dt>
@@ -1554,7 +1679,7 @@ var[data-type]:hover::before {
         <p>
             When used as part of a structured symbolic language, 
             the <a href="https://w3c.github.io/aria/#aria-roledescription" class="property-reference"><code>aria-roledescription</code></a> property 
-            (introduced in ARIA 1.1 [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>])
+            (introduced in ARIA 1.1 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>])
             can be used to name the symbol type 
             separately from the name and description 
             for the particular instance of the symbol.
@@ -1733,7 +1858,7 @@ var[data-type]:hover::before {
 	</section>
 	<section id="role_other">
 		<h3 id="x4-2-other-roles-for-graphics"><bdi class="secno">4.2 </bdi>Other Roles for Graphics<a class="self-link" aria-label="§" href="#role_other"></a></h3>
-		<p>	The following core ARIA roles, defined in ARIA 1.1 [<cite><a class="bibref" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" data-link-type="biblio">WAI-ARIA-1.1</a></cite>], are also 
+		<p>	The following core ARIA roles, defined in ARIA 1.1 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>], are also 
       relevant for annotating graphics:
     </p>
 		<ul>
@@ -1994,10 +2119,7 @@ var[data-type]:hover::before {
 	</section>
 
 
-<section id="references" class="appendix">
-      <h2 id="c-references"><bdi class="secno">C. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2>
-      
-    <section id="normative-references">
+<section id="references" class="appendix"><h2 id="c-references"><bdi class="secno">C. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
         <h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
       <dl class="bibliography">
         <dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd><dt id="bib-svg-aam-1.0">[SVG-AAM-1.0]</dt><dd><a href="https://www.w3.org/TR/svg-aam-1.0/"><cite>SVG Accessibility API Mappings</cite></a>. Amelia Bellamy-Royds; Ian Pouncey.  W3C. 10 May 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/svg-aam-1.0/">https://www.w3.org/TR/svg-aam-1.0/</a></dd><dt id="bib-wai-aria-1.1">[WAI-ARIA-1.1]</dt><dd><a href="https://www.w3.org/TR/wai-aria-1.1/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.1</cite></a>. Joanmarie Diggs; Shane McCarron; Michael Cooper; Richard Schwerdtfeger; James Craig.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-1.1/">https://www.w3.org/TR/wai-aria-1.1/</a></dd>
