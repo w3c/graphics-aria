@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 25.3.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 25.4.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- EXAMPLES --- */
 span.example-title {
     text-transform: none;
 }
@@ -79,16 +79,6 @@ input.task-list-item-checkbox {
   bottom: 2px;
   border: none;
   display: inline-block;
-}
-
-.issue a.respec-label-dark {
-  color: #fff;
-  background-color: #000;
-}
-
-.issue a.respec-label-light {
-  color: #000;
-  background-color: #fff;
 }
 </style><style>/* dfn popup panel that list all local references to a dfn */
 dfn {
@@ -181,7 +171,7 @@ dfn {
         width: 60em;
     }
 </style>
-<style id="respec-mainstyle">/*****************************************************************
+<script async="" src="/cdn-cgi/bm/cv/2172558837/api.js"></script><style id="respec-mainstyle">/*****************************************************************
  * ReSpec specific CSS
  *****************************************************************/
 @keyframes pop {
@@ -262,7 +252,7 @@ cite .bibref {
 }
 
 code {
-  color: #c83500;
+  color: #c63501;
 }
 
 th code {
@@ -468,7 +458,7 @@ h6 > a.self-link::before {
   }
 }
 </style><meta name="description" content="Assistive technologies need semantic information about the structures and expected behaviors of a document in order to convey appropriate information to persons with disabilities. This specification defines a WAI-ARIA 1.1 [WAI-ARIA-1.1] module of core roles specific to web graphics. These semantics allow an author to express the logical structure of the graphic to assistive technologies in order improve accessibility of graphics. Assistive technologies could then enable semantic navigation and adapt styling and interactive features, to provide an optimal experience for the audience.  These features complement the graphics and document structure elements defined by HTML [HTML52] and SVG [SVG2]."><link rel="canonical" href="https://www.w3.org/TR/graphics-aria-1.0/"><style>/*
-Atom One Light by Daniel Gamage
+Adapted from Atom One Light by Daniel Gamage for ReSpec, with better color contrast
 Original One Light Syntax theme from https://github.com/atom/one-light-syntax
 base:    #fafafa
 mono-1:  #383a42
@@ -509,11 +499,12 @@ hue-6-2: #c18401
 .hljs-selector-tag,
 .hljs-deletion,
 .hljs-subst {
-  color: #e45649;
+  color: #ca4706;
+  font-weight: bold;
 }
 
 .hljs-literal {
-  color: #0184bb;
+  color: #0b76c5;
 }
 
 .hljs-string,
@@ -526,7 +517,7 @@ hue-6-2: #c18401
 
 .hljs-built_in,
 .hljs-class .hljs-title {
-  color: #c18401;
+  color: #9a6a01;
 }
 
 .hljs-attr,
@@ -546,7 +537,7 @@ hue-6-2: #c18401
 .hljs-meta,
 .hljs-selector-id,
 .hljs-title {
-  color: #4078f2;
+  color: #336ae3;
 }
 
 .hljs-emphasis {
@@ -710,16 +701,16 @@ var[data-type]:hover::before {
   "preProcess": [
     null
   ],
-  "publishDate": "2020-03-06",
-  "publishISODate": "2020-03-06T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 06 March 2020"
+  "publishDate": "2020-03-30",
+  "publishISODate": "2020-03-30T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 30 March 2020"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry informative"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">WAI-ARIA Graphics Module</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2020-03-06">06 March 2020</time>
+        <time class="dt-published" datetime="2020-03-30">30 March 2020</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -1016,7 +1007,7 @@ var[data-type]:hover::before {
     </dd>
     <dt><dfn data-lt="live region|live regions|Live Region" id="dfn-live-region" data-dfn-type="dfn">Live Region</dfn></dt>
     <dd>
-      <p>Live regions are perceivable regions of a web page that are typically updated as a result of an external event when user focus may be elsewhere. These regions are not always updated as a result of a user interaction. This practice has become commonplace with the growing use of Ajax. Examples of live regions include a chat log, stock ticker, or a sport scoring section that updates periodically to reflect game statistics. Since these asynchronous areas are expected to update outside the user's area of focus, assistive technologies such as screen readers have either been unaware of their existence or unable to process them for the user. <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> has provided a collection of properties that allow the author to identify these live regions and process them: aria-live, aria-relevant, aria-atomic, and aria-busy.</p>
+      <p>Live regions are perceivable regions of a web page that are typically updated as a result of an external event when user focus may be elsewhere. These regions are not always updated as a result of a user interaction. Examples of live regions include a chat log, stock ticker, or a sport scoring section that updates periodically to reflect game statistics. Since these asynchronous areas are expected to update outside the user's area of focus, assistive technologies such as screen readers have either been unaware of their existence or unable to process them for the user. <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> has provided a collection of properties that allow the author to identify these live regions and process them: aria-live, aria-relevant, aria-atomic, and aria-busy.</p>
     </dd>
     <dt><dfn id="dfn-primary-content-element" data-dfn-type="dfn">Primary Content Element</dfn></dt>
     <dd>
@@ -2069,7 +2060,7 @@ var[data-type]:hover::before {
 			<p>This publication has been funded in part with U.S. Federal funds from the Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR), initially under contract number ED-OSE-10-C-0067 and currently under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
 		</section>
 	</section>
-
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'57c49896ee0fff78',m:'799f65a07fecd140dddb405c7450f028f0e18e5f-1585600306-1800-AQluS9ht+Kx453M+M/i072p2NPmaFJ0cBHcQTnY/GBRkDX1dZ7uqvKoqcmPKPrmN7ip4QPVv2NPjCa0KLKXKhg9QZ1RdcyoenTqSxwurdkJvYio98e+uvUiRCdV1bmkGHwKHHO25ESimEzuRMRlz20cSMbbeRTdKL4jzg4NfktI9WPawpIP2dHF5VGOdd5QHLg==',s:[0x7f193a593d,0x293708ed8b],fb:0,}})();</script>
 
 <section id="references" class="appendix"><h2 id="c-references"><bdi class="secno">C. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
         <h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
