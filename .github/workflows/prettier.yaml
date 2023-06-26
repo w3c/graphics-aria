@@ -21,3 +21,5 @@ jobs:
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
+        with:
+          prettier_options: --write *.{html}
